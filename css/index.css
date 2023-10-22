@@ -1,0 +1,50 @@
+.hero-img {
+   max-height: 700px;
+   object-position: center 75%;
+}
+/* === SECTION 1 === */
+.round-img {
+    height: 264px;
+    width: 264px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+article:hover .round-img {
+    transform: translateY(-5px); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+}
+.article-container {
+    flex-wrap: wrap;
+}
+
+.article-header {
+    padding-top: 25px;
+    font-weight: var(--body-font-weight-bold);
+}
+
+.article-text {
+    max-width: 175px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.categories-hr {
+    min-width: 300px;
+}
+
+/* === SECTION 2 === */
+
+/* .about-section{
+
+} */
+/* .content-text {
+  margin: 0 100px;
+} */
+.location-container {
+    padding-bottom: 17px;
+}
+.fa-location-dot {
+    padding-right: 15px;
+}

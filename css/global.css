@@ -1,0 +1,207 @@
+/* === BASE STYLES === */
+
+/* Root Variables */
+:root {
+  /* Colors */
+  --primary-bg-color: #5a8da7;
+  --section-bg-color: #e3f1fa;
+  --main-color: #20567a;
+  --header-footer-color: #ffffff;
+  --button-anchor-bg-color: #20567a;
+  --hr-color: #a7745a;
+
+  /* Fonts */
+  --header-font-family: "Playfair Display", Georgia, "Times New Roman";
+  --header-font-weight-normal: 400;
+  --header-font-weight-bold: 600;
+  --body-font-family: Roboto, Arial, sans-serif;
+  --body-font-weight-light: 300;
+  --body-font-weight-bold: 500;
+
+  /* Font Sizes */
+  --base-font-size: 1rem; /* 18px */
+  --h1-font-size: 1.5rem; /* 27px */
+  --h2-font-size: 1.33rem; /* 24px */
+  --h3-font-size: 1.2rem; /* 21px */
+}
+
+/* Global Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight-light);
+  font-size: var(--base-font-size);
+  color: var(--main-color);
+  line-height: 1.5;
+}
+
+/* Default styles for HTML elements */
+hr {
+  border: none;
+  border-top: 1px solid var(--hr-color);
+  margin: 10px 0 60px;
+  
+}
+/*om alle section og article bruk disse verdiene, ha de her. om ikke bruk .flex .center class i html istedenfor. */
+section:not(.brand-container) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-top: 125px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 25px;
+}
+img {
+  object-fit: cover;
+}
+/* Text and Link Styles */
+a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--header-font-family);
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  text-align: center;
+  font-weight: var(--header-font-weight-normal);
+}
+
+h2 {
+  font-weight: var(--header-font-weight-bold);
+  font-size: var(--h2-font-size);
+}
+
+h3 {
+  font-weight: var(--header-font-weight-bold);
+  font-size: var(--h3-font-size);
+}
+
+/* === CLASSES === */
+
+/* Flexbox  */
+.flex {
+  display: flex;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.space-around {
+  justify-content: space-around;
+}
+.align-start {
+  align-items: flex-start;
+}
+.align-end {
+  align-items: flex-end;
+}
+/*Text align*/
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align:left
+}
+
+/* Width & Margin  */
+.site-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.w-100 {
+  width: 100%;
+}
+/*Image and text split 50/50 of screen styles*/
+.content-img,
+.content-text {
+    width: 50%;
+}
+.content-text {
+  margin:  0 100px;
+}
+.content-container {
+  background-color: #E3F1FA;
+  
+}
+
+/* Display  */
+.block {
+  display: block;
+}
+
+/* Other  */
+.button-anchor {
+  background-color: var(--button-anchor-bg-color);
+  color: var(--header-footer-color);
+}
+
+.box-shadow {
+  box-shadow: 0px -25px 20px -20px rgba(90, 141, 167, 0.3),
+    0px 25px 20px -20px rgba(0, 0, 0, 0.15);
+}
+
+/* === HEADER FOOTER === */
+nav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-bg-color);
+  z-index: 1000;
+}
+nav ul {
+  list-style-type: none;
+}
+nav li {
+  margin: 0 30px;
+}
+nav a {
+  color: var(--header-footer-color);
+}
+
+.brand-container {
+  height: 100px;
+  margin-top: 60px;
+}
+.brand-logo {
+  width: 60px;
+  height: 60px;
+  margin: 0 15px;
+}
+footer {
+  background-color: var(--primary-bg-color);
+  color: var(--header-footer-color);
+}
+nav,
+footer {
+  padding: 20px 0;
+}
