@@ -54,64 +54,66 @@
             <hr class="categories-hr" />
           </div>
           <div class="article-container flex center w-100">
-            <article>
+            <article class="article-categories">
               <a href=""
                 ><img
-                  class="round-img"
+                  class="img-small round-img"
                   src="/images/Brunch.jpg"
                   alt="Two slices of bread with salmon and egg on a brown plate"
                 />
-                <p class="article-header">BRUNCH</p>
-                <p class="article-text">
+                <h3 class="article-header">BRUNCH</h3>
+                <p class="article-text-categories article-text">
                   Savory and sweet brunch favorites.
                 </p></a
               >
             </article>
-            <article>
+            <article class="article-categories">
               <a href=""
                 ><img
-                  class="round-img"
+                  class="img-small round-img"
                   src="/images/Pastries.jpg"
                   alt="Buns lying on a wooden plate"
                 />
-                <p class="article-header">PASTERIES</p>
-                <p class="article-text">
+                <h3 class="article-header">PASTERIES</h3>
+                <p class="article-text-categories article-text">
                   Flaky, rich, and irresistibly sweet.
                 </p></a
               >
             </article>
-            <article>
+            <article class="article-categories">
               <a href=""
                 ><img
-                  class="round-img"
+                  class="img-small round-img"
                   src="/images/Dinners.jpg"
                   alt="Steak on a plate with side dishes and sauce"
                 />
-                <p class="article-header">DINNERS</p>
-                <p class="article-text">Meals for memorable evenings.</p></a
+                <h3 class="article-header">DINNERS</h3>
+                <p class="article-text-categories article-text">
+                  Meals for memorable evenings.
+                </p></a
               >
             </article>
-            <article>
+            <article class="article-categories">
               <a href=""
                 ><img
-                  class="round-img"
+                  class="img-small round-img"
                   src="/images/Desserts.jpg"
                   alt="Cake on a plate with vanilla sauce on the side"
                 />
-                <p class="article-header">DESSERTS</p>
-                <p class="article-text">
+                <h3 class="article-header">DESSERTS</h3>
+                <p class="article-text-categories article-text">
                   Sweet indulgences for every craving.
                 </p></a
               >
             </article>
           </div>
         </section>
-        <!-- === SECTION 2 === -->   
+        <!-- === SECTION 2 === -->
         <section class="about-section w-100">
           <div>
             <h2 class="text-center">ABOUT ME</h2>
             <p class="text-center">James Cooks</p>
-            <hr class="categories-hr" />
+            <hr />
           </div>
           <div class="content-container flex center box-shadow">
             <img
@@ -125,14 +127,81 @@
                 <p>CURRENTLY IN SANTORINI, <strong>GREECE</strong></p>
               </div>
               <p>
-                My name is James Smith, and the art of cooking has been my lifelong passion. From the warm aromatic kitchens of India to the cozy countryside bistros of France, I've embraced diverse culinary traditions and techniques. The joy, for me, isn't just in savoring these dishes but in sharing their recipes, stories, and the love that goes into making them. Every place has its unique flavor, and my journey has now brought me to the picturesque landscapes of Santorini, Greece. Here, amidst the whitewashed buildings and sunsets, I am immersing myself in local delicacies and eager to bring these Grecian recipes to your plate
+                My name is James Smith, and the art of cooking has been my
+                lifelong passion. From the warm aromatic kitchens of India to
+                the cozy countryside bistros of France, I've embraced diverse
+                culinary traditions and techniques. The joy, for me, isn't just
+                in savoring these dishes but in sharing their recipes, stories,
+                and the love that goes into making them. Every place has its
+                unique flavor, and my journey has now brought me to the
+                picturesque landscapes of Santorini, Greece. Here, amidst the
+                whitewashed buildings and sunsets, I am immersing myself in
+                local delicacies and eager to bring these Grecian recipes to
+                your plate
               </p>
             </div>
+          </div>
         </section>
-        <section>
+        <!-- === SECTION 3 === -->
+        <section class="w-100 text-center">
           <div>
-          <h2>LATEST POSTS</h2>
-          <hr>
+            <h2 class="text-center">LATEST POSTS</h2>
+            <hr />
+          </div>
+          <div class="article-container flex center w-100">
+            <article class="article-latest text-left">
+              <a href=""
+                ><img
+                  class="zoom-img img-small"
+                  src="/images/Japanesestew.jpg"
+                  alt="Japanes curry stew in a bowl."
+                />
+                <h3 class="article-header">JAPANESE CURRY STEW</h3>
+                <p class="article-text latest-top-text">Category: Dinner</p>
+                <p class="article-text latest-bot-text">Origin: Japan</p>
+                <div class="cta-layout">READ MORE</div></a
+              >
+              <!-- i use div for cta-layout bcs everything is wrapped up in a a tag. if not i would have used a anchor around read more text insted of div -->
+            </article>
+            <article class="article-latest text-left">
+              <a href=""
+                ><img
+                  class="zoom-img img-small"
+                  src="/images/Greeksalad.jpg"
+                  alt="Greek salad in a bowl."
+                />
+                <h3 class="article-header">GREEK SALAD</h3>
+                <p class="article-text latest-top-text">Category: Brunch</p>
+                <p class="article-text latest-bot-text">Origin: Greece</p>
+                <div class="cta-layout">READ MORE</div></a
+              >
+            </article>
+            <article class="article-latest text-left">
+              <a href=""
+                ><img
+                  class="zoom-img img-small"
+                  src="/images/Spanakopita.jpg"
+                  alt="Spanakopita on a plate."
+                />
+                <h3 class="article-header">SPANAKOPITA</h3>
+                <p class="article-text latest-top-text">Category: Pastry</p>
+                <p class="article-text latest-bot-text">Origin: Greece</p>
+                <div class="cta-layout">READ MORE</div></a
+              >
+            </article>
+            <article class="article-latest text-left">
+              <a href=""
+                ><img
+                  class="zoom-img img-small"
+                  src="/images/Tiramisu.jpg"
+                  alt="Tiramusy with berrys on top."
+                />
+                <h3 class="article-header">MIXED BERRY TIRAMISU</h3>
+                <p class="article-text latest-top-text">Category: Dinner</p>
+                <p class="article-text latest-bot-text">Origin: Italy</p>
+                <div class="cta-layout">READ MORE</div></a
+              >
+            </article>
           </div>
         </section>
       </main>

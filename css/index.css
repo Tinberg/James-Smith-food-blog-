@@ -1,50 +1,98 @@
+/* === INDEX GLOBALS === */
+hr {
+  min-width: 300px;
+}
+.article-container {
+  flex-wrap: wrap;
+}
+
+.article-header,
+.article-text {
+  position: relative;
+}
+
+.article-header {
+  padding-top: 25px;
+}
+
+.article-text {
+  max-width: 175px;
+}
+
+/* === HERO === */
 .hero-img {
   max-height: 700px;
   object-position: center 75%;
 }
+
 /* === SECTION 1 === */
 .round-img {
-  height: 264px;
-  width: 264px;
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.article-text-categories {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 article:hover .round-img {
   transform: translateY(-5px);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
 }
-.article-container {
-  flex-wrap: wrap;
-}
 
-.article-header {
-  padding-top: 25px;
-  font-weight: var(--body-font-weight-bold);
+.article-text-categories::before,
+.article-header::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--hr-color);
+  transition: width 0.3s;
 }
-
-.article-text {
-  max-width: 175px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.categories-hr {
-  min-width: 300px;
+/*For Section 1 and 3*/
+.article-categories:hover .article-text-categories::before,
+.article-categories:hover .article-header::before {
+  width: 100%;
 }
 
 /* === SECTION 2 === */
 
-/* .about-section{
-
-} */
-/* .content-text {
+/* commented out styles
+.about-section{}
+.content-text {
   margin: 0 100px;
-} */
+}
+*/
+
 .location-container {
   padding-bottom: 17px;
 }
 .fa-location-dot {
   padding-right: 15px;
+}
+
+/* === SECTION 3 === */
+
+.article-latest:hover .cta-layout {
+  background-color: var(--hr-color);
+}
+.article-latest:hover .article-header::before {
+  width: 100%;
+}
+.zoom-img {
+  transition: transform 0.3s ease;
+}
+
+.article-latest:hover .zoom-img {
+  transform: scale(1.1);
+}
+
+.latest-top-text {
+  padding-top: 2.5px;
+}
+
+.latest-bot-text {
+  padding-bottom: 10px;
 }
