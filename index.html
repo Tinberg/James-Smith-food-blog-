@@ -22,7 +22,7 @@
   <body>
     <div class="site-container">
       <header>
-        <nav class="flex center site-container">
+        <nav class="flex center w-100">
           <ul class="flex">
             <li><a href="index.html">HOME</a></li>
             <li><a href="">CONTACT</a></li>
@@ -122,7 +122,7 @@
               alt="A scenic view of Santorini, Greece"
             />
             <div class="content-text">
-              <div class="location-container flex">
+              <div class="margin-bot17 flex">
                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                 <p>CURRENTLY IN SANTORINI, <strong>GREECE</strong></p>
               </div>
@@ -150,7 +150,7 @@
           </div>
           <div class="article-container flex center w-100">
             <article class="article-latest text-left">
-              <a href=""
+              <a href="" aria-label="Read more about Japanese curry stew"
                 ><img
                   class="zoom-img img-small"
                   src="/images/Japanesestew.jpg"
@@ -164,7 +164,7 @@
               <!-- i use div for cta-layout bcs everything is wrapped up in a a tag. if not i would have used a anchor around read more text insted of div -->
             </article>
             <article class="article-latest text-left">
-              <a href=""
+              <a href="" aria-label="Read more about Greek salad"
                 ><img
                   class="zoom-img img-small"
                   src="/images/Greeksalad.jpg"
@@ -177,7 +177,7 @@
               >
             </article>
             <article class="article-latest text-left">
-              <a href=""
+              <a href="" aria-label="Read more about Spanakopita"
                 ><img
                   class="zoom-img img-small"
                   src="/images/Spanakopita.jpg"
@@ -190,11 +190,11 @@
               >
             </article>
             <article class="article-latest text-left">
-              <a href=""
+              <a href="" aria-label="Read more about Tiramisu"
                 ><img
                   class="zoom-img img-small"
                   src="/images/Tiramisu.jpg"
-                  alt="Tiramusy with berrys on top."
+                  alt="Tiramisu with berrys on top."
                 />
                 <h3 class="article-header">MIXED BERRY TIRAMISU</h3>
                 <p class="article-text latest-top-text">Category: Dinner</p>
@@ -202,6 +202,44 @@
                 <div class="cta-layout">READ MORE</div></a
               >
             </article>
+          </div>
+        </section>
+        <!-- === SECTION 4 === -->
+        <section class="about-section">
+          <div class="content-container flex center box-shadow">
+            <div class="content-text">
+              <h2 class="margin-bot17">STAY UPDATED</h2>
+              <p class="margin-bot17">
+                Sign up to savor the latest recipes and blog posts direcly in
+                your inbox!
+              </p>
+              <form
+                action="#"
+                method="post"
+                class="newsletter-form flex-column">
+                <label for="name" class="visually-hidden">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="username"
+                  placeholder="Name"
+                  required/>
+
+                <label for="email" class="visually-hidden">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="useremail"
+                  placeholder="Email"
+                  required/>
+                <button type="submit" class="cta">Sign Up</button>
+              </form>
+            </div>
+            <img
+              class="content-img"
+              src="/images/Newsletter.png"
+              alt="James standing in the kitchen making food"
+            />
           </div>
         </section>
       </main>

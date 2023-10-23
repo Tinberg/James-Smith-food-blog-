@@ -34,6 +34,7 @@
 
 html {
   font-size: 18px;
+  background-color: #FFFCF9;
 }
 
 body {
@@ -42,6 +43,7 @@ body {
   font-size: var(--base-font-size);
   color: var(--main-color);
   line-height: 1.5;
+  
 }
 
 /* Default styles for HTML elements */
@@ -135,6 +137,7 @@ h3 {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  background-color: #F9FCFF;
 }
 .w-100 {
   width: 100%;
@@ -185,6 +188,7 @@ nav {
   position: fixed;
   top: 0;
   left: 50%;
+  max-width: 1440px;
   transform: translateX(-50%);
   background-color: var(--primary-bg-color);
   z-index: 1000;

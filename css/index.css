@@ -19,6 +19,10 @@ hr {
   max-width: 175px;
 }
 
+.margin-bot17 {
+  padding-bottom: 17px;
+}
+
 /* === HERO === */
 .hero-img {
   max-height: 700px;
@@ -59,16 +63,6 @@ article:hover .round-img {
 
 /* === SECTION 2 === */
 
-/* commented out styles
-.about-section{}
-.content-text {
-  margin: 0 100px;
-}
-*/
-
-.location-container {
-  padding-bottom: 17px;
-}
 .fa-location-dot {
   padding-right: 15px;
 }
@@ -95,4 +89,17 @@ article:hover .round-img {
 
 .latest-bot-text {
   padding-bottom: 10px;
+}
+
+/* === SECTION 4 === */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
