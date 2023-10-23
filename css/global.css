@@ -49,7 +49,6 @@ hr {
   border: none;
   border-top: 1px solid var(--hr-color);
   margin: 10px 0 60px;
-  
 }
 /*om alle section og article bruk disse verdiene, ha de her. om ikke bruk .flex .center class i html istedenfor. */
 section:not(.brand-container) {
@@ -128,7 +127,7 @@ h3 {
   text-align: center;
 }
 .text-left {
-  text-align:left
+  text-align: left;
 }
 
 /* Width & Margin  */
@@ -143,14 +142,13 @@ h3 {
 /*Image and text split 50/50 of screen styles*/
 .content-img,
 .content-text {
-    width: 50%;
+  width: 50%;
 }
 .content-text {
-  margin:  0 100px;
+  margin: 0 100px;
 }
 .content-container {
-  background-color: #E3F1FA;
-  
+  background-color: #e3f1fa;
 }
 
 /* Display  */
