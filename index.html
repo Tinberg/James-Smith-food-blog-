@@ -18,6 +18,7 @@
       defer
     ></script>
     <script src="/js/index.js" defer></script>
+    <script src="/js/form.js" defer></script>
   </head>
   <body>
     <div class="site-container">
@@ -116,7 +117,7 @@
             <hr />
           </div>
           <div class="content-container flex center box-shadow">
-            <div class="content-img slider w-100">
+            <div class="content-img slider w-100" id="aboutSlider">
               <figure>
                 <img
                   class="w-100 block"
@@ -187,7 +188,6 @@
                 <p class="article-text latest-bot-text">Origin: Japan</p>
                 <div class="cta-layout">READ MORE</div></a
               >
-              <!-- i use div for cta-layout bcs everything is wrapped up in a a tag. if not i would have used a anchor around read more text insted of div -->
             </article>
             <article class="article-latest text-left">
               <a href="" aria-label="Read more about Greek salad"
@@ -240,6 +240,7 @@
                 your inbox!
               </p>
               <form
+                id="newsletterForm"
                 action="#"
                 method="post"
                 class="newsletter-form flex-column"
@@ -250,17 +251,16 @@
                   id="name"
                   name="username"
                   placeholder="Name"
-                  required
                 />
-
+                <div class="error-message" id="nameError"></div>
                 <label for="email" class="visually-hidden">Email</label>
                 <input
                   type="email"
                   id="email"
                   name="useremail"
                   placeholder="Email"
-                  required
                 />
+                <div class="error-message" id="emailError"></div>
                 <button type="submit" class="cta">Sign Up</button>
               </form>
             </div>
