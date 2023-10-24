@@ -22,7 +22,7 @@
   <body>
     <div class="site-container">
       <header>
-        <nav class="flex center w-100">
+        <nav class="flex center w-100 box-shadow">
           <ul class="flex">
             <li><a href="index.html">HOME</a></li>
             <li><a href="">CONTACT</a></li>
@@ -116,28 +116,54 @@
             <hr />
           </div>
           <div class="content-container flex center box-shadow">
-            <img
-              class="content-img"
-              src="/images/Greece.jpg"
-              alt="A scenic view of Santorini, Greece"
-            />
+            <div class="content-img slider w-100">
+              <figure>
+                <img
+                  class="w-100 block"
+                  src="/images/Greece.jpg"
+                  alt="White-washed buildings perched on cliffs overlooking the azure ocean in Santorini, Greece"
+                />
+                <figcaption class="visually-hidden">
+                  Scenic view of cliffside buildings in Santorini, Greece,
+                  overlooking the crystal-clear ocean.
+                </figcaption>
+              </figure>
+              <figure>
+                <img
+                  class="w-100 block"
+                  src="/images/Greece2.jpg"
+                  alt="White table set with food and chairs by the coast in Greece, with a sailboat drifting in the background"
+                />
+                <figcaption class="visually-hidden">
+                  Idyllic dining setup in Greece, with a table laden with food
+                  and a view of a sailboat gliding across the waters.
+                </figcaption>
+              </figure>
+              <figure>
+                <img
+                  class="w-100 block"
+                  src="/images/Greece3.jpg"
+                  alt="Greek salad, bread, and juice served on a table in a Greek restaurant with a predominant blue color theme"
+                />
+                <figcaption class="visually-hidden">
+                  A refreshing Greek spread with salad, bread, and juice, set
+                  against the vibrant blue ambiance of a local restaurant.
+                </figcaption>
+              </figure>
+            </div>
             <div class="content-text">
               <div class="margin-bot17 flex">
                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                 <p>CURRENTLY IN SANTORINI, <strong>GREECE</strong></p>
               </div>
               <p>
-                My name is James Smith, and the art of cooking has been my
-                lifelong passion. From the warm aromatic kitchens of India to
-                the cozy countryside bistros of France, I've embraced diverse
-                culinary traditions and techniques. The joy, for me, isn't just
-                in savoring these dishes but in sharing their recipes, stories,
-                and the love that goes into making them. Every place has its
-                unique flavor, and my journey has now brought me to the
-                picturesque landscapes of Santorini, Greece. Here, amidst the
-                whitewashed buildings and sunsets, I am immersing myself in
-                local delicacies and eager to bring these Grecian recipes to
-                your plate.
+                My name is James Smith, a lifelong culinary enthusiast. From the
+                aromatic kitchens of India to the charming bistros of France,
+                I've explored and embraced diverse food traditions. What brings
+                me joy isn't just tasting these dishes, but sharing their rich
+                histories and recipes. Currently, I'm in the heart of Santorini,
+                Greece, immersing myself in its culinary wonders. I'm eager to
+                share these Grecian delights and their stories with you.
               </p>
             </div>
           </div>
@@ -216,14 +242,16 @@
               <form
                 action="#"
                 method="post"
-                class="newsletter-form flex-column">
+                class="newsletter-form flex-column"
+              >
                 <label for="name" class="visually-hidden">Name</label>
                 <input
                   type="text"
                   id="name"
                   name="username"
                   placeholder="Name"
-                  required/>
+                  required
+                />
 
                 <label for="email" class="visually-hidden">Email</label>
                 <input
@@ -231,7 +259,8 @@
                   id="email"
                   name="useremail"
                   placeholder="Email"
-                  required/>
+                  required
+                />
                 <button type="submit" class="cta">Sign Up</button>
               </form>
             </div>

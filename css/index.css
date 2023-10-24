@@ -23,6 +23,18 @@ hr {
   padding-bottom: 17px;
 }
 
+/*Used for figcaption and label(form)*/
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 /* === HERO === */
 .hero-img {
   max-height: 700px;
@@ -55,17 +67,31 @@ article:hover .round-img {
   background-color: var(--hr-color);
   transition: width 0.3s;
 }
+
 /*For Section 1 and 3*/
-.article-categories:hover .article-text-categories::before,
 .article-categories:hover .article-header::before {
   width: 100%;
 }
 
 /* === SECTION 2 === */
-
 .fa-location-dot {
   padding-right: 15px;
 }
+/*Content-container for Section 2 og 4*/
+.content-container,
+figure img {
+  max-height: 522px;
+}
+
+/*For JS IMG slider*/
+
+.slider figure {
+  display: none;
+}
+.slider figure.active {
+  display: block;
+}
+
 
 /* === SECTION 3 === */
 
@@ -93,13 +119,3 @@ article:hover .round-img {
 
 /* === SECTION 4 === */
 
-.visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
