@@ -239,7 +239,7 @@ nav a::after {
   left: 0;
   transform-origin: 0% 100%; 
 }
-
+  
 nav a span::before, nav a span::after {
   content: '';
   position: absolute;

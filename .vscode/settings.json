@@ -1,0 +1,4 @@
+{
+  "editor.formatOnSaveMode": "file",
+  "prettier.trailingComma": "es5"
+}
