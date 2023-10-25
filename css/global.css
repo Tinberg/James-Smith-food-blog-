@@ -3,12 +3,12 @@
 /* Root Variables */
 :root {
   /* Colors */
-  --primary-bg-color: #5a8da7;
+  --primary-bg-color: #20567a;
   --section-bg-color: #e3f1fa;
   --hover-bg-color: #a7745a;
   --button-anchor-bg-color: #20567a;
   --main-color: #20567a;
-  --header-footer-color: #144A66;
+  --header-footer-color: #f7f7f7;
   --button-anchor-color: #f7f7f7;
   --hr-color: #a7745a;
 
@@ -206,7 +206,6 @@ nav {
   transform: translateX(-50%);
   background-color: var(--primary-bg-color);
   z-index: 1000;
-  font-weight: var(--header-font-weight-bold);
 }
 
 nav li {
