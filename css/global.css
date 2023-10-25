@@ -5,9 +5,10 @@
   /* Colors */
   --primary-bg-color: #5a8da7;
   --section-bg-color: #e3f1fa;
+  --hover-bg-color: #a7745a;
+  --button-anchor-bg-color: #20567a;
   --main-color: #20567a;
   --header-footer-color: #ffffff;
-  --button-anchor-bg-color: #20567a;
   --hr-color: #a7745a;
 
   /* Fonts */
@@ -30,6 +31,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border-style: none;
+  list-style-type: none;
 }
 
 html {
@@ -45,12 +48,21 @@ body {
   color: var(--main-color);
   line-height: 1.5;
 }
+html,
+body {
+  scroll-behavior: smooth;
+}
 
 /* Default styles for HTML elements */
 hr {
   border: none;
   border-top: 1px solid var(--hr-color);
+}
+.hr-devider {
   margin: 10px 0 60px;
+}
+.hr-sub-heading {
+  margin: 10px 0 30px;
 }
 /*om alle section og article bruk disse verdiene, ha de her. om ikke bruk .flex .center class i html istedenfor. */
 section:not(.brand-container) {
@@ -74,6 +86,8 @@ img {
 a {
   text-decoration: none;
   color: var(--main-color);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 h1,
@@ -168,9 +182,10 @@ h3 {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 .cta-layout:hover {
-  background-color: var(--hr-color);
+  background-color: var(--hover-bg-color);
 }
 
 .box-shadow {
@@ -191,16 +206,71 @@ nav {
   background-color: var(--primary-bg-color);
   z-index: 1000;
 }
-nav ul {
-  list-style-type: none;
-}
+
 nav li {
-  margin: 0 30px;
-}
-nav a {
-  color: var(--header-footer-color);
+  margin: 15px 20px;
 }
 
+nav a {
+  color: var(--header-footer-color);
+  padding: 5px 20px;
+  position: relative;
+  display: inline-block;
+  
+}
+
+nav a::before, nav a::after {
+  content: '';
+  position: absolute;
+  background: var(--hr-color);
+  transition: all 0.3s;
+  height: 2px;
+  width: 0%;
+}
+
+nav a::before {
+  top: 0;
+  right: 0;
+  transform-origin: 100% 0%; 
+}
+
+nav a::after {
+  bottom: 0;
+  left: 0;
+  transform-origin: 0% 100%; 
+}
+
+nav a span::before, nav a span::after {
+  content: '';
+  position: absolute;
+  background: var(--hr-color);
+  transition: all 0.3s;
+  height: 0%; 
+  width: 2px;
+}
+
+nav a span::before {
+  top: 0;
+  left: 0;
+  transition-delay: 0.3s; 
+}
+
+nav a span::after {
+  bottom: 0;
+  right: 0;
+  transition-delay: 0.3s; 
+}
+
+nav a:hover::before,
+nav a:hover::after {
+  width: 100%; 
+}
+
+nav a:hover span::before,
+nav a:hover span::after {
+  height: 100%; 
+}  
+/*Brand*/
 .brand-container {
   height: 100px;
   margin-top: 60px;
@@ -210,11 +280,11 @@ nav a {
   height: 60px;
   margin: 0 15px;
 }
+/*Footer*/
 footer {
   background-color: var(--primary-bg-color);
   color: var(--header-footer-color);
 }
-nav,
 footer {
   padding: 20px 0;
 }

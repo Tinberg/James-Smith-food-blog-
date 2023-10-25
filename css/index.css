@@ -145,7 +145,25 @@ figure img {
 }
 
 /* === SECTION 4 === */
+/*Form*/
+.newsletter-form input {
+padding: 15px;
+margin: 10px 0;
+border-radius: 10px;
+}
+.newsletter-form input,
+.cta-layout {
+font-size: var(--base-font-size);
+font-family: var(--body-font-family);
+font-weight: var(--body-font-weight-light);
+}
+input::placeholder {
+  color: var(--main-color);
+}
 
 .error-message {
   color: red;
+}
+.error-message-bot {
+  margin-bottom: 10px ;
 }
