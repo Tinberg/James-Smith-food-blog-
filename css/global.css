@@ -9,6 +9,7 @@
   --button-anchor-bg-color: #20567a;
   --main-color: #20567a;
   --header-footer-color: #20567a;
+  --button-anchor-color: #f7f7f7;
   --hr-color: #a7745a;
 
   /* Fonts */
@@ -175,7 +176,7 @@ h3 {
 /* Other  */
 .cta-layout {
   background-color: var(--button-anchor-bg-color);
-  color: var(--header-footer-color);
+  color: var(--button-anchor-color);
   border-radius: 5px;
   max-width: 125px;
   padding: 10px;
