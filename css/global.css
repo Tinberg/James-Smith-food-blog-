@@ -8,7 +8,7 @@
   --hover-bg-color: #a7745a;
   --button-anchor-bg-color: #20567a;
   --main-color: #20567a;
-  --header-footer-color: #a7745a;
+  --header-footer-color: white;
   --button-anchor-color: #f7f7f7;
   --hr-color: #a7745a;
 
@@ -206,6 +206,7 @@ nav {
   transform: translateX(-50%);
   background-color: var(--primary-bg-color);
   z-index: 1000;
+  font-weight: var(--header-font-weight-bold);
 }
 
 nav li {
