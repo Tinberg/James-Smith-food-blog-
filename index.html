@@ -23,22 +23,24 @@
   <body>
     <div class="site-container">
       <header>
+        <!-- === NAV BAR === -->
         <nav class="flex center w-100">
           <ul class="flex center">
             <li>
               <a href="index.html"><span></span>HOME</a>
             </li>
             <li>
-              <a href=""><span></span>CONTACT</a>
+              <a href="/html/contact.html"><span></span>CONTACT</a>
             </li>
             <li>
               <a href="#about-section"><span></span>ABOUT</a>
             </li>
             <li>
-              <a href=""><span></span>POSTS</a>
+              <a href="/html/posts.html"><span></span>POSTS</a>
             </li>
           </ul>
         </nav>
+        <!-- === BRAND SECTION === -->
         <section class="brand-container flex center">
           <a class="flex center" href="index.html"
             ><h1 class="flex center">
@@ -54,12 +56,13 @@
         </section>
       </header>
       <main>
+        <!-- === HERO IMAGE === -->
         <img
           class="hero-img w-100 box-shadow"
           src="/images/Hero_1_200.png"
           alt="Foods and juice on a table adorned with flowers, with a scenic ocean view in the background"
         />
-        <!-- === SECTION 1 === -->
+        <!-- === SECTION 1 CATERGORIES === -->
         <section class="w-100 text-center">
           <div>
             <h2 class="text-center">CATEGORIES</h2>
@@ -68,7 +71,7 @@
           </div>
           <div class="article-container flex center w-100">
             <article class="article-categories">
-              <a href=""
+              <a href="/html/posts.html"
                 ><img
                   class="img-small round-img"
                   src="/images/Brunch.jpg"
@@ -81,7 +84,7 @@
               >
             </article>
             <article class="article-categories">
-              <a href=""
+              <a href="/html/posts.html"
                 ><img
                   class="img-small round-img"
                   src="/images/Pastries.jpg"
@@ -94,7 +97,7 @@
               >
             </article>
             <article class="article-categories">
-              <a href=""
+              <a href="/html/posts.html"
                 ><img
                   class="img-small round-img"
                   src="/images/Dinners.jpg"
@@ -107,7 +110,7 @@
               >
             </article>
             <article class="article-categories">
-              <a href=""
+              <a href="html/posts.html"
                 ><img
                   class="img-small round-img"
                   src="/images/Desserts.jpg"
@@ -121,7 +124,7 @@
             </article>
           </div>
         </section>
-        <!-- === SECTION 2 === -->
+        <!-- === SECTION 2 ABOUT ME === -->
         <section id="about-section" class="about-section w-100">
           <div>
             <h2 class="text-center">ABOUT ME</h2>
@@ -181,7 +184,7 @@
             </div>
           </div>
         </section>
-        <!-- === SECTION 3 === -->
+        <!-- === SECTION 3 LATEST POSTS === -->
         <section class="w-100 text-center">
           <div>
             <h2 class="text-center">LATEST POSTS</h2>
@@ -189,7 +192,9 @@
           </div>
           <div class="article-container flex center w-100">
             <article class="article-latest text-left">
-              <a href="" aria-label="Read more about Japanese curry stew"
+              <a
+                href="/html/recipe.html"
+                aria-label="Read more about Japanese curry stew"
                 ><img
                   class="zoom-img img-small"
                   src="/images/Japanesestew.jpg"
@@ -202,7 +207,9 @@
               >
             </article>
             <article class="article-latest text-left">
-              <a href="" aria-label="Read more about Greek salad"
+              <a
+                href="/html/recipe.html"
+                aria-label="Read more about Greek salad"
                 ><img
                   class="zoom-img img-small"
                   src="/images/Greeksalad.jpg"
@@ -215,7 +222,9 @@
               >
             </article>
             <article class="article-latest text-left">
-              <a href="" aria-label="Read more about Spanakopita"
+              <a
+                href="/html/recipe.html"
+                aria-label="Read more about Spanakopita"
                 ><img
                   class="zoom-img img-small"
                   src="/images/Spanakopita.jpg"
@@ -228,7 +237,7 @@
               >
             </article>
             <article class="article-latest text-left">
-              <a href="" aria-label="Read more about Tiramisu"
+              <a href="/html/recipe.html" aria-label="Read more about Tiramisu"
                 ><img
                   class="zoom-img img-small"
                   src="/images/Tiramisu.jpg"
@@ -242,7 +251,7 @@
             </article>
           </div>
         </section>
-        <!-- === SECTION 4 === -->
+        <!-- === SECTION 4 NEWSLETTER === -->
         <section class="about-section">
           <div class="content-container flex center box-shadow">
             <div class="content-text">
@@ -254,7 +263,7 @@
               </p>
               <form
                 id="newsletterForm"
-                action="#"
+                action="/html/newsletter-thank-you.html"
                 method="post"
                 class="newsletter-form flex-column"
               >
@@ -262,7 +271,7 @@
                 <input
                   type="text"
                   id="name"
-                  name="username"
+                  name="name"
                   placeholder="Name"
                 />
                 <div class="error-message" id="nameError"></div>
@@ -270,7 +279,7 @@
                 <input
                   type="email"
                   id="email"
-                  name="useremail"
+                  name="email"
                   placeholder="Email"
                 />
                 <div

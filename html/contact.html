@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>James Cook|Exploring World Cuisines From My Kitchen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Roboto:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <script
+      src="https://kit.fontawesome.com/0933736d52.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="/js/form.js" defer></script>
+  </head>
+  <body>
+    <div class="site-container">
+      <header>
+        <!-- === NAV BAR === -->
+        <nav class="flex center w-100">
+          <ul class="flex center">
+            <li>
+              <a href="/index.html"><span></span>HOME</a>
+            </li>
+            <li>
+              <a href="/html/contact.html"><span></span>CONTACT</a>
+            </li>
+            <li>
+              <a href="/index.html#about-section"><span></span>ABOUT</a>
+            </li>
+            <li>
+              <a href="/html/posts.html"><span></span>POSTS</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- === BRAND SECTION === -->
+        <section class="brand-container flex center">
+          <a class="flex center" href="/index.html"
+            ><h1 class="flex center">
+              James
+              <img
+                class="brand-logo"
+                src="/images/Brand.png"
+                alt="Brand logo. Plate with fork and knife"
+              />
+              Cooks
+            </h1></a
+          >
+        </section>
+      </header>
+      <main>
+        <section>
+          <form id="contactForm" action="/html/contact-thank-you.html" method="post">
+            <label class="visually-hidden" for="contactName">Name:</label>
+            <input type="text" id="contactName" name="contactname" placeholder="Name" />
+            <div class="error-message" id="contactNameError"></div>
+            <label class="visually-hidden" for="contactEmail">Email:</label>
+            <input type="email" id="contactEmail" name="contactemail" placeholder="Email" />
+            <div class="error-message" id="contactEmailError"></div>
+            <label class="visually-hidden" for="contactSubject">Subject:</label>
+            <input
+                type="text"
+                id="contactSubject"
+                name="contactsubject"
+                placeholder="Subject"
+            />
+            <div class="error-message" id="contactSubjectError"></div>
+            <label class="visually-hidden" for="contactMessage">Message:</label>
+            <textarea
+                id="contactMessage"
+                name="contactmessage"
+                placeholder="Your message"
+            ></textarea>
+            <div class="error-message" id="contactMessageError"></div>
+            <button class="cta-layout" type="submit">Submit</button>
+        </form>
+        </section>
+      </main>
+      <footer class="flex center">
+        <p>COPYRIGHT 2023 © JAMES SMITH</p>
+      </footer>
+    </div>
+  </body>
+</html>
