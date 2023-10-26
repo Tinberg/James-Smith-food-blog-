@@ -10,3 +10,4 @@ School project HTML/CSS/JS/HeadlessCMS
 make a page for success for newsletter form and contact form
 
 
+fix css for contact and fix new css for contact. 

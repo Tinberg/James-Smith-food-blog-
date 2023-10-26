@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/contact.css" />
-    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/form.css" />
     <script
       src="https://kit.fontawesome.com/0933736d52.js"
       crossorigin="anonymous"
@@ -56,31 +56,55 @@
         </section>
       </header>
       <main>
-        <section>
-          <form id="contactForm" action="/html/contact-thank-you.html" method="post">
+        <figure>
+          <img class="hero-img w-100 box-shadow" src="/images/Contact1.jpg" />
+        </figure>
+        <section class="content-container flex-column center">
+          <h2>CONTACT:</h2>
+          <hr class="header-sub-text">
+          <p class="header-sub-text text-center">
+            Craving a new recipe or have a question about one you’ve tried? Drop
+            me a line! Whether it’s feedback, queries, or suggestions, i´d love
+            to hear from you. Dive into the culinary conversation with me!
+          </p>
+          <form class="center flex-column"
+            id="contactForm"
+            action="/html/contact-thank-you.html"
+            method="post"
+          >
             <label class="visually-hidden" for="contactName">Name:</label>
-            <input type="text" id="contactName" name="contactname" placeholder="Name" />
+            <input
+              type="text"
+              id="contactName"
+              name="contactname"
+              placeholder="Name"
+            />
             <div class="error-message" id="contactNameError"></div>
             <label class="visually-hidden" for="contactEmail">Email:</label>
-            <input type="email" id="contactEmail" name="contactemail" placeholder="Email" />
+            <input
+              type="email"
+              id="contactEmail"
+              name="contactemail"
+              placeholder="Email"
+            />
             <div class="error-message" id="contactEmailError"></div>
             <label class="visually-hidden" for="contactSubject">Subject:</label>
             <input
-                type="text"
-                id="contactSubject"
-                name="contactsubject"
-                placeholder="Subject"
+              type="text"
+              id="contactSubject"
+              name="contactsubject"
+              placeholder="Subject"
             />
             <div class="error-message" id="contactSubjectError"></div>
             <label class="visually-hidden" for="contactMessage">Message:</label>
             <textarea
-                id="contactMessage"
-                name="contactmessage"
-                placeholder="Your message"
+              id="contactMessage"
+              name="contactmessage"
+              placeholder="Your message"
             ></textarea>
             <div class="error-message" id="contactMessageError"></div>
-            <button class="cta-layout" type="submit">Submit</button>
-        </form>
+            <button class="cta-layout w-100" type="submit">Submit</button>
+          </form>
         </section>
       </main>
       <footer class="flex center">

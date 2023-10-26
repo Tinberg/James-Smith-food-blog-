@@ -33,21 +33,9 @@ hr {
   padding-bottom: 17px;
 }
 
-/*Used for figcaption and label(form)*/
-.visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
 /* === HERO IMAGE === */
 .hero-img {
-  max-height: 700px;
+  max-height: 600px;
   object-position: center 75%;
 }
 
@@ -144,37 +132,6 @@ figure img {
 }
 
 /* === SECTION 4 NEWSLETTER === */
-/*flytt til eget css ark om det er likt på contact*/
-/*Form*/
 
-form input {
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 10px;
-}
-form input,
-.cta-layout {
-  font-size: var(--base-font-size);
-  font-family: var(--body-font-family);
-  font-weight: var(--body-font-weight-light);
-}
-input,
-input::placeholder {
-  color: var(--main-color);
-}
+/*Styles in form.css*/
 
-.error-message {
-  color: red;
-}
-.error-message-bot {
-  margin-bottom: 10px;
-}
-
-/* Override browser styles for input Chrome and Safari*/
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px var(--body-bg-color) inset;
-  -webkit-text-fill-color: var(--main-color);
-}

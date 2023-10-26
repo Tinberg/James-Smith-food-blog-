@@ -1,0 +1,24 @@
+.hero-img {
+    max-height: 500px;
+    object-position: center;
+}
+
+.header-sub-text {
+    width: 40%;
+    margin-bottom: 25px;
+}
+
+hr {
+    margin: 20px 0 30px;
+    max-width: 200px;
+}
+form input, 
+form textarea {
+    width: 40vw;
+}
+form textarea {
+    height: 250px;
+}
+button {
+    margin: 25px 0 100px;
+}
