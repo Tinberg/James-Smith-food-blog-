@@ -1,3 +1,4 @@
+/* HERO */
 .hero-img {
     max-height: 500px;
     object-position: center;
@@ -7,11 +8,12 @@
     width: 40%;
     margin-bottom: 25px;
 }
-
+/*HR*/
 hr {
     margin: 20px 0 30px;
     max-width: 200px;
 }
+/*FORM*/
 form input, 
 form textarea {
     width: 40vw;

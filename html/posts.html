@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>James Cook|Exploring World Cuisines From My Kitchen</title>
+    <title>James Cook|Cuisine Diaries From My Kitchen to Yours</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -55,23 +55,110 @@
         </section>
       </header>
       <main>
+        <!-- === SECTION 1 SLIDER === -->
         <section class="hero-posts text-center">
           <h2>CULINARY HIGHLIGHTS</h2>
-        <div class="slider-container flex center">
-        <div class="slider">
-          <div class="slide"><a>
-          <img class="block" src="/images/Greeksalad.jpg" alt=""><h3>GREEK SALAD</h3></a></div>
-          <div class="slide"><a><img class="block" src="/images/Tiramisu.jpg" alt="Tiramisu with berrys on top."><h3 >MIXED BERRY TIRAMISU</h3></a></div>
-          <div class="slide"><a><img class="block" src="/images/Irishstew.jpg" alt="Irish stew in a brown bowl."><h3 >IRISH BEEF STEW</h3></a></div>
-          <div class="slide"><a><img class="block" src="/images/Puffpinwheels.jpg" alt="Puffy pinwheels on a black plate"><h3>PUFF PASTRY PINWHEELS</h3></a></div>
-          <div class="slide"><a><img class="block" src="/images/Japanesestew.jpg" alt="Japanese stew in a bowl with rice"><h3>JAPANESE CURRY STEW</h3></a></div>
-          <div class="slide"><a><img class="block" src="/images/Smoothie.jpg" alt="Four different smoothies with berrys"><h3>FOUR TYPES OF SMOOTHIE</h3></a></div>
-          <div class="slide"><a><img class="block" src="/images/Frozenyogurt.jpg" alt="Frozen yogurt in a white bowl"><h3>STRAWBERRY FROZEN YOGURT</h3></a></div>
-      </div>
-      <button class="arrow left" aria-label="Previous Slide">❮</button>
-    <button class="arrow right" aria-label="Next Slide">❯</button>
-        </div>
+          <div class="slider-container flex center">
+            <div class="slider">
+              <div class="slide">
+                <a>
+                  <img
+                    class="block"
+                    src="/images/Greeksalad.jpg"
+                    alt="Greek salad in a bowl"
+                  />
+                  <h3 class="h3-slider">GREEK SALAD</h3></a
+                >
+              </div>
+              <div class="slide">
+                <a
+                  ><img
+                    class="block"
+                    src="/images/Tiramisu.jpg"
+                    alt="Tiramisu with berrys on top."
+                  />
+                  <h3 class="h3-slider">MIXED BERRY TIRAMISU</h3></a
+                >
+              </div>
+              <div class="slide">
+                <a
+                  ><img
+                    class="block"
+                    src="/images/Irishstew.jpg"
+                    alt="Irish stew in a brown bowl."
+                  />
+                  <h3 class="h3-slider">IRISH BEEF STEW</h3></a
+                >
+              </div>
+              <div class="slide">
+                <a
+                  ><img
+                    class="block"
+                    src="/images/Puffpinwheels.jpg"
+                    alt="Puffy pinwheels on a black plate"
+                  />
+                  <h3 class="h3-slider">PUFF PASTRY PINWHEELS</h3></a
+                >
+              </div>
+              <div class="slide">
+                <a
+                  ><img
+                    class="block"
+                    src="/images/Japanesestew.jpg"
+                    alt="Japanese stew in a bowl with rice"
+                  />
+                  <h3 class="h3-slider">JAPANESE CURRY STEW</h3></a
+                >
+              </div>
+              <div class="slide">
+                <a
+                  ><img
+                    class="block"
+                    src="/images/Smoothie.jpg"
+                    alt="Four different smoothies with berrys"
+                  />
+                  <h3 class="h3-slider">FOUR TYPES OF SMOOTHIE</h3></a
+                >
+              </div>
+              <div class="slide">
+                <a
+                  ><img
+                    class="block"
+                    src="/images/Frozenyogurt.jpg"
+                    alt="Frozen yogurt in a white bowl"
+                  />
+                  <h3 class="h3-slider">STRAWBERRY FROZEN YOGURT</h3></a
+                >
+              </div>
+            </div>
+            <button class="arrow left" aria-label="Previous Slide">❮</button>
+            <button class="arrow right" aria-label="Next Slide">❯</button>
+          </div>
         </section>
+        <!-- === SECTION 2 POSTS === -->
+        <!-- === SECTION 2 POSTS === -->
+        <section class="flex-column">
+          <div>
+            <select id="sortSelect">
+              <option value="new">Newest First</option>
+              <option value="old">Oldest First</option>
+              <option value="title1">Title A-Z</option>
+              <option value="title2">Title Z-A</option>
+              <option value="origin">Origin</option>
+            </select>
+          </div>
+          <div class="posts flex center text-center">
+            <div class="post">
+              <img class="img-small" src="/images/Japanesestew.jpg" alt="Japanes curry stew in a bowl." />
+              <h3 class="h3-post">JAPANESE CURRY STEW</h3>
+            </div>
+            <div class="post">
+              <img class="img-small" src="/images/Greeksalad.jpg" alt="Greek salad in a bowl." />
+              <h3 class="h3-post">GREEK SALAD</h3>
+            </div>
+          </div>
+        </section>
+
         <!-- <section class="hero-posts w-100">
           <div class="content-container flex center box-shadow">
             <div class="content-img slider w-100" id="aboutSlider">
@@ -103,7 +190,6 @@
             </div>
           </div>
         </section> -->
-        <section></section>
       </main>
       <footer class="flex center">
         <p>COPYRIGHT 2023 © JAMES SMITH</p>
