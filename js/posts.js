@@ -1,11 +1,19 @@
-//3D slider
 const slides = document.querySelectorAll('.slide');
+const heroPosts = document.querySelector('.hero-posts');
 const numberOfSlides = slides.length;
 const angle = 360 / numberOfSlides;
 
 let currentActive = 0;
 slides[currentActive].classList.add('active');
-//This function makes the images and text slide.
+//this function will update the backgorund img, and remove the other image
+function updateBackgroundImage() {
+    for (let i = 1; i <= numberOfSlides; i++) {
+        heroPosts.classList.remove('bg-slide' + i);
+    }
+
+    heroPosts.classList.add('bg-slide' + (currentActive + 1));
+}
+
 function rotateSlider(direction) {
     slides[currentActive].classList.remove('active');
     if (direction === 'right') {
@@ -18,6 +26,7 @@ function rotateSlider(direction) {
         slides[i].style.transform = `translate(-50%, -50%) rotateY(${currentAngle}deg) translateZ(250px)`;
     }
     slides[currentActive].classList.add('active');
+    updateBackgroundImage();
 }
 
 document.querySelector('.left').addEventListener('click', () => {
@@ -28,7 +37,10 @@ document.querySelector('.right').addEventListener('click', () => {
     rotateSlider('right');
 });
 
+// Initially set the background for the first slide
+updateBackgroundImage();
 
+// Auto rotate slides
 setInterval(() => {
     rotateSlider('right');
 }, 3500);

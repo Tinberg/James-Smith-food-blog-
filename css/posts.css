@@ -1,6 +1,26 @@
 /*HERO SLIDER*/
 .hero-posts {
-    background-color: var(--section-bg-color);
+    background-image: url(/images/Greeksalad-background.jpg);
+    transition: background-image 1s ease, opacity 1s ease;
+}
+
+.hero-posts.bg-slide2{
+    background-image: url(/images/Tiramisu-background.jpg);
+}
+.hero-posts.bg-slide3 {
+    background-image: url(/images/Irishstew-background.jpg);
+}
+.hero-posts.bg-slide4 {
+    background-image: url(/images/Puffpinwheels-background.jpg);
+}
+.hero-posts.bg-slide5 {
+    background-image: url(/images/Japanesestew-background.jpg);
+}
+.hero-posts.bg-slide6 {
+    background-image: url(/images/Smoothie-background.jpg);
+}
+.hero-posts.bg-slide7 {
+    background-image: url(/images/Frozenyogurt-background.jpg);
 }
 h2 {
     padding-top: 20px;
@@ -27,9 +47,12 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%) rotateY(0deg) translateZ(0px);
     backface-visibility: hidden;
-    opacity: 0.6;
+    opacity: 0.75;
     transition: transform 1s, opacity 1s;
 }
+
+
+
 .slider .slide img {
     width: 100%;
     height: 100%;
@@ -46,7 +69,7 @@ h3 {
     background-color: var(--button-anchor-bg-color);
     color: var(--button-anchor-color);
 }
-h3:hover {
+.slider a:hover > h3 {
     background-color: var(--hover-bg-color);
 }
 .content-container {
@@ -59,7 +82,7 @@ h3:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 2rem;
+    font-size: 3rem;
     background: var(--body-bg-color);
     color: var(--main-color);
     cursor: pointer;
