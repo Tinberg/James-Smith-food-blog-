@@ -60,7 +60,7 @@
           <h2>CULINARY HIGHLIGHTS</h2>
           <div class="slider-container flex center">
             <div class="slider">
-              <div class="slide">
+              <article class="slide block">
                 <a>
                   <img
                     class="block"
@@ -69,8 +69,8 @@
                   />
                   <h3 class="h3-slider">GREEK SALAD</h3></a
                 >
-              </div>
-              <div class="slide">
+              </article>
+              <article class="slide block">
                 <a
                   ><img
                     class="block"
@@ -79,8 +79,8 @@
                   />
                   <h3 class="h3-slider">MIXED BERRY TIRAMISU</h3></a
                 >
-              </div>
-              <div class="slide">
+              </article>
+              <article class="slide block">
                 <a
                   ><img
                     class="block"
@@ -89,8 +89,8 @@
                   />
                   <h3 class="h3-slider">IRISH BEEF STEW</h3></a
                 >
-              </div>
-              <div class="slide">
+              </article>
+              <article class="slide block">
                 <a
                   ><img
                     class="block"
@@ -99,8 +99,8 @@
                   />
                   <h3 class="h3-slider">PUFF PASTRY PINWHEELS</h3></a
                 >
-              </div>
-              <div class="slide">
+              </article>
+              <article class="slide block">
                 <a
                   ><img
                     class="block"
@@ -109,8 +109,8 @@
                   />
                   <h3 class="h3-slider">JAPANESE CURRY STEW</h3></a
                 >
-              </div>
-              <div class="slide">
+              </article>
+              <article class="slide block">
                 <a
                   ><img
                     class="block"
@@ -119,8 +119,8 @@
                   />
                   <h3 class="h3-slider">FOUR TYPES OF SMOOTHIE</h3></a
                 >
-              </div>
-              <div class="slide">
+              </article>
+              <article class="slide block">
                 <a
                   ><img
                     class="block"
@@ -129,16 +129,16 @@
                   />
                   <h3 class="h3-slider">STRAWBERRY FROZEN YOGURT</h3></a
                 >
-              </div>
+              </article>
             </div>
             <button class="arrow left" aria-label="Previous Slide">❮</button>
             <button class="arrow right" aria-label="Next Slide">❯</button>
           </div>
         </section>
         <!-- === SECTION 2 POSTS === -->
-        <!-- === SECTION 2 POSTS === -->
-        <section class="flex-column">
-          <div>
+        <section>
+          <div class="select-container">
+            <label for="sortSelect">Sort by:</label>
             <select id="sortSelect">
               <option value="new">Newest First</option>
               <option value="old">Oldest First</option>
@@ -148,15 +148,139 @@
             </select>
           </div>
           <div class="posts flex center text-center">
-            <div class="post">
-              <img class="img-small" src="/images/Japanesestew.jpg" alt="Japanes curry stew in a bowl." />
-              <h3 class="h3-post">JAPANESE CURRY STEW</h3>
-            </div>
-            <div class="post">
-              <img class="img-small" src="/images/Greeksalad.jpg" alt="Greek salad in a bowl." />
-              <h3 class="h3-post">GREEK SALAD</h3>
-            </div>
+            <article class="post">
+              <a class="a-post box-shadow">
+                <img
+                  class="img-small block"
+                  src="/images/Japanesestew.jpg"
+                  alt="Japanes curry stew in a bowl."
+                />
+                <h3 class="h3-post">JAPANESE CURRY STEW</h3>
+                <div class="hover-content text-left">
+                  <p>MY RATING: <span class="rating-value"></span></p>
+                  <p>DIFFICULTY: <span class="difficulty-value">2/5</span> </p>
+                  <p>TIME: <span class="time-value">1.5hr</span></p>
+                  <p>CATEGORY: <span class="category-value">Dinner</span></p>
+                  <p>ORIGIN: <span class="origin-value">Mexico</span></p>
+                  <p>TYPE: <span class="type-value">Chicken</span></p>
+              </div>
+              </a>
+            </article>
+
+            <article class="post">
+              <a class="a-post box-shadow">
+                <img
+                  class="img-small block"
+                  src="/images/Greeksalad.jpg"
+                  alt="Greek salad in a bowl."
+                />
+                <h3 class="h3-post">GREEK SALAD</h3>
+              </a>
+            </article>
+
+            <article class="post">
+              <a class="a-post box-shadow">
+                <img
+                  class="img-small block"
+                  src="/images/Spanakopita.jpg"
+                  alt="Spanakopita on a plate."
+                />
+                <h3 class="h3-post">SPANAKOPITA</h3>
+              </a>
+            </article>
+
+            <article class="post">
+              <a class="a-post box-shadow">
+                <img
+                  class="img-small block"
+                  src="/images/Tiramisu.jpg"
+                  alt="Tiramisu on a plate"
+                />
+                <h3 class="h3-post">MIXED BERRY TIRAMISU</h3>
+              </a>
+            </article>
+            <article class="post">
+              <a class="a-post box-shadow">
+                <img
+                  class="img-small block"
+                  src="/images/Toscansksuppe.jpg"
+                  alt="Toscan vegetable soupe in a bowl"
+                />
+                <h3 class="h3-post">TOSCAN VEGETABLE SOUPE</h3>
+              </a>
+            </article>
+            <article class="post">
+              <a class="a-post box-shadow">
+                <img
+                  class="img-small block"
+                  src="/images/Scrambled eggs.jpg"
+                  alt="Scrambled eggs on a plate"
+                />
+                <h3 class="h3-post">SCRAMBLED EGGS</h3>
+              </a>
+            </article>
+            <article class="post flex">
+              <a class="a-post box-shadow">
+                <img
+                  class="img-small block"
+                  src="/images/Brioche.jpg"
+                  alt="Brioche with chocolate on a bread board "
+                />
+                <h3 class="h3-post">BRIOCHE WITH CHOCOLATE</h3>
+              </a>
+            </article>
+            <article class="post flex">
+              <a class="a-post box-shadow">
+                <img
+                  class="img-small block"
+                  src="/images/Frozenyogurt.jpg"
+                  alt="Frozen yogurt in a bowl with strawberrys"
+                />
+                <h3 class="h3-post">STRAWBERRY FROZEN YOGURT</h3>
+              </a>
+            </article>
+            <article class="post flex">
+              <a class="a-post box-shadow">
+                <img
+                  class="img-small block"
+                  src="/images/Irishstew.jpg"
+                  alt="Irish beef stew in a bowl"
+                />
+                <h3 class="h3-post">IRISH BEEF STEW</h3>
+              </a>
+            </article>
+            <article class="post flex">
+              <a class="a-post box-shadow">
+                <img
+                  class="img-small block"
+                  src="/images/Englishbreakfast.jpg"
+                  alt="Full english breakfast on a plate"
+                />
+                <h3 class="h3-post">FULL ENGLISH BREAKFAST</h3>
+              </a>
+            </article>
+            <article class="post flex">
+              <a class="a-post box-shadow">
+                <img
+                  class="img-small block"
+                  src="/images/Puffpinwheels.jpg"
+                  alt="Puff pastry pinwheels on a plate"
+                />
+                <h3 class="h3-post">PUFF PASTRY PINWHEELS</h3>
+              </a>
+            </article>
+            <article class="post flex">
+              <a class="a-post box-shadow">
+                <img
+                  class="img-small block"
+                  src="/images/Pannacotta.jpg"
+                  alt="Panna cotta with berrys in a bowl"
+                />
+                <h3 class="h3-post">PANNA COTTA WITH BERRYS</h3>
+              </a>
+            </article>
           </div>
+          <button class="cta-layout" id="viewMoreBtn">View More</button>
         </section>
 
         <!-- <section class="hero-posts w-100">

@@ -2,6 +2,8 @@
 .hero-posts {
   background-image: url(/images/Greeksalad-background.jpg);
   transition: background-image 1s ease, opacity 1s ease;
+  background-size: cover;
+  background-position: center;
 }
 .hero-posts.bg-slide2 {
   background-image: url(/images/Tiramisu-background.jpg);
@@ -31,7 +33,7 @@ h2 {
 
 .slider {
   width: 1200px;
-  height: 575px;
+  height: 600px;
   position: relative;
   transform-style: preserve-3d;
   transform: rotateY(0deg);
@@ -41,12 +43,13 @@ h2 {
   position: absolute;
   width: 240px;
   height: 240px;
-  top: 40%;
+  top: 43%;
   left: 50%;
   transform: translate(-50%, -50%) rotateY(0deg) translateZ(0px);
   backface-visibility: hidden;
   opacity: 0.75;
   transition: transform 1s, opacity 1s;
+  padding: 0;
 }
 
 .slider .slide img {
@@ -60,20 +63,21 @@ h2 {
 }
 
 .h3-slider {
-  min-height: 92.06px;
-  font-size: 0.9rem;
-  background-color: var(--button-anchor-bg-color);
-  color: var(--button-anchor-color);
+  min-height: 65px;
+  padding-top: 8px;
+  font-size: var(--footer-font-size);
+  background-color: var(--section-bg-color);
+  color: var(--main-color);
 }
-.slider a:hover > .h3-slider {
+.slider a:hover > .h3-slider,
+.content-container:hover {
   background-color: var(--hover-bg-color);
+  color: var(--button-anchor-color);
 }
 .content-container {
   padding: 10px;
 }
-.content-container:hover {
-  background-color: var(--hover-bg-color);
-}
+
 .arrow {
   position: absolute;
   top: 50%;
@@ -94,8 +98,80 @@ h2 {
 .right {
   right: 15%;
 }
-/*Section*/
+/*Section 2 POSTS*/
+
+.select-container,
+select{
+  background-color: var(--body-bg-color);
+  color: var(--main-color);
+  font-size: var(--base-font-size);
+  font-weight: var(--body-font-weight-bold);
+}
+select{
+    width: 150px;
+}
+.select-container {
+  padding: 10px;
+  margin: 10px;
+}
+.posts {
+  flex-wrap: wrap;
+}
+.post {
+  padding: 25px;
+}
+.a-post {
+  position: relative;
+}
+.a-post:hover .h3-post {
+  background-color: var(--hover-bg-color);
+  color: var(--button-anchor-color);
+}
+.a-post:hover .hover-content {
+  display: block;
+}
+.a-post:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 24%;
+  left: 0;
+  background-color: var(--section-bg-color);
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+.h3-post {
+  background-color: var(--section-bg-color);
+  padding: 10px 5px;
+  max-width: 264px;
+  min-height: 86.72px;
+}
+
+.hover-content {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  z-index: 2;
+  display: none;
+  padding: 10px;
+}
+
+.img-small {
+  box-shadow: none;
+}
+
+.cta-layout {
+  font-size: var(--base-font-size);
+  padding: 15px;
+  margin-top: 25px;
+  width: 100%;
+  max-width: 225px;
+}
+
 /*FOOTER*/
 footer {
-    margin-top: 100px;
+  margin-top: 100px;
 }
