@@ -58,11 +58,16 @@
       </header>
       <main>
         <!-- === HERO IMAGE === -->
-        <figure><img
-          class="hero-img w-100 box-shadow block"
-          src="/images/Hero_1_200.png"
-          alt="Foods and juice on a table adorned with flowers, with a scenic ocean view in the background"
-        /> <figcaption class="visually-hidden">A Gourmet Spread Overlooking the Ocean</figcaption></figure>
+        <figure>
+          <img
+            class="hero-img w-100 box-shadow block"
+            src="/images/Hero_1_200.png"
+            alt="Foods and juice on a table adorned with flowers, with a scenic ocean view in the background"
+          />
+          <figcaption class="visually-hidden">
+            A Gourmet Spread Overlooking the Ocean
+          </figcaption>
+        </figure>
         <!-- === SECTION 1 CATERGORIES === -->
         <section class="w-100 text-center">
           <div>
@@ -126,7 +131,7 @@
           </div>
         </section>
         <!-- === SECTION 2 ABOUT ME === -->
-        <section id="about-section" class=" w-100">
+        <section id="about-section" class="w-100">
           <div>
             <h2 class="text-center">ABOUT ME</h2>
             <p class="text-center">James Cooks</p>
@@ -192,6 +197,9 @@
             <hr class="hr-devider-bot" />
           </div>
           <div class="article-container flex center w-100">
+            <div class="left-arrow-container">
+              <button class="arrow left" aria-label="Previous Slide">❮</button>
+            </div>
             <article class="article-latest text-left">
               <a
                 href="/html/recipe.html"
@@ -250,6 +258,9 @@
                 <div class="cta-layout">READ MORE</div></a
               >
             </article>
+            <div class="right-arrow-container">
+              <button class="arrow right" aria-label="Next posts">❯</button>
+            </div>
           </div>
         </section>
         <!-- === SECTION 4 NEWSLETTER === -->
@@ -269,12 +280,7 @@
                 class="newsletter-form flex-column"
               >
                 <label for="name" class="visually-hidden">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Name"
-                />
+                <input type="text" id="name" name="name" placeholder="Name" />
                 <div class="error-message" id="nameError"></div>
                 <label for="email" class="visually-hidden">Email</label>
                 <input
@@ -291,10 +297,15 @@
               </form>
             </div>
             <figure class="content-img">
-            <img class="block"
-              src="/images/Newsletter.jpg"
-              alt="James standing in the kitchen making food"
-            /> <figcaption class="visually-hidden">James at Work Crafting His Next Culinary Masterpiece</figcaption></figure>
+              <img
+                class="block w-100"
+                src="/images/Newsletter.jpg"
+                alt="James standing in the kitchen making food"
+              />
+              <figcaption class="visually-hidden">
+                James at Work Crafting His Next Culinary Masterpiece
+              </figcaption>
+            </figure>
           </div>
         </section>
       </main>

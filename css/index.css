@@ -14,6 +14,7 @@ hr {
 }
 .article-container {
   flex-wrap: wrap;
+  position: relative;
 }
 
 .article-header,
@@ -80,7 +81,6 @@ article:hover .round-img {
 .content-container,
 figure img {
   max-height: 522px;
- 
 }
 /*For JS IMG slider*/
 .slider {
@@ -101,17 +101,24 @@ figure img {
   display: block;
   animation: slideInFromLeft 0.8s ease forwards;
 }
-
-/* make image change instantly*/
-/* .slider figure {
-  display: none;
-}
-.slider figure.active {
-  display: block;
-} */
-
 /* === SECTION 3 LATEST POSTS === */
-
+.left-arrow-container,
+.right-arrow-container {
+  margin-top: -150px;
+}
+.arrow {
+  font-size: var(--arrow-font-size);
+  background: var(--body-bg-color);
+  color: var(--main-color);
+  cursor: pointer;
+  padding: 5px 15px;
+}
+.left {
+  left: 25px;
+}
+.right {
+  right: 25px;
+}
 .article-latest:hover .cta-layout {
   background-color: var(--hover-bg-color);
 }
@@ -138,3 +145,39 @@ figure img {
 
 /*Styles in form.css*/
 
+/* === MEDIA QUERIES === */
+
+@media (max-width: 1371px) {
+  .article-latest:last-of-type {
+    display: none;
+  }
+  .article-container {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 1059px) {
+  .article-latest:last-of-type,
+  .article-latest:nth-last-of-type(2) {
+    display: none;
+  }
+  .arrow {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 744px) {
+  .article-latest:last-of-type,
+  .article-latest:nth-last-of-type(2),
+  .article-latest:nth-last-of-type(3) {
+    display: none;
+  }
+  .article-latest a {
+    text-align: center;
+  }
+  .article-latest h3,
+  .article-latest .article-text,
+  .article-latest .cta-layout {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

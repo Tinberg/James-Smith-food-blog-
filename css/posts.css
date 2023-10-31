@@ -78,7 +78,7 @@ h2 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 3rem;
+  font-size: var(--arrow-font-size);
   background: var(--body-bg-color);
   color: var(--main-color);
   cursor: pointer;
@@ -186,8 +186,7 @@ figure img {
 .margin-bot17 {
   margin-bottom: 17px;
 }
-.recipe-weekbtn {
-}
+
 /*FOOTER*/
 footer {
   margin-top: 100px;
