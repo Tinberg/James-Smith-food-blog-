@@ -80,7 +80,7 @@ article:hover .round-img {
 .content-container,
 figure img {
   max-height: 522px;
-  overflow: hidden;
+ 
 }
 /*For JS IMG slider*/
 .slider figure img {

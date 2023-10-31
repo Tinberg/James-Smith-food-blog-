@@ -69,13 +69,9 @@ h2 {
   background-color: var(--section-bg-color);
   color: var(--main-color);
 }
-.slider a:hover > .h3-slider,
-.content-container:hover {
+.slider a:hover > .h3-slider {
   background-color: var(--hover-bg-color);
   color: var(--button-anchor-color);
-}
-.content-container {
-  padding: 10px;
 }
 
 .arrow {
@@ -166,15 +162,32 @@ select {
   display: none;
   padding: 10px;
 }
+.fa-heart {
+  margin-left: 5px;
+}
 
-.cta-layout {
+.postsbtn {
   font-size: var(--base-font-size);
   padding: 15px;
-  margin-top: 25px;
   width: 100%;
   max-width: 225px;
 }
+/*for section 2 and 3*/
+.recipe-weekbtn,
+.postsbtn {
+  margin-top: 25px;
+}
+/* === SECTION 3 Recipe of the week=== */
 
+.content-container,
+figure img {
+  max-height: 522px;
+}
+.margin-bot17 {
+  margin-bottom: 17px;
+}
+.recipe-weekbtn {
+}
 /*FOOTER*/
 footer {
   margin-top: 100px;

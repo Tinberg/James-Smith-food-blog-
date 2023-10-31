@@ -71,7 +71,7 @@ section:not(.brand-container, .hero-posts) {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding-top: 125px;
+  padding-top: 100px;
 }
 
 article {
