@@ -1,4 +1,4 @@
-/*HERO SLIDER*/
+/* === SECTION 1 Slider=== */
 .hero-posts {
   background-image: url(/images/Greeksalad-background.jpg);
   transition: background-image 1s ease, opacity 1s ease;
@@ -98,17 +98,17 @@ h2 {
 .right {
   right: 15%;
 }
-/*Section 2 POSTS*/
+/* === SECTION 2 POSTS=== */
 
 .select-container,
-select{
+select {
   background-color: var(--body-bg-color);
   color: var(--main-color);
   font-size: var(--base-font-size);
   font-weight: var(--body-font-weight-bold);
 }
-select{
-    width: 150px;
+select {
+  width: 150px;
 }
 .select-container {
   padding: 10px;
@@ -123,6 +123,25 @@ select{
 .a-post {
   position: relative;
 }
+.a-post img {
+  box-shadow: none;
+}
+.a-post::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 24%;
+  left: 0;
+  z-index: 1;
+}
+.a-post::before,
+.a-post .h3-post {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.a-post:hover::before {
+  background-color: var(--section-bg-color);
+}
 .a-post:hover .h3-post {
   background-color: var(--hover-bg-color);
   color: var(--button-anchor-color);
@@ -130,24 +149,13 @@ select{
 .a-post:hover .hover-content {
   display: block;
 }
-.a-post:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 24%;
-  left: 0;
-  background-color: var(--section-bg-color);
-  z-index: 1;
-  transition: background-color 0.3s ease;
-}
 .h3-post {
   background-color: var(--section-bg-color);
   padding: 10px 5px;
   max-width: 264px;
   min-height: 86.72px;
 }
-
+/*HOVER CONTENT POST*/
 .hover-content {
   position: absolute;
   top: 10%;
@@ -157,10 +165,6 @@ select{
   z-index: 2;
   display: none;
   padding: 10px;
-}
-
-.img-small {
-  box-shadow: none;
 }
 
 .cta-layout {

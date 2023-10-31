@@ -294,7 +294,7 @@ nav a:hover span::after {
   height: 60px;
   margin: 0 15px;
 }
-/*Footer*/
+/* === FOOTER=== */
 footer {
   background-color: var(--header-footer-bg-color);
   color: var(--header-footer-color);
