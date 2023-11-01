@@ -14,13 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
       validateForm(event, "contact");
     });
   }
-  newsletterForm.addEventListener("submit", function (event) {
-    validateForm(event, "newsletter");
-  });
-
-  contactForm.addEventListener("submit", function (event) {
-    validateForm(event, "contact");
-  });
   // this function prevent if there are missing characters or invalid email. it creates text for each input/texerea, at the end it redriect the user if everything in the form is validateForm.
   function validateForm(event, formType) {
     let hasError = false;

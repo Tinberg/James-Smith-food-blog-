@@ -23,7 +23,7 @@
   /* Font Size */
   --footer-font-size: 0.9rem; /*16.2px*/
   --base-font-size: 1rem; /* 18px */
-  --arrow-font-size: 3rem;/* 54px */
+  --arrow-font-size: 3rem; /* 54px */
   --h1-font-size: 1.5rem; /* 27px */
   --h2-font-size: 1.33rem; /* 23.94px */
   --h3-font-size: 1.05rem; /* 19.8px */
@@ -172,7 +172,6 @@ h3 {
 }
 .content-container {
   background-color: var(--section-bg-color);
-  
 }
 
 /* Display*/
@@ -211,6 +210,18 @@ h3 {
 }
 
 /* === HEADER FOOTER === */
+/*Hamburger*/
+.hamburger {
+  background: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  display: none;
+  z-index: 1100;
+  position: fixed;
+  top: 18px;
+  left: 20px;
+  color: var(--body-bg-color);
+}
 nav {
   position: fixed;
   top: 0;
@@ -223,6 +234,7 @@ nav {
 
 nav li {
   margin: 15px 20px;
+  
 }
 
 nav a {
@@ -306,5 +318,29 @@ footer {
 }
 /* === MEDIA QUERIES === */
 @media (max-width: 744px) {
-
+  /*Hamburger*/
+  .hamburger {
+    display: block;
+    
+  }
+  nav li {
+    display: none;
+  }
+  nav {
+    min-height: 67px;
+    
+  }
+  nav ul {
+    transform: translateY(-100%); 
+    transition: transform 0.3s ease-out;
+  }
+  nav.active ul {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(0);
+  }
+  nav.active li {
+    display: flex;
+    padding: 6px 0;
+  }
 }

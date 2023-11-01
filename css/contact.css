@@ -1,26 +1,41 @@
 /* HERO */
 .hero-img {
-    max-height: 500px;
-    object-position: center;
+  max-height: 500px;
+  object-position: center;
 }
 /* === SECTION 1 CONTACT=== */
 .header-sub-text {
-    width: 40%;
-    margin-bottom: 25px;
+  width: 50%;
+  margin-bottom: 25px;
 }
 /*HR*/
 hr {
-    margin: 20px 0 30px;
-    max-width: 200px;
+  margin: 20px 0 30px;
+  max-width: 200px;
 }
 /*FORM*/
-form input, 
+form input,
 form textarea {
-    width: 40vw;
+  width: 550px;
 }
 form textarea {
-    height: 250px;
+  height: 250px;
 }
-button {
-    margin: 25px 0 100px;
+.cta-layout {
+  margin: 25px 0 100px;
+}
+/* === MEDIA QUERIES === */
+@media (max-width: 1059px) {
+  .header-sub-text {
+    width: 60%;
+  }
+}
+@media (max-width: 744px) {
+  .header-sub-text {
+    width: 80%;
+  }
+  form input,
+  form textarea {
+    width: 275px;
+  }
 }

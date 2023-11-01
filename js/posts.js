@@ -1,3 +1,4 @@
+//3D SLIDER
 const slides = document.querySelectorAll('.slide');
 const heroPosts = document.querySelector('.hero-posts');
 const numberOfSlides = slides.length;
@@ -37,10 +38,8 @@ document.querySelector('.right').addEventListener('click', () => {
     rotateSlider('right');
 });
 
-// Initially set the background for the first slide
 updateBackgroundImage();
 
-// Auto rotate slides
 setInterval(() => {
     rotateSlider('right');
 }, 3500);
