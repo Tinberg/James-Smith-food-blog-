@@ -223,6 +223,7 @@ footer {
   .slider .slide img,
   .h3-slider {
     width: 264px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   }
   .slider .slide:not(.active) {
     display: none;
