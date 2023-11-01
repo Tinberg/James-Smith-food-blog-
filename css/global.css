@@ -166,13 +166,13 @@ h3 {
 .content-img,
 .content-text {
   width: 50%;
-  
 }
 .content-text {
-  margin: 0 100px;
+  padding: 0 100px;
 }
 .content-container {
   background-color: var(--section-bg-color);
+  
 }
 
 /* Display*/
@@ -303,4 +303,8 @@ footer {
 footer {
   padding: 20px 0;
   font-size: var(--footer-font-size);
+}
+/* === MEDIA QUERIES === */
+@media (max-width: 744px) {
+
 }
