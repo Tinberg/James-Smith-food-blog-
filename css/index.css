@@ -198,6 +198,9 @@ figure img {
   }
 }
 @media (max-width: 744px) {
+  .hr-devider-bot {
+    margin: 20px 0 40px;
+  }
   /*Section 3*/
   .article-latest {
     padding: 0;
@@ -219,10 +222,13 @@ figure img {
     margin-left: auto;
     margin-right: auto;
   }
-
   /*Section 2 and 4*/
   .content-img img {
     object-position: center 65%;
     max-height: 450px;
+  }
+  /*Section 4 */
+  .hr-devider-small {
+    margin: 15px 0;
   }
 }
