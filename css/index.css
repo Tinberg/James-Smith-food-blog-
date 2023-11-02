@@ -1,10 +1,9 @@
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
+/* For section 2 about */
+@keyframes dissolveIn {
+ 0% {
     opacity: 0;
   }
   100% {
-    transform: translateX(0);
     opacity: 1;
   }
 }
@@ -99,7 +98,7 @@ figure img {
 }
 .slider figure.active {
   display: block;
-  animation: slideInFromLeft 0.8s ease forwards;
+  animation: dissolveIn 3s ease forwards;
 }
 /* === SECTION 3 LATEST POSTS === */
 .left-arrow-container,

@@ -19,5 +19,5 @@ document.addEventListener("DOMContentLoaded", function () {
       figures[currentFigureIndex].classList.remove("active");
       currentFigureIndex = (currentFigureIndex + 1) % figures.length;
       figures[currentFigureIndex].classList.add("active");
-    }, 3500);
+    }, 4000);
   });

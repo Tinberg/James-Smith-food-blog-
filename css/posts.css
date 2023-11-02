@@ -1,3 +1,12 @@
+/* For 2D slider small screens */
+@keyframes dissolveIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* === SECTION 1 Slider=== */
 .hero-posts {
   background-image: url(/images/Greeksalad-background.jpg);
@@ -216,7 +225,9 @@ footer {
     right: 12px;
     transform: none;
   }
-  
+  .slider .slide.active {
+    animation: dissolveIn 0.5s ease-in-out forwards;
+  }
   .slider .slide img {
     height: 264px;
   }
@@ -228,7 +239,7 @@ footer {
   .slider .slide:not(.active) {
     display: none;
   }
-  
+
   /*Section 3*/
   .content-container {
     flex-direction: column;
@@ -249,14 +260,14 @@ footer {
   }
 }
 /*MQ max 744px*/
-@media (max-width: 744px){
-    .arrow {
-        padding: 5px 5px;
-    }
-    .left{
-        left: 2%;
-    }
-    .right {
-        right: 2%;
-    }
+@media (max-width: 744px) {
+  .arrow {
+    padding: 5px 5px;
+  }
+  .left {
+    left: 2%;
+  }
+  .right {
+    right: 2%;
+  }
 }
