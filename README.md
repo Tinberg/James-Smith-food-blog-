@@ -14,4 +14,4 @@ School project HTML/CSS/JS/HeadlessCMS
 
 
 
-THANK YOU PAGES SJEKK
+sjekk wca og validator, lag meta desciption på alle sidene. 
