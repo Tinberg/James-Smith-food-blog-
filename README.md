@@ -9,6 +9,9 @@ School project HTML/CSS/JS/HeadlessCMS
 
 - some styles are the same on different pages like the arrow button, but bcs index and posts css page both have some lines, i chose to just repeat myself on some classes insted of link both css sheet to both html. 
 
-media querys for index side og sjekke posts 3dslider for mindre skjermer. 
 
-about me text media query
+
+
+
+
+THANK YOU PAGES SJEKK

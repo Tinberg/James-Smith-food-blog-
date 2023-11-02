@@ -303,9 +303,10 @@ nav a:hover span::after {
   margin-top: 60px;
 }
 .brand-logo {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   margin: 0 15px;
+  
 }
 /* === FOOTER=== */
 footer {

@@ -3,7 +3,7 @@
   max-height: 500px;
   object-position: center;
 }
-/* === SECTION 1 CONTACT=== */
+/* === SECTION 1 Thank you=== */
 .header-sub-text {
   width: 50%;
   margin-bottom: 25px;
@@ -13,17 +13,12 @@ hr {
   margin: 20px 0 30px;
   max-width: 200px;
 }
-/*FORM*/
-form input,
-form textarea {
-  width: 550px;
-}
-form textarea {
-  height: 250px;
-}
-.cta-layout {
-  margin: 25px 0 100px;
-}
+strong {
+    border-bottom: 1px solid var(--main-color);
+  }
+  .bot-text {
+    margin: 50px 0 80px;
+  }
 
 /* === MEDIA QUERIES === */
 @media (max-width: 1059px) {
@@ -34,9 +29,5 @@ form textarea {
 @media (max-width: 744px) {
   .header-sub-text {
     width: 90%;
-  }
-  form input,
-  form textarea {
-    width: 275px;
   }
 }
