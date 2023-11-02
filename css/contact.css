@@ -24,6 +24,10 @@ form textarea {
 .cta-layout {
   margin: 25px 0 100px;
 }
+/*For contact-thank-you*/
+strong {
+  border-bottom: 1px solid var(--main-color);
+}
 /* === MEDIA QUERIES === */
 @media (max-width: 1059px) {
   .header-sub-text {
