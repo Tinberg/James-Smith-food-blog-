@@ -29,10 +29,6 @@ hr {
   max-width: 175px;
 }
 
-.margin-bot17 {
-  padding-bottom: 17px;
-}
-
 /* === HERO IMAGE === */
 .hero-img {
   max-height: 600px;
@@ -181,15 +177,7 @@ figure img {
   }
   /*Section 2 and 4*/
   .content-container {
-    flex-direction: column;
     max-height: none;
-  }
-  .content-img,
-  .content-text {
-    width: 100%;
-  }
-  .content-text {
-    padding: 25px;
   }
   .content-img img {
     object-position: center 65%;

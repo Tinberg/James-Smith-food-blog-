@@ -192,9 +192,6 @@ select {
 figure img {
   max-height: 522px;
 }
-.margin-bot17 {
-  margin-bottom: 17px;
-}
 .recipe-week-hr {
   width: 300px;
 }
@@ -244,19 +241,11 @@ footer {
 
   /*Section 3*/
   .content-container {
-    flex-direction: column;
     max-height: none;
-  }
-  .content-img,
-  .content-text {
-    width: 100%;
   }
   .content-img img {
     object-position: center;
     max-height: 500px;
-  }
-  .content-text {
-    padding: 25px;
   }
 }
 /*MQ max 744px*/
@@ -270,5 +259,4 @@ footer {
   .right {
     right: 2%;
   }
- 
 }

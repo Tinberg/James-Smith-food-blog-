@@ -1,0 +1,98 @@
+/* === Section 1 === */
+.content-container,
+figure img {
+  max-height: 600px;
+}
+.hero-hr {
+  width: 200px;
+  margin-bottom: 10;
+}
+.ingredient-list li {
+  margin: 15px 0;
+  font-size: var(--h3-font-size); /*Not Header Font-size!*/
+}
+/* === Section 2 === */
+/*50/50 Left*/
+.section2-container {
+  background-color: var(--body-bg-color);
+  padding: 0 75px;
+  max-height: none;
+}
+.dish {
+  margin-left: 10px;
+}
+.how-to-hr-left {
+  width: 500px;
+}
+.steps-list {
+  counter-reset: step-counter;
+}
+
+.steps-list li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 50px;
+}
+
+.steps-list li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--button-anchor-bg-color);
+  color: var(--button-anchor-color);
+}
+/*50/50 Left & Right*/
+.how-to-hr-left,
+.how-to-hr-right {
+  margin-bottom: 30px;
+}
+/*50/50 Right*/
+.how-to-hr-right {
+  width: 200px;
+}
+.fa-heart {
+  margin-left: 5px;
+}
+/* === MEDIA QUERIES === */
+/*MQ max 1059px*/
+@media (max-width: 1059px) {
+  /*Section 1*/
+  .hero-posts {
+    text-align: center;
+  }
+  .content-container {
+    max-height: none;
+  }
+  .content-img img {
+    object-position: center;
+    max-height: 500px;
+  }
+  .hero-hr {
+    margin: 0 auto;
+    width: 40%;
+  }
+
+  /*Section 2*/
+}
+
+/*MQ max 744px*/
+@media (max-width: 744px) {
+  /*Section 1*/
+  .hero-hr {
+    width: 60%;
+  }
+  /*Section 2*/
+  .section2-container {
+    padding: 0 25px;
+  }
+  .how-to-hr-left,
+  .how-to-hr-right {
+    width: 100%;
+  }
+}
