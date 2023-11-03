@@ -14,4 +14,4 @@ School project HTML/CSS/JS/HeadlessCMS
 
 
 
-sjekk wca og validator, lag meta desciption på alle sidene. 
+anchor fra posts til recipe. siste section på recipe page. about page og Rest api
