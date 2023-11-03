@@ -1,6 +1,6 @@
 /* For section 2 about */
 @keyframes dissolveIn {
- 0% {
+  0% {
     opacity: 0;
   }
   100% {
@@ -9,7 +9,7 @@
 }
 /* === INDEX GLOBALS === */
 hr {
-  min-width: 300px;
+  min-width: 250px;
 }
 .article-container {
   flex-wrap: wrap;
@@ -141,8 +141,11 @@ figure img {
 }
 
 /* === SECTION 4 NEWSLETTER === */
+.newsletter-h2 {
+  padding-top: 20px;
+}
 .hr-newsletter {
-  max-width: 50%;
+  width: 250px;
 }
 .sign-upbtn {
   margin-bottom: 25px;
@@ -179,23 +182,35 @@ figure img {
   /*Section 2 and 4*/
   .content-container {
     flex-direction: column;
+    max-height: none;
   }
   .content-img,
   .content-text {
     width: 100%;
   }
-
+  .content-text {
+    padding: 25px;
+  }
   .content-img img {
     object-position: center 65%;
     max-height: 500px;
   }
-  .content-text {
-    padding: 15px;
+  /*Section 4*/
+  .form-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .content-container {
-    max-height: none;
+  .sign-upbtn {
+    margin-left: auto;
+    margin-right: auto;
+    width: 125px;
+  }
+  form input {
+    width: 500px;
   }
 }
+
 @media (max-width: 744px) {
   .hr-devider-bot {
     margin: 20px 0 40px;
@@ -205,7 +220,7 @@ figure img {
     padding: 0;
   }
   .arrow {
-    padding: 2px;
+    padding: 5px;
   }
   .article-latest:last-of-type,
   .article-latest:nth-last-of-type(2),
@@ -229,5 +244,8 @@ figure img {
   /*Section 4 */
   .hr-devider-small {
     margin: 15px 0;
+  }
+  form input {
+    width: 300px;
   }
 }

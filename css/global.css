@@ -318,6 +318,8 @@ footer {
   font-size: var(--footer-font-size);
 }
 /* === MEDIA QUERIES === */
+
+
 @media (max-width: 744px) {
   /*Hamburger*/
   .hamburger {

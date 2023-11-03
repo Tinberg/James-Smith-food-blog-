@@ -195,7 +195,9 @@ figure img {
 .margin-bot17 {
   margin-bottom: 17px;
 }
-
+.recipe-week-hr {
+  width: 300px;
+}
 /*FOOTER*/
 footer {
   margin-top: 100px;
@@ -243,6 +245,7 @@ footer {
   /*Section 3*/
   .content-container {
     flex-direction: column;
+    max-height: none;
   }
   .content-img,
   .content-text {
@@ -253,10 +256,7 @@ footer {
     max-height: 500px;
   }
   .content-text {
-    padding: 15px;
-  }
-  .content-container {
-    max-height: none;
+    padding: 25px;
   }
 }
 /*MQ max 744px*/
@@ -270,4 +270,5 @@ footer {
   .right {
     right: 2%;
   }
+ 
 }
