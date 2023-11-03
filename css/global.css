@@ -67,7 +67,7 @@ hr {
   margin: 20px 0;
 }
 
-section:not(.brand-container, .hero-posts) {
+section:not(.brand-container, .hero-posts, .simular-container) {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -315,6 +315,7 @@ footer {
   color: var(--header-footer-color);
   padding: 20px 0;
   font-size: var(--footer-font-size);
+  margin-top: 80px;
 }
 /* === MEDIA QUERIES === */
 @media (max-width: 1059px) {

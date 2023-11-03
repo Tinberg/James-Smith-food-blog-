@@ -195,10 +195,7 @@ figure img {
 .recipe-week-hr {
   width: 300px;
 }
-/*FOOTER*/
-footer {
-  margin-top: 100px;
-}
+
 /* === MEDIA QUERIES === */
 /*MQ max 1059px*/
 @media (max-width: 1059px) {

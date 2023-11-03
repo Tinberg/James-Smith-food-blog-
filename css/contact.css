@@ -26,6 +26,11 @@ form textarea {
 }
 /*Rest of the Form styles in form.css*/
 
+/* === FOOTER=== */
+footer {
+  margin-top: 0;
+}
+
 /* === MEDIA QUERIES === */
 @media (max-width: 1059px) {
   .header-sub-text {
