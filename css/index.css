@@ -114,6 +114,9 @@ figure img {
 .right {
   right: 25px;
 }
+.article-latest{
+  z-index: 2;
+}
 .article-latest:hover .cta-layout {
   background-color: var(--hover-bg-color);
 }

@@ -14,4 +14,4 @@ School project HTML/CSS/JS/HeadlessCMS
 
 
 
-anchor fra posts til recipe. siste section på recipe page. about page og Rest api
+Scrollbar på recipes???
