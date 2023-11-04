@@ -7,6 +7,9 @@
     opacity: 1;
   }
 }
+html,body{
+  -webkit-overflow-scrolling: touch;
+}
 /* === SECTION 1 Slider=== */
 .hero-posts {
   background-image: url(/images/Greeksalad-background.jpg);
