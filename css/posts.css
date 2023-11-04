@@ -7,7 +7,7 @@
     opacity: 1;
   }
 }
-html,body{
+html,body, .site-container{
   -webkit-overflow-scrolling: touch;
 }
 /* === SECTION 1 Slider=== */
