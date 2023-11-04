@@ -7,10 +7,16 @@
     opacity: 1;
   }
 }
-nav {
-  padding-top: constant(safe-area-inset-top); /* for iOS 11.0 */
-  padding-top: env(safe-area-inset-top);
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS Safari */
+  .slider .slide {
+    z-index: 1;
+  }
+  nav {
+    z-index: 9989;
+  }
 }
+
 /* === SECTION 1 Slider=== */
 .hero-posts {
   background-image: url(/images/Greeksalad-background.jpg);
