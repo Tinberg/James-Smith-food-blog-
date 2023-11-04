@@ -214,9 +214,9 @@ figure img {
   .right {
     right: 20%;
   }
-  .slider-container {
+  /* .slider-container {
     perspective: none;
-  }
+  } */
   .slider {
     bottom: 80px;
     right: 12px;
