@@ -199,9 +199,7 @@ figure img {
 /* === MEDIA QUERIES === */
 /*MQ max 1059px*/
 @media (max-width: 1059px) {
-  nav {
-    transform: translateZ(0);
-  }
+
   /*Section 1*/
   .hero-posts {
     height: 550px;
@@ -223,6 +221,8 @@ figure img {
     bottom: 80px;
     right: 12px;
     transform: none;
+    position: relative;
+    z-index: 10;
   }
  
   .slider .slide.active {
