@@ -222,23 +222,19 @@ figure img {
     transform: none;
   }
  
-  .slider .slide.active {
+  /* .slider .slide.active {
     animation: dissolveIn 0.5s ease-in-out forwards;
-    z-index: 1;
-  }
+  } */
   .slider .slide:not(.active) {
     display: none;
-    z-index: 1;
   }
   .slider .slide img {
     height: 264px;
-    z-index: 1;
   }
   .slider .slide img,
   .h3-slider {
     width: 264px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    z-index: 1;
   }
 
   /*Section 3*/
