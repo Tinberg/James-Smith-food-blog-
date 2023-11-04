@@ -55,7 +55,6 @@ h2 {
   top: 43%;
   left: 50%;
   transform: translate(-50%, -50%) rotateY(0deg) translateZ(0px);
-  will-change: transform, opacity;
   backface-visibility: hidden;
   opacity: 0.75;
   transition: transform 1s, opacity 1s;
@@ -222,7 +221,9 @@ figure img {
     right: 12px;
     transform: none;
   }
- 
+  .slider .slide {
+    transform: translate3d(-50%, -50%, 0);
+  }
   .slider .slide.active {
     animation: dissolveIn 0.5s ease-in-out forwards;
   }
