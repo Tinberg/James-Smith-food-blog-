@@ -7,8 +7,9 @@
     opacity: 1;
   }
 }
-html,body, .site-container{
-  -webkit-overflow-scrolling: touch;
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 /* === SECTION 1 Slider=== */
 .hero-posts {
