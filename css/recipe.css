@@ -75,7 +75,6 @@ figure img {
 }
 .post {
   padding: 22px;
-  
 }
 .a-post {
   position: relative;
@@ -133,7 +132,7 @@ figure img {
 /* === MEDIA QUERIES === */
 /*MQ max 1332px*/
 @media (max-width: 1332px) {
-    /*Section 3*/
+  /*Section 3*/
   .posts {
     justify-content: space-around;
   }
@@ -201,13 +200,13 @@ figure img {
 }
 /*MQ max 960px*/
 @media (max-width: 960px) {
-    .post {
-        flex: 0 0 100%;
-      }
+    /*Section 3*/
+  .post {
+    flex: 0 0 100%;
+  }
 }
 /*MQ max 744px*/
 @media (max-width: 744px) {
-   
   /*Section 1*/
   .hero-hr {
     width: 60%;
@@ -230,4 +229,3 @@ figure img {
     width: 250px;
   }
 }
-

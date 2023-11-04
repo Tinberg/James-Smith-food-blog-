@@ -235,7 +235,6 @@ figure img {
   .slider .slide:not(.active) {
     display: none;
   }
-
   /*Section 3*/
   .content-container {
     max-height: none;
@@ -247,6 +246,7 @@ figure img {
 }
 /*MQ max 744px*/
 @media (max-width: 744px) {
+  /*Section 1*/
   .arrow {
     padding: 5px 5px;
   }
@@ -256,5 +256,4 @@ figure img {
   .right {
     right: 2%;
   }
- 
 }

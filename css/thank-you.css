@@ -26,11 +26,13 @@ footer {
 
 /* === MEDIA QUERIES === */
 @media (max-width: 1059px) {
+  /*Section 1*/
   .header-sub-text {
     width: 60%;
   }
 }
 @media (max-width: 744px) {
+  /*Section 1*/
   .header-sub-text {
     width: 90%;
   }
