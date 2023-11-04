@@ -221,8 +221,14 @@ figure img {
     right: 12px;
     transform: none;
   }
+  .slider .slide {
+    z-index: 500;
+  }
   .slider .slide.active {
     animation: dissolveIn 0.5s ease-in-out forwards;
+  }
+  .slider .slide:not(.active) {
+    display: none;
   }
   .slider .slide img {
     height: 264px;
@@ -232,9 +238,7 @@ figure img {
     width: 264px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   }
-  .slider .slide:not(.active) {
-    display: none;
-  }
+
   /*Section 3*/
   .content-container {
     max-height: none;
