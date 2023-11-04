@@ -175,12 +175,18 @@ figure img {
     display: flex;
     flex-direction: column;
   }
+  .simular-h2-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .simular-container h2 {
     text-align: center;
     padding-top: 50px;
   }
   .simular-hr {
-    width: 500px;
+    width: 600px;
   }
   .a-post img {
     width: 300px;
@@ -201,17 +207,27 @@ figure img {
 }
 /*MQ max 744px*/
 @media (max-width: 744px) {
+   
   /*Section 1*/
   .hero-hr {
     width: 60%;
   }
-  /*Section 2*/
+  /*Section 1 and 2*/
+  .ingredient-list li,
   .section2-container {
     padding: 0 25px;
   }
+  /*Section 2*/
   .how-to-hr-left,
   .how-to-hr-right {
     width: 100%;
   }
   /*Section 3*/
+  .simular-h2-container {
+    padding: 25px;
+  }
+  .simular-hr {
+    width: 250px;
+  }
 }
+

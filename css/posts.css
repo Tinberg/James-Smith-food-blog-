@@ -193,7 +193,7 @@ figure img {
   max-height: 522px;
 }
 .recipe-week-hr {
-  width: 300px;
+  width: 280px;
 }
 
 /* === MEDIA QUERIES === */
@@ -256,4 +256,5 @@ figure img {
   .right {
     right: 2%;
   }
+ 
 }
