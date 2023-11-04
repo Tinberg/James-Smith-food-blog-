@@ -216,6 +216,7 @@ figure img {
   }
   .slider-container {
     perspective: none;
+    overflow: hidden;
   }
   .slider {
     bottom: 80px;
