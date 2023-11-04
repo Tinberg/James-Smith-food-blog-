@@ -3,6 +3,7 @@
   max-height: 500px;
   object-position: center;
 }
+
 /* === SECTION 1 Thank you=== */
 .header-sub-text {
   width: 50%;
@@ -14,12 +15,12 @@ hr {
   max-width: 200px;
 }
 strong {
-    border-bottom: 1px solid var(--main-color);
-  }
-  .bot-text {
-    margin: 50px 0 80px;
-  }
-  /* === FOOTER=== */
+  border-bottom: 1px solid var(--main-color);
+}
+.bot-text {
+  margin: 100px;
+}
+/* === FOOTER=== */
 footer {
   margin-top: 0;
 }
