@@ -200,7 +200,7 @@ figure img {
 /*MQ max 1059px*/
 @media (max-width: 1059px) {
   /*Section 1*/
-  .hero-posts {
+  /* .hero-posts {
     height: 550px;
   }
   .arrow {
@@ -222,9 +222,9 @@ figure img {
     transform: none;
   }
  
-  /* .slider .slide.active {
+  .slider .slide.active {
     animation: dissolveIn 0.5s ease-in-out forwards;
-  } */
+  }
   .slider .slide:not(.active) {
     display: none;
   }
@@ -235,7 +235,7 @@ figure img {
   .h3-slider {
     width: 264px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  }
+  } */
 
   /*Section 3*/
   .content-container {
