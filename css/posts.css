@@ -7,6 +7,10 @@
     opacity: 1;
   }
 }
+nav {
+  padding-top: constant(safe-area-inset-top); /* for iOS 11.0 */
+  padding-top: env(safe-area-inset-top);
+}
 /* === SECTION 1 Slider=== */
 .hero-posts {
   background-image: url(/images/Greeksalad-background.jpg);
@@ -221,9 +225,7 @@ figure img {
     right: 12px;
     transform: none;
   }
-  .slider .slide {
-    z-index: 500;
-  }
+ 
   .slider .slide.active {
     animation: dissolveIn 0.5s ease-in-out forwards;
   }
