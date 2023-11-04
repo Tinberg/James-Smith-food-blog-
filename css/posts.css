@@ -7,6 +7,9 @@
     opacity: 1;
   }
 }
+nav{
+  overflow: hidden;
+}
 /* === SECTION 1 Slider=== */
 .hero-posts {
   background-image: url(/images/Greeksalad-background.jpg);
@@ -38,7 +41,6 @@ h2 {
 .slider-container {
   position: relative;
   perspective: 1000px;
-  z-index: 1;
 }
 
 .slider {
