@@ -44,7 +44,7 @@ h2 {
   width: 1200px;
   height: 600px;
   position: relative;
-  
+  transform-style: preserve-3d;
   transform: rotateY(0deg);
 }
 
@@ -214,14 +214,14 @@ figure img {
   .right {
     right: 20%;
   }
-  /* .slider-container {
+  .slider-container {
     perspective: none;
-  } */
+  }
   .slider {
     bottom: 80px;
     right: 12px;
     transform: none;
-    
+    transform-style: flat;
   }
  
   .slider .slide.active {
