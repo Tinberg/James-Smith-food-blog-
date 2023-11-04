@@ -221,9 +221,7 @@ figure img {
     right: 12px;
     transform: none;
   }
-  .slider .slide {
-    transform: translate3d(-50%, -50%, 0);
-  }
+ 
   .slider .slide.active {
     animation: dissolveIn 0.5s ease-in-out forwards;
   }
