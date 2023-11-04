@@ -55,6 +55,7 @@ h2 {
   top: 43%;
   left: 50%;
   transform: translate(-50%, -50%) rotateY(0deg) translateZ(0px);
+  will-change: transform, opacity;
   backface-visibility: hidden;
   opacity: 0.75;
   transition: transform 1s, opacity 1s;
@@ -67,7 +68,7 @@ h2 {
 }
 
 .slider .slide.active {
-  /* transform: translate(-50%, -50%) rotateY(0deg) translateZ(250px); */
+  transform: translate(-50%, -50%) rotateY(0deg) translateZ(250px);
   opacity: 1;
 }
 
