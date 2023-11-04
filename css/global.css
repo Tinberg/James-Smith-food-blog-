@@ -219,7 +219,7 @@ h3 {
   cursor: pointer;
   font-size: 1.6rem;
   display: none;
-  z-index: 1100;
+  z-index: 9999;
   position: fixed;
   top: 18px;
   left: 20px;
@@ -232,7 +232,7 @@ nav {
   max-width: 1440px;
   transform: translateX(-50%);
   background-color: var(--header-footer-bg-color);
-  z-index: 1000;
+  z-index: 9989;
 }
 
 nav li {
