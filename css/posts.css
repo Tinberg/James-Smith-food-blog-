@@ -200,9 +200,9 @@ figure img {
 /*MQ max 1059px*/
 @media (max-width: 1059px) {
   /*Section 1*/
-  /* .hero-posts {
+  .hero-posts {
     height: 550px;
-  } */
+  }
   .arrow {
     font-size: 2.5rem;
     top: 200px;
@@ -213,9 +213,9 @@ figure img {
   .right {
     right: 20%;
   }
-  .slider-container {
+  /* .slider-container {
     perspective: none;
-  }
+  } */
   .slider {
     bottom: 80px;
     right: 12px;
