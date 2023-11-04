@@ -59,6 +59,7 @@ h2 {
   opacity: 0.75;
   transition: transform 1s, opacity 1s;
   padding: 0;
+  z-index: 1;
 }
 
 .slider .slide img {
@@ -69,6 +70,7 @@ h2 {
 .slider .slide.active {
   transform: translate(-50%, -50%) rotateY(0deg) translateZ(250px);
   opacity: 1;
+  z-index: 1;
 }
 
 .h3-slider {
