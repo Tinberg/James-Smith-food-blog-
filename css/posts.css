@@ -35,7 +35,10 @@
 h2 {
   padding-top: 20px;
 }
-
+.slider-container {
+  position: relative;
+  perspective: 1000px;
+}
 
 .slider {
   width: 1200px;
