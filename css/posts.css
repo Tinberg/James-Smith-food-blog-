@@ -199,7 +199,18 @@ figure img {
 /* === MEDIA QUERIES === */
 /*MQ max 1059px*/
 @media (max-width: 1059px) {
-
+  nav {
+    position: fixed; /* or absolute, depending on your layout */
+    z-index: 9999 !important; /* A high value to ensure it stays on top */
+    transform: translateX(-50%) translateZ(0) !important; /* Establish a new stacking context */
+    /* ... other styles ... */
+}
+.slider-container {
+    perspective: none;
+    /* ... other styles ... */
+}
+/* ... other styles ... */
+}
   /*Section 1*/
   .hero-posts {
     height: 550px;
@@ -214,15 +225,13 @@ figure img {
   .right {
     right: 20%;
   }
-  .slider-container {
+  /* .slider-container {
     perspective: none;
-  }
+  } */
   .slider {
     bottom: 80px;
     right: 12px;
     transform: none;
-    position: relative;
-    z-index: 10;
   }
  
   .slider .slide.active {
