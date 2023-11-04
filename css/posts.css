@@ -66,10 +66,10 @@ h2 {
   height: 100%;
 }
 
-/* .slider .slide.active {
+.slider .slide.active {
   transform: translate(-50%, -50%) rotateY(0deg) translateZ(250px);
   opacity: 1;
-} */
+}
 
 .h3-slider {
   min-height: 65px;
