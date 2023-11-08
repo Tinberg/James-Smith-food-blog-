@@ -14,4 +14,4 @@ School project HTML/CSS/JS/HeadlessCMS
 
 
 
-Scrollbar på recipes???
+bilder for about. når man trykker på timeline så går man til seksjonen over.bytt text til ren gresk på den som er der. 

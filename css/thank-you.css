@@ -26,12 +26,14 @@ footer {
 }
 
 /* === MEDIA QUERIES === */
+/*MQ for max 1059px*/
 @media (max-width: 1059px) {
   /*Section 1*/
   .header-sub-text {
     width: 60%;
   }
 }
+/*MQ for max 744px*/
 @media (max-width: 744px) {
   /*Section 1*/
   .header-sub-text {

@@ -197,9 +197,8 @@ figure img {
 }
 
 /* === MEDIA QUERIES === */
-/*MQ max 1059px*/
+/*MQ for max 1059px*/
 @media (max-width: 1059px) {
-
   /*Section 1*/
   .hero-posts {
     height: 550px;
@@ -224,7 +223,7 @@ figure img {
     transform: none;
     transform-style: flat;
   }
- 
+
   .slider .slide.active {
     animation: dissolveIn 0.5s ease-in-out forwards;
   }
@@ -249,7 +248,7 @@ figure img {
     max-height: 500px;
   }
 }
-/*MQ max 744px*/
+/*MQ for max 744px*/
 @media (max-width: 744px) {
   /*Section 1*/
   .arrow {

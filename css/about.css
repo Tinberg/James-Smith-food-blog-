@@ -1,0 +1,70 @@
+/* === SECTION 1  === */
+/*Section 1 location*/
+.hero-hr {
+  max-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+.content-container,
+figure img {
+  max-height: 522px;
+}
+.fa-location-dot {
+  padding-right: 15px;
+}
+/*For JS IMG slider*/
+.slider {
+  overflow: hidden;
+}
+.slider figure img {
+  transform: translateX(-100%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.slider figure.active img {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slider figure {
+  display: none;
+}
+.slider figure.active {
+  display: block;
+  animation: dissolveIn 3s ease forwards;
+}
+.about-text {
+  margin-bottom: 50px;
+}
+.myjourney-hr {
+  padding: 20px 0;
+}
+.myjourney-hr {
+  width: 250px;
+  margin: 0 auto;
+}
+
+
+/* === MEDIA QUERIES === */
+/*MQ for max 1059px*/
+@media (max-width: 1059px) {
+  /*Section 1*/
+  .content-about-text {
+    margin-bottom: 30px;
+  }
+  .about-text {
+    margin-bottom: 40px;
+  }
+  .content-container {
+    max-height: none;
+  }
+  .content-img img {
+    object-position: center 65%;
+    max-height: 500px;
+  }
+}
+/*MQ for max 744px*/
+@media (max-width: 744px) {
+  .content-img img {
+    object-position: center 65%;
+    max-height: 450px;
+  }
+}

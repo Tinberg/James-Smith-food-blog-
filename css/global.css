@@ -318,6 +318,7 @@ footer {
   margin-top: 80px;
 }
 /* === MEDIA QUERIES === */
+/*MQ for max 1059px*/
 @media (max-width: 1059px) {
   /*Image and text split 50/50 of screen styles*/
   .content-container {
@@ -331,7 +332,7 @@ footer {
     padding: 25px;
   }
 }
-
+/*MQ for max 744px*/
 @media (max-width: 744px) {
   /*Hamburger*/
   .hamburger {

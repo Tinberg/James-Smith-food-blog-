@@ -156,6 +156,7 @@ figure img {
 /*Style For Form in form.css*/
 
 /* === MEDIA QUERIES === */
+/*MQ for max 1371px*/
 @media (max-width: 1371px) {
   /*Section3*/
   .article-latest:last-of-type {
@@ -165,14 +166,14 @@ figure img {
     justify-content: space-around;
   }
 }
-
+/*MQ for max 1255px*/
 @media (max-width: 1255px) {
   /*Section 1*/
   .article-categories {
     flex-basis: calc(50% - 10px);
   }
 }
-
+/*MQ for max 1059px*/
 @media (max-width: 1059px) {
   /*Section2*/
   .content-about-text {
@@ -213,7 +214,7 @@ figure img {
     width: 500px;
   }
 }
-
+/*MQ for max 744px*/
 @media (max-width: 744px) {
   .hr-devider-bot {
     margin: 20px 0 40px;
