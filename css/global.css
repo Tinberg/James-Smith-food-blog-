@@ -11,6 +11,7 @@
   --main-color: #20567a;
   --header-footer-color: #f7f7f7;
   --button-anchor-color: #f7f7f7;
+  --error-message-color: red;
 
   /* Font Family and Weight */
   --header-font-family: "Playfair Display", Georgia, "Times New Roman";

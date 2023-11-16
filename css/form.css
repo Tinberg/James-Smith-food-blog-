@@ -20,7 +20,7 @@ textarea::placeholder {
 }
 
 .error-message {
-  color: red;
+  color: var(--error-message-color);
 }
 .error-message-bot {
   margin-bottom: 10px;

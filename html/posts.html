@@ -150,25 +150,57 @@
           </div>
         </section>
         <!-- === SECTION 2 POSTS === -->
-        <section>
-          <div>
+        <section class="flex-column">
+          <div class="w-100">
             <h2 class="text-center">BLOG</h2>
             <hr />
-            <div class="select-container">
-              <label for="sortSelect">Sort by:</label>
-              <select id="sortSelect">
-                <option value="new">Newest First</option>
-                <option value="old">Oldest First</option>
-                <option value="title1">Title A-Z</option>
-                <option value="title2">Title Z-A</option>
-                <option value="origin">Origin</option>
-              </select>
+            <div class="filter-sort-container flex space-between">
+              <div class="select-container">
+                <label for="filterSelect">Filter by:</label>
+                <select id="filterSelect">
+                  <option value="all">All Posts</option>
+                  <optgroup label="Category">
+                    <option value="category-brunch">Brunch</option>
+                    <option value="category-dinner">Dinner</option>
+                    <option value="category-pastry">Pastry</option>
+                    <option value="category-dessert">Dessert</option>
+                  </optgroup>
+                  <optgroup label="Origin">
+                    <option value="origin-america">America</option>
+                    <option value="origin-england">England</option>
+                    <option value="origin-france">France</option>
+                    <option value="origin-greece">Greece</option>
+                    <option value="origin-ireland">Ireland</option>
+                    <option value="origin-italy">Italy</option>
+                    <option value="origin-japan">Japan</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="select-container">
+                <label for="sortSelect">Sort by:</label>
+                <select id="sortSelect">
+                  <option value="newest">Newest First</option>
+                  <option value="oldest">Oldest First</option>
+                  <option value="title1">Title A-Z</option>
+                  <option value="title2">Title Z-A</option>
+                </select>
+              </div>
             </div>
           </div>
           <div class="posts flex center text-center">
             <!--Content from JS goes here-->
           </div>
-          <button class="cta-layout postsbtn" id="viewMoreBtn">
+          <div class="loading-spinner hidden" id="loadingSpinner">
+            <i class="fa-solid fa-fish fa-2x icon1"></i>
+            <i class="fa-solid fa-egg fa-2x icon2"></i>
+            <i class="fa-solid fa-carrot fa-2x icon3"></i>
+            <i class="fa-solid fa-pepper-hot fa-2x icon4"></i>
+            <i class="fa-solid fa-apple-whole fa-2x icon5"></i>
+            <i class="fa-solid fa-shrimp fa-2x icon6"></i>
+            <p class="loader-text text-center">Loading...</p>
+          </div>
+          <div id="error-message" class="error-message block"></div>
+          <button class="cta-layout postsbtn hidden" id="viewMoreBtn">
             View More
           </button>
         </section>
