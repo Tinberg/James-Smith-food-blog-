@@ -1,58 +1,9 @@
-//---------- 3D SLIDER-------------//
-const slides = document.querySelectorAll(".slide");
-const heroPosts = document.querySelector(".hero-posts");
-const numberOfSlides = slides.length;
-const angle = 360 / numberOfSlides;
-
-let currentActive = 0;
-slides[currentActive].classList.add("active");
-//this function loops through my articles and remove the bg-img that is set, and adds a new class for the next img(in css)
-function updateBackgroundImage() {
-  for (let i = 1; i <= numberOfSlides; i++) {
-    heroPosts.classList.remove("bg-slide" + i);
-  }
-
-  heroPosts.classList.add("bg-slide" + (currentActive + 1));
-}
-//this function change the active slide, and make the slide go back to the beginning when there is not slides left in the loop
-//its also a loop for the 3d slider(to make it 3d)
-function rotateSlider(direction) {
-  slides[currentActive].classList.remove("active");
-  if (direction === "right") {
-    currentActive = (currentActive + 1) % numberOfSlides;
-  } else {
-    currentActive = (currentActive - 1 + numberOfSlides) % numberOfSlides;
-  }
-  for (let i = 0; i < numberOfSlides; i++) {
-    let currentAngle = angle * (i - currentActive);
-    slides[
-      i
-    ].style.transform = `translate(-50%, -50%) rotateY(${currentAngle}deg) translateZ(250px)`;
-  }
-  slides[currentActive].classList.add("active");
-  updateBackgroundImage();
-}
-
-document.querySelector(".left").addEventListener("click", () => {
-  rotateSlider("left");
-});
-
-document.querySelector(".right").addEventListener("click", () => {
-  rotateSlider("right");
-});
-
-updateBackgroundImage();
-
-setInterval(() => {
-  rotateSlider("right");
-}, 3500);
-
 //---------- API, SORTBY AND FILTER-------------//
 
 //object to store cached API
 const cache = {};
 
-//filter map from category in api
+// This function filter map from category in api
 function getCategoryId(filterValue) {
   const categoryMap = {
     //Origin
@@ -89,7 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
   loadPosts("newest", filterSelect.value);
 });
 
-//----fetch the api with 10 posts, with sortBy to newest and every posts(no filter)
+//---------- Fetch -------------//
+
+//---- This function fetch the api with 10 posts, with sortBy to newest and every posts(no filter)
 async function fetchPosts(
   perPage = 10,
   page = 1,
@@ -154,8 +107,10 @@ async function fetchPosts(
   }
 }
 
-//----create dom and parse the img from the string. it makes the article with the post detaisl.
-function createPostElement(post) {
+//---------- Create -------------//
+
+//----This function create dom and parse the img from the string. it makes the article with the post detaisl.
+function createPostsElements(post) {
   const parser = new DOMParser();
   const doc = parser.parseFromString(post.content.rendered, "text/html");
   const image = doc.querySelector("img");
@@ -216,8 +171,9 @@ filterSelect.addEventListener("change", () => {
   currentPage = 1;
   loadPosts(sortSelect.value, filterSelect.value);
 });
+//---------- Fetch and Create -------------//
 
-//----load the posts based on the current page and sorting order, and filter. it create "post" for each item in the api, and shows the button, or hide depending on if there are more posts to load or not.
+//----This function load the posts based on the current page and sorting order, and filter. it create "post" for each item in the api, and shows the button, or hide depending on if there are more posts to load or not.
 async function loadPosts(sortBy = "newest", filter = "all") {
   if (currentPage === 1) {
     postsContainer.innerHTML = "";
@@ -230,7 +186,7 @@ async function loadPosts(sortBy = "newest", filter = "all") {
     // await new Promise((resolve) => setTimeout(resolve, 2000));
 
     posts.forEach((post) => {
-      const postElement = createPostElement(post);
+      const postElement = createPostsElements(post);
       postsContainer.appendChild(postElement);
     });
 
@@ -250,95 +206,57 @@ async function loadPosts(sortBy = "newest", filter = "all") {
   }
 }
 
-//Fetch and display REST API (10 posts)
-//blog
-// async function fetchPosts(perPage = 10, page = 1) {
-//   const corsAnywhereUrl = "https://noroffcors.onrender.com/";
-//   let originalUrl = `https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${page}`;
 
-//   const url = corsAnywhereUrl + originalUrl;
+//---------- 3D SLIDER-------------//
+const slides = document.querySelectorAll(".slide");
+const heroPosts = document.querySelector(".hero-posts");
+const numberOfSlides = slides.length;
+const angle = 360 / numberOfSlides;
 
-//   const response = await fetch(url);
-//   const totalPosts = parseInt(response.headers.get('X-WP-Total'), 10);
-//   const posts = await response.json();
+let currentActive = 0;
+slides[currentActive].classList.add("active");
 
-//   return { posts, totalPosts };
-// }
+//this function loops through my articles and remove the bg-img that is set, and adds a new class for the next img(in css)
+function updateBackgroundImage() {
+  for (let i = 1; i <= numberOfSlides; i++) {
+    heroPosts.classList.remove("bg-slide" + i);
+  }
+  heroPosts.classList.add("bg-slide" + (currentActive + 1));
+}
 
-// //parse value from string, target it and then create article around the HTML
-// function createPostElement(post) {
-//   const parser = new DOMParser();
-//   const doc = parser.parseFromString(post.content.rendered, 'text/html');
-//   const image = doc.querySelector('img');
-//   const imageUrl = image ? image.src : '';
-//   const imageAlt = image ? image.alt : '';
+//This function change the active slide, and make the slide go back to the beginning when there is not slides left in the loop
+//its also a loop for the 3d slider(to make it 3d)
+function rotateSlider(direction) {
+  slides[currentActive].classList.remove("active");
+  if (direction === "right") {
+    currentActive = (currentActive + 1) % numberOfSlides;
+  } else {
+    currentActive = (currentActive - 1 + numberOfSlides) % numberOfSlides;
+  }
+  for (let i = 0; i < numberOfSlides; i++) {
+    let currentAngle = angle * (i - currentActive);
+    slides[
+      i
+    ].style.transform = `translate(-50%, -50%) rotateY(${currentAngle}deg) translateZ(250px)`;
+  }
+  slides[currentActive].classList.add("active");
+  updateBackgroundImage();
+}
 
-//   const article = document.createElement('article');
-//   article.className = 'post';
-//   article.innerHTML = `
-//     <a href="/html/recipe.html?post_id=${post.id}" class="a-post box-shadow">
-//       <img class="img-small block" src="${imageUrl}" alt="${imageAlt}">
-//       <h3 class="h3-post">${post.title.rendered}</h3>
-//       <div class="hover-content text-left">
-//         <p class="flex space-between">
-//           MY RATING:
-//           <span class="rating-value">${post['rating-value']}<i class="fa-solid fa-heart"></i></span>
-//         </p>
-//         <p class="flex space-between">
-//           DIFFICULTY: <span class="difficulty-value">${post['difficulty-value']}</span>
-//         </p>
-//         <p class="flex space-between">
-//           TIME: <span class="time-value">${post['time-value']}</span>
-//         </p>
-//         <p class="flex space-between">
-//           CATEGORY: <span class="category-value">${post['category-value']}</span>
-//         </p>
-//         <p class="flex space-between">
-//           TYPE: <span class="type-value">${post['type-value']}</span>
-//         </p>
-//         <p class="flex space-between">
-//           ORIGIN: <span class="origin-value">${post['origin-value']}</span>
-//         </p>
-//       </div>
-//     </a>
-//   `;
-//   return article;
-// }
+document.querySelector(".left").addEventListener("click", () => {
+  rotateSlider("left");
+});
 
-// const postsContainer = document.querySelector('.posts');
-// const viewMoreBtn = document.getElementById('viewMoreBtn');
-// let currentPage = 1;
+document.querySelector(".right").addEventListener("click", () => {
+  rotateSlider("right");
+});
 
-// // event listener to the View More button
-// viewMoreBtn.addEventListener('click', () => {
-//   currentPage++;
-//   const selectedOption = sortSelect.value;
-//   loadPosts(selectedOption);
-// });
+updateBackgroundImage();
 
-// //this function display 10 posts. it also display the btn if there are more posts from the API
-// function loadPosts() {
-//   if (currentPage === 1) {
-//     postsContainer.innerHTML = '';
-//   }
+setInterval(() => {
+  rotateSlider("right");
+}, 3500);
 
-//   fetchPosts(10, currentPage).then(data => {
-//     const { posts, totalPosts } = data;
 
-//     posts.forEach(post => {
-//       const postElement = createPostElement(post);
-//       postsContainer.appendChild(postElement);
-//     });
 
-//     const displayedPostsCount = postsContainer.children.length;
 
-//     if (displayedPostsCount >= totalPosts) {
-//       viewMoreBtn.style.display = 'none';
-//     } else {
-//       viewMoreBtn.style.display = 'block';
-//     }
-//   });
-// }
-
-// // Initial load of posts
-// loadPosts();

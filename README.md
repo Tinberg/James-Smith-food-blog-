@@ -9,9 +9,9 @@ School project HTML/CSS/JS/HeadlessCMS
 
 - some styles are the same on different pages like the arrow button, but bcs index and posts css page both have some lines, i chose to just repeat myself on some classes insted of link both css sheet to both html. 
 
+- JS is 
 
 
 
 
 
-bilder for about. når man trykker på timeline så går man til seksjonen over.bytt text til ren gresk på den som er der. 
