@@ -206,7 +206,6 @@ async function loadPosts(sortBy = "newest", filter = "all") {
   }
 }
 
-
 //---------- 3D SLIDER-------------//
 const slides = document.querySelectorAll(".slide");
 const heroPosts = document.querySelector(".hero-posts");
@@ -256,7 +255,3 @@ updateBackgroundImage();
 setInterval(() => {
   rotateSlider("right");
 }, 3500);
-
-
-
-
