@@ -73,7 +73,7 @@
         <section class="hero-posts w-100">
           <div class="content-container flex center box-shadow w-100">
             <div class="content-img">
-              <!-- === Figure,img and figcaption from API, JS === -->
+              <!-- Figure,img and figcaption from API, JS -->
             </div>
             <div class="content-text">
               <div class="margin-bot17 flex-column">
@@ -88,16 +88,28 @@
         </section>
         <!-- === SECTION 2 HOW TO MAKE === -->
         <section class="w-100">
+          <!--Loader recipe-->
+          <div class="loader-recipe hidden" id="loaderRecipe">
+            <i class="fa-solid fa-fish fa-2x icon1"></i>
+            <i class="fa-solid fa-egg fa-2x icon2"></i>
+            <i class="fa-solid fa-carrot fa-2x icon3"></i>
+            <i class="fa-solid fa-pepper-hot fa-2x icon4"></i>
+            <i class="fa-solid fa-apple-whole fa-2x icon5"></i>
+            <i class="fa-solid fa-shrimp fa-2x icon6"></i>
+            <p class="loader-text text-center">Loading...</p>
+          </div>
+          <!--Error message recipe-->
+          <div class="error-message-recipe" id="errorRecipeMessage"></div>
           <div class="section2-container content-container flex w-100">
             <div class="container-howto content-img">
               <h2 class="margin-bot17">
                 HOW TO MAKE<span class="dish">
-                  <!-- === Title from API, JS === --></span
+                  <!-- Title from API, JS --></span
                 >
               </h2>
               <hr class="how-to-hr-left" />
               <ol id="recipe-instructions" class="steps-list">
-                <!-- === OL list from API, JS === -->
+                <!-- OL list from API, JS -->
               </ol>
             </div>
             <div class="container-notes content-text">
@@ -106,35 +118,37 @@
               <p class="flex space-between">
                 MY RATING:
                 <span class="rating-value">
-                  <!-- === Rating value from API, JS === -->
+                  <!-- Rating value from API, JS -->
                 </span>
               </p>
               <p class="flex space-between">
                 DIFFICULTY:
                 <span class="difficulty-value">
-                  <!-- === Difficulty value from API, JS === -->
+                  <!-- Difficulty value from API, JS -->
                 </span>
               </p>
               <p class="flex space-between">
                 TIME:
                 <span class="time-value">
-                  <!-- === Timing value from API, JS === -->
+                  <!-- Timing value from API, JS -->
                 </span>
               </p>
               <p class="flex space-between">
-                CATEGORY: 
+                CATEGORY:
                 <span class="category-value">
-                  <!-- === Category value from API, JS === -->
+                  <!--Category value from API, JS -->
                 </span>
               </p>
               <p class="flex space-between">
-                TYPE: <span class="type-value">
-                  <!-- === Type value from API, JS === -->
+                TYPE:
+                <span class="type-value">
+                  <!--Type value from API, JS -->
                 </span>
               </p>
               <p class="flex space-between">
-                ORIGIN: <span class="origin-value">
-                  <!-- === Origin value from API, JS === -->
+                ORIGIN:
+                <span class="origin-value">
+                  <!--  Origin value from API, JS -->
                 </span>
               </p>
             </div>
@@ -145,6 +159,24 @@
           <div class="simular-h2-container text-left w-100">
             <h2>SIMULAR DISHES</h2>
             <hr class="simular-hr hr-devider-small" />
+            <!--Loader similar-->
+            <div
+              class="loader-similar hidden text-center center"
+              id="loaderSimilar"
+            >
+              <i class="fa-solid fa-fish fa-2x icon1"></i>
+              <i class="fa-solid fa-egg fa-2x icon2"></i>
+              <i class="fa-solid fa-carrot fa-2x icon3"></i>
+              <i class="fa-solid fa-pepper-hot fa-2x icon4"></i>
+              <i class="fa-solid fa-apple-whole fa-2x icon5"></i>
+              <i class="fa-solid fa-shrimp fa-2x icon6"></i>
+              <p class="loader-text text-center">Loading...</p>
+            </div>
+            <!--Error message similar-->
+            <div
+              class="error-similar-message block text-center"
+              id="errorSimilarMessage"
+            ></div>
           </div>
           <div class="posts flex center text-center">
             <!--Post from JS and API-->

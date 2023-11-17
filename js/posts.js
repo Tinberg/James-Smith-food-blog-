@@ -37,7 +37,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  loadPosts("newest", filterSelect.value);
+  try {
+    loadPosts("newest", filterSelect.value);
+  } catch (error) {
+    console.error("Error occurred while loading posts on page load:", error);
+
+    if (errorMessage) {
+      /*Error message for loadposts*/
+      errorMessage.textContent =
+        "We're currently unable to load the latest recipes. This might be due to a network issue or an error on our end. Please check your internet connection, and if the problem persists, visit us again later.";
+    }
+  }
 });
 
 //---------- Fetch -------------//
@@ -103,7 +113,6 @@ async function fetchPosts(
     return cache[cacheKey];
   } catch (error) {
     console.error("Error fetching posts:", error);
-    throw new Error("Failed to fetch posts");
   }
 }
 
@@ -197,11 +206,11 @@ async function loadPosts(sortBy = "newest", filter = "all") {
     }
   } catch (error) {
     viewMoreBtn.classList.add("hidden");
+    /*Error message for fetchPosts*/
     errorMessage.textContent =
-      "Oops! Something went wrong while loading the posts. Please check your internet connection and try again.";
+      "We're having difficulty loading more posts at the moment. This could be due to a temporary server issue or a network problem on your end. Please try refreshing the page in a little while. If you continue to see this message, my site might be undergoing maintenance.";
     console.error("Error loading posts:", error);
   } finally {
-    const loadingSpinner = document.getElementById("loadingSpinner");
     loadingSpinner.classList.add("hidden");
   }
 }
