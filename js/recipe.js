@@ -130,7 +130,7 @@ function createRecipeElements(post) {
       instructionsList.innerHTML = instructions.innerHTML;
     }
 
-    // removing classes from WP REST API and add my own
+    // Removing classes from WP REST API and add my own
     const figure = contentDoc.querySelector("figure");
     if (figure) {
       figure.classList.remove("wp-block-image", "size-full");
@@ -138,7 +138,11 @@ function createRecipeElements(post) {
       const imgElement = figure.querySelector("img");
       if (imgElement) {
         imgElement.classList.remove("wp-image-62");
-        imgElement.classList.add("w-100", "block");
+        imgElement.classList.add("w-100", "block", "recipe-img");
+        //Event Listner for bigger img on click
+        imgElement.addEventListener("click", function () {
+          openModal(this.src);
+        });
       }
 
       const figcaption = figure.querySelector("figcaption");
@@ -150,7 +154,7 @@ function createRecipeElements(post) {
       figureContainer.appendChild(figure);
     }
 
-    //adding notes with querySelector
+    //Adding notes with querySelector
     const ratingValueElement = document.querySelector(".rating-value");
     ratingValueElement.textContent = post["rating-value"];
 
@@ -171,6 +175,23 @@ function createRecipeElements(post) {
     errorRecipeMessage.textContent =
       "We've fetched the recipe but are having trouble displaying it right now. Please refresh the page or try again later. Feel free to check out similar dishes below";
   }
+}
+// This function opens the modal to display the recipe img bigger.
+function openModal(src) {
+  var modal = document.getElementById("imageModal");
+  var modalImg = document.getElementById("enlargedImage");
+
+  modal.style.display = "block";
+  modalImg.src = src;
+
+  window.onclick = function(event) {
+    var modal = document.getElementById("imageModal");
+  
+    // Check if the clicked target is the modal background or the close button or its icon
+    if (event.target == modal || event.target.classList.contains("close") || event.target.parentElement.classList.contains("close")) {
+      modal.style.display = "none";
+    }
+  };
 }
 
 //---------- Fetch and Create-------------//

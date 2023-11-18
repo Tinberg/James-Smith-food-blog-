@@ -27,6 +27,41 @@
 figure img {
   max-height: 700px;
 }
+.recipe-img,
+.modal,
+.close {
+  cursor: pointer;
+}
+
+/*Javascript function to handle modal functionality, by opening the modal and display the clicked img*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100000;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: default;
+  max-width: 95%;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: var(--button-anchor-color);
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+
 .hero-hr {
   width: 200px;
   margin-bottom: 10px;
@@ -93,7 +128,7 @@ figure img {
 }
 /*Loader 2 and 3*/
 .hidden {
- display: none;
+  display: none;
 }
 .loader-recipe {
   padding-bottom: 50px;
@@ -299,6 +334,12 @@ figure img {
   /*Section 1*/
   .hero-hr {
     width: 60%;
+  }
+  .content-img img {
+    max-height: 400px;
+  }
+  .close {
+    font-size: 1.5rem;
   }
   /*Section 1 and 2*/
   .ingredient-list li,
