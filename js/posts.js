@@ -22,7 +22,7 @@ function getCategoryId(filterValue) {
   };
   return categoryMap[filterValue] || null;
 }
-//Eventlistner for category filter from index page. it display the category and and loop thorugh the select element and set it to true with the current category.
+//Eventlistner for category filter from index, and about page. it display the category/origin and and loop thorugh the select element and set it to true with the current category.
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const filterParam = urlParams.get("filter");
@@ -80,7 +80,7 @@ async function fetchPosts(
     originalUrl += "&orderby=title&order=desc";
   }
 
-  //this logic is based on GetCategoryID from filter map, and it splits the name and id. and making the endpoint to the spesific category.
+  //this logic is based on GetCategoryID from filter map, and it splits the name and id. and making the endpoint to the spesific category/origin.
   if (filter !== "all") {
     let categoryId;
 

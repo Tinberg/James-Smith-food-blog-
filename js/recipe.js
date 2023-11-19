@@ -7,6 +7,7 @@ const postId = urlParams.get("post_id");
 //Error messages
 const errorRecipeMessage = document.querySelector("#errorRecipeMessage");
 const errorSimilarMessage = document.querySelector("#errorSimilarMessage");
+
 //---------- Fetch -------------//
 
 //---- This function fetch a specific post by post_id
@@ -154,6 +155,14 @@ function createRecipeElements(post) {
       figureContainer.appendChild(figure);
     }
 
+    //This function set the makes the first letter the string to uppercase, and the rest to lowercase. it will also change the title to the titleId of the post.
+    function capitalizeFirstLetter(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
+    document.title = `James Cook | ${capitalizeFirstLetter(
+      post.title.rendered
+    )}`;
+
     //Adding notes with querySelector
     const ratingValueElement = document.querySelector(".rating-value");
     ratingValueElement.textContent = post["rating-value"];
@@ -184,10 +193,14 @@ function openModal(src) {
   modal.style.display = "block";
   modalImg.src = src;
 
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     var modal = document.getElementById("imageModal");
-  
-    if (event.target == modal || event.target.classList.contains("close") || event.target.parentElement.classList.contains("close")) {
+
+    if (
+      event.target == modal ||
+      event.target.classList.contains("close") ||
+      event.target.parentElement.classList.contains("close")
+    ) {
       modal.style.display = "none";
     }
   };

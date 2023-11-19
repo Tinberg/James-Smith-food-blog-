@@ -49,7 +49,8 @@ hr,
 /* === SECTION 2  === */
 .fa-utensils,
 .fa-earth-americas,
-.fa-users {
+.fa-users,
+.fa-envelope {
   padding-bottom: 15px;
   font-size: var(--h1-font-size);
 }
@@ -61,14 +62,12 @@ hr,
   padding: 50px 0 25px;
 }
 .value-text-container {
-  font-family: var(--header-font-family);
-  font-size: var(--h3-font-size);
+  font-size: var(--h3-font-size); /*Not h3 element*/
 }
 .value-text-container,
 .background-text-value {
   padding: 50px 25px;
 }
-
 .cta-container {
   margin-top: 25px;
 }
@@ -113,7 +112,7 @@ hr,
   }
   /*Section 2*/
   .background-text-value {
-    padding:20px 15px 50px;
+    padding: 20px 15px 50px;
     text-align: center;
   }
   .value-text-container {
@@ -124,11 +123,10 @@ hr,
     padding: 20px 0;
   }
   .fa-utensils,
-.fa-earth-americas,
-.fa-users {
-  padding-bottom: 10px;
-  
-}
+  .fa-earth-americas,
+  .fa-users {
+    padding-bottom: 10px;
+  }
   /*Section 3*/
   .background-container {
     background-position: left;
