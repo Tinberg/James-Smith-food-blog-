@@ -235,7 +235,6 @@ async function loadRecipe() {
         similarDishesLoaded = true;
 
         document.getElementById("loaderSimilar").classList.add("hidden");
-        loadComments(postId);
       }
     }
   } catch (error) {
@@ -253,6 +252,13 @@ async function loadRecipe() {
 }
 
 loadRecipe();
+
+
+
+
+
+
+
 
 
 //----------COMMENT FORM-------------//
@@ -286,7 +292,7 @@ document.getElementById('commentForm').addEventListener('submit', async function
       // Handle errors, maybe display a message to the user
   }
 });
-
+//Display comment
 function displayComments(comments) {
   const commentsContainer = document.getElementById("commentsContainer");
   commentsContainer.innerHTML = ""; 
@@ -300,18 +306,4 @@ function displayComments(comments) {
     `;
     commentsContainer.appendChild(commentElement);
   });
-}
-
-async function loadComments(postId) {
-  try {
-    const response = await fetch(`https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/comments?post=${postId}`);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const comments = await response.json();
-    displayComments(comments);
-  } catch (error) {
-    console.error("Error loading comments:", error);
-    // Optionally update the UI to show an error message
-  }
 }

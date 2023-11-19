@@ -78,6 +78,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+
+
+
+
+
+
 //plugin or this? trenger også async pga fetch
 //Save message in Endpoint API
 function submitContactForm() {
