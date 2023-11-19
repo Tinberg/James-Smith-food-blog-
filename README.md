@@ -11,7 +11,7 @@ School project HTML/CSS/JS/HeadlessCMS
 
 - JS is 
 
-
+sjekk comment for recipe page. og contact form for lagring av melding
 
 
 

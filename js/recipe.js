@@ -285,3 +285,18 @@ document.getElementById('commentForm').addEventListener('submit', async function
       // Handle errors, maybe display a message to the user
   }
 });
+
+function displayComments(comments) {
+  const commentsContainer = document.getElementById("commentsContainer");
+  commentsContainer.innerHTML = ""; // Clear existing comments
+
+  comments.forEach(comment => {
+    const commentElement = document.createElement("div");
+    commentElement.className = "comment";
+    commentElement.innerHTML = `
+      <p class="comment-author">${comment.author_name}</p>
+      <p class="comment-content">${comment.content.rendered}</p>
+    `;
+    commentsContainer.appendChild(commentElement);
+  });
+}
