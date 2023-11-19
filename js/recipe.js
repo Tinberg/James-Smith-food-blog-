@@ -8,7 +8,7 @@ const postId = urlParams.get("post_id");
 const errorRecipeMessage = document.querySelector("#errorRecipeMessage");
 const errorSimilarMessage = document.querySelector("#errorSimilarMessage");
 
-// Category IDs for filtering
+// Category IDs for filtering similar dishes based on the recipes categories
 const categoryIds = {
   brunch: 70,
   pastry: 68,
@@ -16,7 +16,7 @@ const categoryIds = {
   dinner: 69,
 };
 
-// Function to get the category name by ID
+// Function to get the category name by ID for filtering similar dishes
 function getCategoryNameById(categoryId) {
   const idToNameMap = {
     70: "brunch",
@@ -75,7 +75,7 @@ async function fetchSimilarDishes(categoryNames, excludePostId) {
     }
   }
 
-  // Deduplicate and return the dishes
+  // make the createsimilar dishes not display two of the same dish by removing duplicates based on dish id
   const uniqueDishIds = new Set();
   const uniqueDishes = [];
   allDishes.forEach((dish) => {
@@ -276,6 +276,10 @@ async function loadRecipe() {
 
         document.getElementById("loaderSimilar").classList.add("hidden");
       }
+    } else {
+      errorRecipeMessage.textContent =
+        "Oops! Something went wrong. It could be due to a network issue, an invalid recipe ID, or the recipe not being found. Please check your connection, verify the recipe details, and try again later.";
+      document.getElementById("loaderRecipe").classList.add("hidden");
     }
   } catch (error) {
     console.error("Error loading recipe page:", error);

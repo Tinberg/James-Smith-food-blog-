@@ -246,12 +246,13 @@ figure img {
 .error-similar-message,
 .error-message-recipe {
   color: var(--error-message-color);
+  padding: 0 25px;
 }
 .error-message-recipe {
   margin-bottom: 75px;
 }
 .error-similar-message {
-  padding: 15px 60px;
+  padding: 15px 0;
 }
 /* === MEDIA QUERIES === */
 /*MQ max 1332px*/
