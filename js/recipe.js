@@ -8,6 +8,25 @@ const postId = urlParams.get("post_id");
 const errorRecipeMessage = document.querySelector("#errorRecipeMessage");
 const errorSimilarMessage = document.querySelector("#errorSimilarMessage");
 
+// Category IDs for filtering
+const categoryIds = {
+  brunch: 70,
+  pastry: 68,
+  dessert: 71,
+  dinner: 69,
+};
+
+// Function to get the category name by ID
+function getCategoryNameById(categoryId) {
+  const idToNameMap = {
+    70: "brunch",
+    68: "pastry",
+    71: "dessert",
+    69: "dinner",
+  };
+  return idToNameMap[categoryId] || "Unknown";
+}
+
 //---------- Fetch -------------//
 
 //---- This function fetch a specific post by post_id
@@ -31,19 +50,42 @@ async function fetchPostById(postId) {
 }
 
 //---- This function fetch with url to get similar dishes based on the category. it use categoruId to get similar dishes(category) and expludePostId removes the current post from the flow.
-async function fetchSimilarDishes(categoryId, excludePostId) {
-  try {
-    const url = `https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/posts?categories=${categoryId}&per_page=4&exclude=${excludePostId}`;
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error("Failed to fetch similar dishes");
-    }
-    return await response.json();
-  } catch (error) {
-    console.error("Error fetching similar dishes:", error);
+async function fetchSimilarDishes(categoryNames, excludePostId) {
+  let allDishes = [];
 
-    throw error;
+  for (const categoryName of categoryNames) {
+    const categoryId = categoryIds[categoryName];
+    if (categoryId) {
+      const url = `https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/posts?categories=${categoryId}&per_page=4&exclude=${excludePostId}`;
+      try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const dishes = await response.json();
+        allDishes = allDishes.concat(dishes);
+      } catch (error) {
+        console.error(
+          `Error fetching dishes for category ${categoryName}:`,
+          error
+        );
+        throw error;
+      }
+    }
   }
+
+  // Deduplicate and return the dishes
+  const uniqueDishIds = new Set();
+  const uniqueDishes = [];
+  allDishes.forEach((dish) => {
+    if (!uniqueDishIds.has(dish.id)) {
+      uniqueDishes.push(dish);
+      uniqueDishIds.add(dish.id);
+    }
+  });
+
+  return uniqueDishes;
 }
 
 //---------- Create -------------//
@@ -220,18 +262,16 @@ async function loadRecipe() {
       const post = await fetchPostById(postId);
       createRecipeElements(post);
       recipeLoaded = true;
-
       document.getElementById("loaderRecipe").classList.add("hidden");
-      const categoryId = post.categories[0];
-      if (categoryId) {
+
+      const categoryNames = post.categories.map((id) =>
+        getCategoryNameById(id)
+      );
+      if (categoryNames.length > 0) {
         document.getElementById("loaderSimilar").classList.remove("hidden");
 
-        const similarDishes = await fetchSimilarDishes(categoryId, postId);
-        createSimilarDishesElements(
-          similarDishes
-            .filter((dish) => dish.id !== parseInt(postId))
-            .slice(0, 3)
-        );
+        const similarDishes = await fetchSimilarDishes(categoryNames, postId);
+        createSimilarDishesElements(similarDishes.slice(0, 3));
         similarDishesLoaded = true;
 
         document.getElementById("loaderSimilar").classList.add("hidden");
@@ -253,57 +293,49 @@ async function loadRecipe() {
 
 loadRecipe();
 
+// //----------COMMENT FORM-------------//
+// document.getElementById('commentForm').addEventListener('submit', async function(event) {
+//   event.preventDefault();
 
+//   const formData = {
+//       author_name: document.getElementById('commentName').value,
+//       content: document.getElementById('commentContent').value,
+//       post: postId
+//   };
 
+//   try {
+//       const response = await fetch('https://james-smith.cmsbackendsolutions.com//wp-json/wp/v2/comments', {
+//           method: 'POST',
+//           headers: {
+//               'Content-Type': 'application/json'
+//           },
+//           body: JSON.stringify(formData)
+//       });
 
+//       if (!response.ok) {
+//           throw new Error(`HTTP error! Status: ${response.status}`);
+//       }
 
+//       const data = await response.json();
+//       console.log('Comment submitted:', data);
+//       // Handle success - maybe clear the form or show a success message
+//   } catch (error) {
+//       console.error('Error posting comment:', error);
+//       // Handle errors, maybe display a message to the user
+//   }
+// });
+// //Display comment
+// function displayComments(comments) {
+//   const commentsContainer = document.getElementById("commentsContainer");
+//   commentsContainer.innerHTML = "";
 
-
-
-
-//----------COMMENT FORM-------------//
-document.getElementById('commentForm').addEventListener('submit', async function(event) {
-  event.preventDefault();
-
-  const formData = {
-      author_name: document.getElementById('commentName').value,
-      content: document.getElementById('commentContent').value,
-      post: postId
-  };
-
-  try {
-      const response = await fetch('https://james-smith.cmsbackendsolutions.com//wp-json/wp/v2/comments', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(formData)
-      });
-
-      if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      console.log('Comment submitted:', data);
-      // Handle success - maybe clear the form or show a success message
-  } catch (error) {
-      console.error('Error posting comment:', error);
-      // Handle errors, maybe display a message to the user
-  }
-});
-//Display comment
-function displayComments(comments) {
-  const commentsContainer = document.getElementById("commentsContainer");
-  commentsContainer.innerHTML = ""; 
-
-  comments.forEach(comment => {
-    const commentElement = document.createElement("div");
-    commentElement.className = "comment";
-    commentElement.innerHTML = `
-      <p class="comment-author">${comment.author_name}</p>
-      <p class="comment-content">${comment.content.rendered}</p>
-    `;
-    commentsContainer.appendChild(commentElement);
-  });
-}
+//   comments.forEach(comment => {
+//     const commentElement = document.createElement("div");
+//     commentElement.className = "comment";
+//     commentElement.innerHTML = `
+//       <p class="comment-author">${comment.author_name}</p>
+//       <p class="comment-content">${comment.content.rendered}</p>
+//     `;
+//     commentsContainer.appendChild(commentElement);
+//   });
+// }
