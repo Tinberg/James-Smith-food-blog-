@@ -252,3 +252,36 @@ async function loadRecipe() {
 }
 
 loadRecipe();
+
+
+//----------COMMENT FORM-------------//
+document.getElementById('commentForm').addEventListener('submit', async function(event) {
+  event.preventDefault();
+
+  const formData = {
+      author_name: document.getElementById('commentName').value,
+      content: document.getElementById('commentContent').value,
+      post: postId
+  };
+
+  try {
+      const response = await fetch('https://james-smith.cmsbackendsolutions.com//wp-json/wp/v2/comments', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Comment submitted:', data);
+      // Handle success - maybe clear the form or show a success message
+  } catch (error) {
+      console.error('Error posting comment:', error);
+      // Handle errors, maybe display a message to the user
+  }
+});
