@@ -77,3 +77,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+
+function submitContactForm() {
+  const formData = {
+    name: document.getElementById('contactName').value,
+    email: document.getElementById('contactEmail').value,
+    subject: document.getElementById('contactSubject').value,
+    message: document.getElementById('contactMessage').value,
+  };
+
+  fetch('https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/contact', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Success:', data);
+    // Redirect to thank you page or show success message
+    window.location.href = '/html/contact-thank-you.html';
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    // Display error message to the user
+    // ...
+  });
+}
