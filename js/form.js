@@ -87,7 +87,7 @@ function submitContactForm() {
     message: document.getElementById('contactMessage').value,
   };
 
-  fetch('https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/contact', {
+  fetch('https://james-smith.cmsbackendsolutions.com/wp-json/wp/v1/contact', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
