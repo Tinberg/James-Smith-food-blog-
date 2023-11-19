@@ -176,7 +176,7 @@ function createRecipeElements(post) {
       "We've fetched the recipe but are having trouble displaying it right now. Please refresh the page or try again later. Feel free to check out similar dishes below";
   }
 }
-// This function opens the modal to display the recipe img bigger.
+// This function opens the modal to display the recipe img bigger also close the modal when click outside imagemodal or closeIcon.
 function openModal(src) {
   var modal = document.getElementById("imageModal");
   var modalImg = document.getElementById("enlargedImage");
@@ -187,7 +187,6 @@ function openModal(src) {
   window.onclick = function(event) {
     var modal = document.getElementById("imageModal");
   
-    // Check if the clicked target is the modal background or the close button or its icon
     if (event.target == modal || event.target.classList.contains("close") || event.target.parentElement.classList.contains("close")) {
       modal.style.display = "none";
     }
