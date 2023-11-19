@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
+//Save message in Endpoint API
 function submitContactForm() {
   const formData = {
     name: document.getElementById('contactName').value,
@@ -102,12 +102,11 @@ function submitContactForm() {
   })
   .then(data => {
     console.log('Success:', data);
-    // Redirect to thank you page or show success message
+   
     window.location.href = '/html/contact-thank-you.html';
   })
   .catch(error => {
     console.error('Error:', error);
-    // Display error message to the user
-    // ...
+    
   });
 }
