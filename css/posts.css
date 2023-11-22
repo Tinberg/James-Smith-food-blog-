@@ -213,6 +213,12 @@ select {
 .postsbtn {
   margin-top: 25px;
 }
+.section-2-hr{
+  margin: 0 auto;
+}
+hr {
+  width: 280px;
+}
 
 /*hide postsbtn and loading-spinner*/
 .hidden {
@@ -273,9 +279,6 @@ select {
 .content-container,
 figure img {
   max-height: 522px;
-}
-.recipe-week-hr {
-  width: 280px;
 }
 
 /* === MEDIA QUERIES === */
