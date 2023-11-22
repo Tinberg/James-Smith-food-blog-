@@ -39,6 +39,7 @@ hr {
 }
 .article-container {
   flex-wrap: wrap;
+  position: relative;
 }
 .article-header {
   padding-top: 25px;
@@ -46,6 +47,7 @@ hr {
   max-width: 264px;
   white-space: nowrap;
   overflow: hidden;
+  position: relative;
 }
 .article-text {
   max-width: 175px;
