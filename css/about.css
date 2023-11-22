@@ -3,8 +3,7 @@
 
 hr {
   max-width: 300px;
-  padding-bottom: 40px;
-
+  margin: 20px auto 50px ;
 }
 .content-container,
 figure img {
@@ -42,7 +41,7 @@ figure img {
   width: 250px;
 }
 /*Section 1 and 2*/
-hr,
+
 .myjourney-hr,
 .value-text-container {
   margin: 0 auto;
