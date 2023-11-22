@@ -161,6 +161,9 @@ figure img {
   padding: 0 25px;
 }
 /*Loader-Slider*/
+.loader-slider-container {
+  margin-top: 20px;
+}
 .loader-slider {
 padding-bottom: 15px;
 }

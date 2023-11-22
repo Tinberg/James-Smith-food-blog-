@@ -125,8 +125,8 @@ async function loadSliderPosts(page) {
   if (loaderSlider) {
     loaderSlider.classList.remove("hidden");
   }
-  toggleArrowsDisplay("none");
-//   await new Promise((resolve) => setTimeout(resolve, 2000));
+  
+//   await new Promise((resolve) => setTimeout(resolve, 5000)); testing(removeThis)
   try {
     const leftArrowContainer = document.querySelector(".left-arrow-container");
     const rightArrowContainer = document.querySelector(

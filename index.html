@@ -32,6 +32,17 @@
     <script src="/js/form.js" defer></script>
     <script src="/js/about.js"></script>
     <script src="/js/index.js" defer></script>
+    <!-- Hotjar Tracking Code for JamesSmith-Foodblog -->
+<script>
+  (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:3747166,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
   </head>
   <body>
     <div class="site-container">
@@ -217,16 +228,7 @@
             <h2 class="text-center">LATEST POSTS</h2>
             <p>Explore my latest dishes</p>
             <hr class="hr-devider-bot" />
-            <!--Loader-->
-            <div class="loader-slider hidden" id="loaderSlider">
-              <i class="fa-solid fa-fish fa-2x icon1"></i>
-              <i class="fa-solid fa-egg fa-2x icon2"></i>
-              <i class="fa-solid fa-carrot fa-2x icon3"></i>
-              <i class="fa-solid fa-pepper-hot fa-2x icon4"></i>
-              <i class="fa-solid fa-apple-whole fa-2x icon5"></i>
-              <i class="fa-solid fa-shrimp fa-2x icon6"></i>
-              <p class="loader-text text-center">Loading...</p>
-            </div>
+          
           </div>
           <div class="article-container posts-container flex center w-100">
             <div class="left-arrow-container">
@@ -248,6 +250,17 @@
             </div>
           </div>
         </section>
+          <!--Loader-->
+          <div class="loader-slider-container flex center" id="loaderSliderContainer">
+          <div class="loader-slider hidden" id="loaderSlider">
+            <i class="fa-solid fa-fish fa-2x icon1"></i>
+            <i class="fa-solid fa-egg fa-2x icon2"></i>
+            <i class="fa-solid fa-carrot fa-2x icon3"></i>
+            <i class="fa-solid fa-pepper-hot fa-2x icon4"></i>
+            <i class="fa-solid fa-apple-whole fa-2x icon5"></i>
+            <i class="fa-solid fa-shrimp fa-2x icon6"></i>
+            <p class="loader-text text-center">Loading...</p>
+          </div></div>
         <!-- === SECTION 4 NEWSLETTER === -->
         <section>
           <div class="content-container flex center box-shadow w-100">
