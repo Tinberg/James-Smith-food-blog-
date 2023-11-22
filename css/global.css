@@ -305,7 +305,7 @@ nav a:hover span::after {
 footer {
   background-color: var(--header-footer-bg-color);
   color: var(--header-footer-color);
-  padding: 150px 0;
+  padding: 100px 0;
   font-size: var(--footer-font-size);
   margin-top: 80px;
 }
