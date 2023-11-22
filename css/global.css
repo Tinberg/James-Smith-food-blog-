@@ -7,7 +7,7 @@
   --section-bg-color: #e3f1fa;
   --body-bg-color: #f9fcff;
   --button-anchor-bg-color: #20567a;
-  --hover-bg-color: #A30B37;
+  --hover-bg-color: #a30b37;
   --main-color: #20567a;
   --header-footer-color: #f7f7f7;
   --button-anchor-color: #f7f7f7;
@@ -59,10 +59,6 @@ body {
 hr {
   border: none;
   border-top: 1px solid var(--hover-bg-color);
-}
-/* de er på index, om de ikke brukes andre steder bytt til index.css du har også en hr devider på contact*/
-.hr-devider-bot {
-  margin: 20px 0 60px;
 }
 .hr-devider-small {
   margin: 20px 0;
@@ -138,12 +134,7 @@ h3 {
 .space-around {
   justify-content: space-around;
 }
-.align-start {
-  align-items: flex-start;
-}
-.align-end {
-  align-items: flex-end;
-}
+
 /*Text align*/
 .text-center {
   text-align: center;

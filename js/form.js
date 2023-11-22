@@ -85,36 +85,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-//plugin or this? trenger også async pga fetch
-//Save message in Endpoint API
-function submitContactForm() {
-  const formData = {
-    name: document.getElementById('contactName').value,
-    email: document.getElementById('contactEmail').value,
-    subject: document.getElementById('contactSubject').value,
-    message: document.getElementById('contactMessage').value,
-  };
+// //plugin or this? trenger også async pga fetch
+// //Save message in Endpoint API
+// function submitContactForm() {
+//   const formData = {
+//     name: document.getElementById('contactName').value,
+//     email: document.getElementById('contactEmail').value,
+//     subject: document.getElementById('contactSubject').value,
+//     message: document.getElementById('contactMessage').value,
+//   };
 
-  fetch('https://james-smith.cmsbackendsolutions.com/wp-json/wp/v1/contact', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(formData)
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log('Success:', data);
+//   fetch('https://james-smith.cmsbackendsolutions.com/wp-json/wp/v1/contact', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(formData)
+//   })
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! Status: ${response.status}`);
+//     }
+//     return response.json();
+//   })
+//   .then(data => {
+//     console.log('Success:', data);
    
-    window.location.href = '/html/contact-thank-you.html';
-  })
-  .catch(error => {
-    console.error('Error:', error);
+//     window.location.href = '/html/contact-thank-you.html';
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
     
-  });
-}
+//   });
+// }

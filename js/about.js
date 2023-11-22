@@ -1,5 +1,6 @@
-//About me section img slider 
-//index.html and about.html
+// ---------- About me section img slider ----------//
+
+// ----------  For Index.html and about.html ----------//
 document.addEventListener("DOMContentLoaded", function () {
   let slider = document.querySelector("#aboutSlider");
   if (!slider) {

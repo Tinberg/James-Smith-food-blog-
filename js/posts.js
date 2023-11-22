@@ -1,9 +1,21 @@
 //---------- API, SORTBY AND FILTER-------------//
 
-//object to store cached API
+//---------- Global Variables-------------//
 const cache = {};
+let currentPage = 1;
+const postsContainer = document.querySelector(".posts");
+const viewMoreBtn = document.getElementById("viewMoreBtn");
+const filterSelect = document.getElementById("filterSelect");
+const sortSelect = document.getElementById("sortSelect");
+const errorMessage = document.getElementById("error-message");
+const slides = document.querySelectorAll(".slide");
+const heroPosts = document.querySelector(".hero-posts");
+const numberOfSlides = slides.length;
+const angle = 360 / numberOfSlides;
+let currentActive = 0;
 
-// This function filter map from category in api
+//---------- API, SORTBY AND FILTER-------------//
+// This function filter map from category in API
 function getCategoryId(filterValue) {
   const categoryMap = {
     //Origin
@@ -22,11 +34,11 @@ function getCategoryId(filterValue) {
   };
   return categoryMap[filterValue] || null;
 }
-//Eventlistner for category filter from index, and about page. it display the category/origin and and loop thorugh the select element and set it to true with the current category.
-document.addEventListener("DOMContentLoaded", () => {
+
+// Event listener for category filter from index, and about page. It displays the category/origin and loops through the select element and sets it to true with the current category.
+document.addEventListener("DOMContentLoaded", async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const filterParam = urlParams.get("filter");
-  const filterSelect = document.getElementById("filterSelect");
 
   if (filterParam) {
     for (const option of filterSelect.options) {
@@ -38,21 +50,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   try {
-    loadPosts("newest", filterSelect.value);
+    // ---------- Initial Load ----------//
+    await loadPosts("newest", filterSelect.value);
   } catch (error) {
+    //error message for loadposts
     console.error("Error occurred while loading posts on page load:", error);
-
     if (errorMessage) {
-      /*Error message for loadposts*/
       errorMessage.textContent =
-        "We're currently unable to load the latest recipes. This might be due to a network issue or an error on our end. Please check your internet connection, and if the problem persists, visit us again later.";
+        "We're currently unable to load the recipes. This might be due to a network issue or an error on our end. Please check your internet connection, and if the problem persists, visit us again later.";
     }
   }
 });
 
 //---------- Fetch -------------//
 
-//---- This function fetch the api with 10 posts, with sortBy to newest and every posts(no filter)
+// This function fetches the API with 10 posts, with sortBy set to newest and no filter
 async function fetchPosts(
   perPage = 10,
   page = 1,
@@ -62,13 +74,13 @@ async function fetchPosts(
   const corsAnywhereUrl = "https://noroffcors.onrender.com/";
   let originalUrl = `https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${page}`;
 
-  // Cache key based on URL, sortBy, and filter
   const cacheKey = `${originalUrl}_${sortBy}_${filter}`;
 
-  // Check if the response is cached
+  //check response catch
   if (cache[cacheKey]) {
     return cache[cacheKey];
   }
+
   // SortBy and Filter logic
   if (sortBy === "newest") {
     originalUrl += "&orderby=date&order=desc";
@@ -80,7 +92,7 @@ async function fetchPosts(
     originalUrl += "&orderby=title&order=desc";
   }
 
-  //this logic is based on GetCategoryID from filter map, and it splits the name and id. and making the endpoint to the spesific category/origin.
+  // This logic is based on GetCategoryID from the filter map, and it splits the name and id, making the endpoint specific to the category/origin.
   if (filter !== "all") {
     let categoryId;
 
@@ -95,7 +107,7 @@ async function fetchPosts(
     }
   }
 
-  // Full api with pr0xy
+  // Full API with proxy
   const url = corsAnywhereUrl + originalUrl;
 
   try {
@@ -104,68 +116,72 @@ async function fetchPosts(
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
+
     // Parse the response
     const totalPosts = parseInt(response.headers.get("X-WP-Total"), 10);
     const posts = await response.json();
-    // Cache the response
-    cache[cacheKey] = { posts, totalPosts };
 
+    // check if the cach is updated and stored
+    cache[cacheKey] = { posts, totalPosts };
     return cache[cacheKey];
   } catch (error) {
     console.error("Error fetching posts:", error);
+    throw new Error(
+      "It looks like my recipe book is temporarily unavailable. Please refresh your palate (and the page) or try again shortly!"
+    );
   }
 }
 
 //---------- Create -------------//
 
-//----This function create dom and parse the img from the string. it makes the article with the post detaisl.
+// This function creates DOM elements and parses the image from the string to create an article with post details.
 function createPostsElements(post) {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(post.content.rendered, "text/html");
-  const image = doc.querySelector("img");
-  const imageUrl = image ? image.src : "";
-  const imageAlt = image ? image.alt : "";
+  try {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(post.content.rendered, "text/html");
+    const image = doc.querySelector("img");
+    const imageUrl = image ? image.src : "";
+    const imageAlt = image ? image.alt : "Image not available";
 
-  const article = document.createElement("article");
-  article.className = "post";
-  article.innerHTML = `
-      <a href="/html/recipe.html?post_id=${post.id}" class="a-post box-shadow">
-        <img class="img-small block" src="${imageUrl}" alt="${imageAlt}">
-        <h3 class="h3-post">${post.title.rendered}</h3>
-        <div class="hover-content text-left">
-          <p class="flex space-between">
-            MY RATING:
-            <span class="rating-value">${post["rating-value"]}<i class="fa-solid fa-heart"></i></span>
-          </p>
-          <p class="flex space-between">
-            DIFFICULTY: <span class="difficulty-value">${post["difficulty-value"]}</span>
-          </p>
-          <p class="flex space-between">
-            TIME: <span class="time-value">${post["time-value"]}</span>
-          </p>
-          <p class="flex space-between">
-            CATEGORY: <span class="category-value">${post["category-value"]}</span>
-          </p>
-          <p class="flex space-between">
-            TYPE: <span class="type-value">${post["type-value"]}</span>
-          </p>
-          <p class="flex space-between">
-            ORIGIN: <span class="origin-value">${post["origin-value"]}</span>
-          </p>
-        </div>
-      </a>
-    `;
-  return article;
+    const article = document.createElement("article");
+    article.className = "post";
+    article.innerHTML = `
+          <a href="/html/recipe.html?post_id=${post.id}" class="a-post box-shadow">
+            <img class="img-small block" src="${imageUrl}" alt="${imageAlt}">
+            <h3 class="h3-post">${post.title.rendered}</h3>
+            <div class="hover-content text-left">
+              <p class="flex space-between">
+                MY RATING:
+                <span class="rating-value">${post["rating-value"]}<i class="fa-solid fa-heart"></i></span>
+              </p>
+              <p class="flex space-between">
+                DIFFICULTY: <span class="difficulty-value">${post["difficulty-value"]}</span>
+              </p>
+              <p class="flex space-between">
+                TIME: <span class="time-value">${post["time-value"]}</span>
+              </p>
+              <p class="flex space-between">
+                CATEGORY: <span class="category-value">${post["category-value"]}</span>
+              </p>
+              <p class="flex space-between">
+                TYPE: <span class="type-value">${post["type-value"]}</span>
+              </p>
+              <p class="flex space-between">
+                ORIGIN: <span class="origin-value">${post["origin-value"]}</span>
+              </p>
+            </div>
+          </a>
+        `;
+    return article;
+  } catch (error) {
+    console.error("Error creating post element:", error);
+    throw new Error(
+      "We're having a bit of trouble in the kitchen, and our recipes aren't displaying as expected. Please refresh the page or try visiting us again a little later!"
+    );
+  }
 }
-//target Static HTML
-const postsContainer = document.querySelector(".posts");
-const viewMoreBtn = document.getElementById("viewMoreBtn");
-const filterSelect = document.getElementById("filterSelect");
-const sortSelect = document.getElementById("sortSelect");
-const errorMessage = document.getElementById("error-message");
-let currentPage = 1;
 
-//event listners btn, sortBy and Filter.
+// Event listeners for buttons, sortBy, and Filter.
 viewMoreBtn.addEventListener("click", () => {
   currentPage++;
   loadPosts(sortSelect.value);
@@ -180,9 +196,11 @@ filterSelect.addEventListener("change", () => {
   currentPage = 1;
   loadPosts(sortSelect.value, filterSelect.value);
 });
+
 //---------- Fetch and Create -------------//
 
-//----This function load the posts based on the current page and sorting order, and filter. it create "post" for each item in the api, and shows the button, or hide depending on if there are more posts to load or not.
+// This function loads the posts based on the current page, sorting order, and filter. It creates "post" for each item in the API and shows or hides the button depending on if there are more posts to load.
+//Initial Load in DomContent at the top
 async function loadPosts(sortBy = "newest", filter = "all") {
   if (currentPage === 1) {
     postsContainer.innerHTML = "";
@@ -192,7 +210,6 @@ async function loadPosts(sortBy = "newest", filter = "all") {
   try {
     const data = await fetchPosts(10, currentPage, sortBy, filter);
     const { posts, totalPosts } = data;
-    // await new Promise((resolve) => setTimeout(resolve, 2000));
 
     posts.forEach((post) => {
       const postElement = createPostsElements(post);
@@ -205,26 +222,22 @@ async function loadPosts(sortBy = "newest", filter = "all") {
       viewMoreBtn.classList.remove("hidden");
     }
   } catch (error) {
+    console.error("Error in loadPosts:", error);
+    //Error message is located in fetch and create functions, loadPosts is located in DOMContentLoad at the top
+    if (errorMessage) {
+      errorMessage.textContent = error.message;
+    }
     viewMoreBtn.classList.add("hidden");
-    /*Error message for fetchPosts*/
-    errorMessage.textContent =
-      "We're having difficulty loading more posts at the moment. This could be due to a temporary server issue or a network problem on your end. Please try refreshing the page in a little while. If you continue to see this message, my site might be undergoing maintenance.";
-    console.error("Error loading posts:", error);
   } finally {
     loadingSpinner.classList.add("hidden");
   }
 }
 
 //---------- 3D SLIDER-------------//
-const slides = document.querySelectorAll(".slide");
-const heroPosts = document.querySelector(".hero-posts");
-const numberOfSlides = slides.length;
-const angle = 360 / numberOfSlides;
 
-let currentActive = 0;
 slides[currentActive].classList.add("active");
 
-//this function loops through my articles and remove the bg-img that is set, and adds a new class for the next img(in css)
+// This function loops through the articles and removes the background image that is set and adds a new class for the next image (in CSS).
 function updateBackgroundImage() {
   for (let i = 1; i <= numberOfSlides; i++) {
     heroPosts.classList.remove("bg-slide" + i);
@@ -232,8 +245,7 @@ function updateBackgroundImage() {
   heroPosts.classList.add("bg-slide" + (currentActive + 1));
 }
 
-//This function change the active slide, and make the slide go back to the beginning when there is not slides left in the loop
-//its also a loop for the 3d slider(to make it 3d)
+// This function changes the active slide and makes the slide go back to the beginning when there are no slides left in the loop. It's also a loop for the 3D slider (to make it 3D).
 function rotateSlider(direction) {
   slides[currentActive].classList.remove("active");
   if (direction === "right") {

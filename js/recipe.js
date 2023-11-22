@@ -1,10 +1,14 @@
 //---------- API, recipe content and similarDish content-------------//
 
+//---------- Global Variables -------------//
+
 // Get the post_id from the query string
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get("post_id");
 
 //Error messages
+const loaderSlider = document.getElementById("loaderRecipe");
+const loaderSimilar = document.getElementById("loaderSimilar");
 const errorRecipeMessage = document.querySelector("#errorRecipeMessage");
 const errorSimilarMessage = document.querySelector("#errorSimilarMessage");
 
@@ -257,40 +261,40 @@ async function loadRecipe() {
 
   try {
     if (postId) {
-      document.getElementById("loaderRecipe").classList.remove("hidden");
+      loaderSlider.classList.remove("hidden");
 
       const post = await fetchPostById(postId);
       createRecipeElements(post);
       recipeLoaded = true;
-      document.getElementById("loaderRecipe").classList.add("hidden");
+      loaderSlider.classList.add("hidden");
 
       const categoryNames = post.categories.map((id) =>
         getCategoryNameById(id)
       );
       if (categoryNames.length > 0) {
-        document.getElementById("loaderSimilar").classList.remove("hidden");
+        loaderSimilar.classList.remove("hidden");
 
         const similarDishes = await fetchSimilarDishes(categoryNames, postId);
         createSimilarDishesElements(similarDishes.slice(0, 3));
         similarDishesLoaded = true;
 
-        document.getElementById("loaderSimilar").classList.add("hidden");
+        loaderSimilar.classList.add("hidden");
       }
     } else {
       errorRecipeMessage.textContent =
         "Oops! Something went wrong. It could be due to a network issue, an invalid recipe ID, or the recipe not being found. Please check your connection, verify the recipe details, and try again later.";
-      document.getElementById("loaderRecipe").classList.add("hidden");
+      loaderSlider.classList.add("hidden");
     }
   } catch (error) {
     console.error("Error loading recipe page:", error);
     if (!recipeLoaded) {
       errorRecipeMessage.textContent =
         "Oops! We're having trouble serving up this recipe right now. Please refresh the page or try again later. We're working to get everything back to the kitchen as soon as possible!";
-      document.getElementById("loaderRecipe").classList.add("hidden");
+      loaderSlider.classList.add("hidden");
     } else if (!similarDishesLoaded) {
       errorSimilarMessage.textContent =
         "Just a heads up: We managed to fetch the recipe, but we're having a bit of trouble loading suggestions for similar dishes. Feel free to enjoy the recipe, and check back later for more culinary inspirations!";
-      document.getElementById("loaderSimilar").classList.add("hidden");
+      loaderSimilar.classList.add("hidden");
     }
   }
 }

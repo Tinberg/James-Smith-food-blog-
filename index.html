@@ -217,76 +217,39 @@
             <h2 class="text-center">LATEST POSTS</h2>
             <p>Explore my latest dishes</p>
             <hr class="hr-devider-bot" />
+            <!--Loader-->
+            <div class="loader-slider hidden" id="loaderSlider">
+              <i class="fa-solid fa-fish fa-2x icon1"></i>
+              <i class="fa-solid fa-egg fa-2x icon2"></i>
+              <i class="fa-solid fa-carrot fa-2x icon3"></i>
+              <i class="fa-solid fa-pepper-hot fa-2x icon4"></i>
+              <i class="fa-solid fa-apple-whole fa-2x icon5"></i>
+              <i class="fa-solid fa-shrimp fa-2x icon6"></i>
+              <p class="loader-text text-center">Loading...</p>
+            </div>
           </div>
           <div class="article-container posts-container flex center w-100">
             <div class="left-arrow-container">
               <button class="arrow left" aria-label="Previous Slide">❮</button>
             </div>
-            <article class="article-latest text-left">
-              <a
-                href="/html/recipe.html"
-                aria-label="Read more about Japanese curry stew"
-                ><img
-                  class="zoom-img img-small"
-                  src="/images/Japanesestew.jpg"
-                  alt="Japanes curry stew in a bowl."
-                />
-                <h3 class="article-header">JAPANESE CURRY STEW</h3>
-                <p class="article-text latest-top-text">Category: Dinner</p>
-                <p class="article-text latest-bot-text">Origin: Japan</p>
-                <div class="cta-layout">READ MORE</div></a
-              >
-            </article>
-            <article class="article-latest text-left">
-              <a
-                href="/html/recipe.html"
-                aria-label="Read more about Greek salad"
-                ><img
-                  class="zoom-img img-small"
-                  src="/images/Greeksalad.jpg"
-                  alt="Greek salad in a bowl."
-                />
-                <h3 class="article-header">GREEK SALAD</h3>
-                <p class="article-text latest-top-text">Category: Brunch</p>
-                <p class="article-text latest-bot-text">Origin: Greece</p>
-                <div class="cta-layout">READ MORE</div></a
-              >
-            </article>
-            <article class="article-latest text-left">
-              <a
-                href="/html/recipe.html"
-                aria-label="Read more about Spanakopita"
-                ><img
-                  class="zoom-img img-small"
-                  src="/images/Spanakopita.jpg"
-                  alt="Spanakopita on a plate."
-                />
-                <h3 class="article-header">SPANAKOPITA</h3>
-                <p class="article-text latest-top-text">Category: Pastry</p>
-                <p class="article-text latest-bot-text">Origin: Greece</p>
-                <div class="cta-layout">READ MORE</div></a
-              >
-            </article>
-            <article class="article-latest text-left">
-              <a href="/html/recipe.html" aria-label="Read more about Tiramisu"
-                ><img
-                  class="zoom-img img-small"
-                  src="/images/Tiramisu.jpg"
-                  alt="Tiramisu with berrys on top."
-                />
-                <h3 class="article-header">MIXED BERRY TIRAMISU</h3>
-                <p class="article-text latest-top-text">Category: Dessert</p>
-                <p class="article-text latest-bot-text">Origin: Italy</p>
-                <div class="cta-layout">READ MORE</div></a
-              >
-            </article>
+            <!--Error message for fetchSliderPosts and loadSliderPosts-->
+            <div
+              id="slider-error-message"
+              class="slider-error-message block text-center"
+            ></div>
+            <!--Error message for createSliderPostElement-->
+            <div
+              id="slider-post-error-message"
+              class="slider-error-message block text-center"
+            ></div>
+            <!--Latest posts from JS and API-->
             <div class="right-arrow-container">
               <button class="arrow right" aria-label="Next posts">❯</button>
             </div>
           </div>
         </section>
         <!-- === SECTION 4 NEWSLETTER === -->
-        <section id="newsletter-section">
+        <section>
           <div class="content-container flex center box-shadow w-100">
             <div class="content-text form-text">
               <h2 class="newsletter-h2">STAY UPDATED</h2>
@@ -333,7 +296,7 @@
           </div>
         </section>
       </main>
-      <footer class="flex center">
+      <footer id="newsletter-section" class="flex center">
         <p>COPYRIGHT 2023 © JAMES SMITH</p>
       </footer>
     </div>

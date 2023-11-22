@@ -220,7 +220,7 @@ select {
 }
 .loading-spinner,
 .error-message {
-  padding: 50px;
+  padding: 50px 25px;
 }
 .error-message {
   color: var(--error-message-color);
