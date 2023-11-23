@@ -326,10 +326,10 @@ loadRecipe();
 
 //       const data = await response.json();
 //       console.log('Comment submitted:', data);
-//       // Handle success - maybe clear the form or show a success message
+//       
 //   } catch (error) {
 //       console.error('Error posting comment:', error);
-//       // Handle errors, maybe display a message to the user
+//      
 //   }
 // });
 // //Display comment
