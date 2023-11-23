@@ -309,6 +309,7 @@ footer {
   font-size: var(--footer-font-size);
   margin-top: 80px;
 }
+
 /* === MEDIA QUERIES === */
 /*MQ for max 1059px*/
 @media (max-width: 1059px) {
