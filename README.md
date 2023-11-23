@@ -20,7 +20,6 @@ School project HTML/CSS/JS/HeadlessCMS
 
 sjekk comment for recipe page. og contact form for lagring av melding
 
- add loader. index 
-
- endre så hr blir lik over alle sider 
+brand i footer? 
+ 
 

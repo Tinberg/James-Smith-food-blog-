@@ -12,3 +12,18 @@ document.addEventListener('click', function(event) {
     }
 });
 
+//Footer brand add class on hover
+document.addEventListener('DOMContentLoaded', () => {
+    const brandContainer = document.querySelector('.footer-brand-container');
+    const tooltip = document.createElement('span');
+    tooltip.classList.add('custom-tooltip');
+    tooltip.textContent = 'Back to Top';
+    brandContainer.appendChild(tooltip);
+  
+    // Position the tooltip relative to the brandContainer
+    brandContainer.onmousemove = (e) => {
+      tooltip.style.left = e.pageX + 'px';
+      tooltip.style.top = e.pageY + 'px';
+    };
+  });
+
