@@ -214,7 +214,7 @@ h3 {
   z-index: 9999;
   position: fixed;
   top: 18px;
-  left: 20px;
+  right: 20px;
   color: var(--body-bg-color);
 }
 nav {
