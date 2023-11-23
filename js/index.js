@@ -126,7 +126,7 @@ async function loadSliderPosts(page) {
     loaderSlider.classList.remove("hidden");
   }
   
-//   await new Promise((resolve) => setTimeout(resolve, 5000)); testing(removeThis)
+  // await new Promise((resolve) => setTimeout(resolve, 5000)); testing(removeThis)
   try {
     const leftArrowContainer = document.querySelector(".left-arrow-container");
     const rightArrowContainer = document.querySelector(

@@ -33,16 +33,21 @@
     <script src="/js/about.js"></script>
     <script src="/js/index.js" defer></script>
     <!-- Hotjar Tracking Code for JamesSmith-Foodblog -->
-<script>
-  (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:3747166,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3747166, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
   </head>
   <body>
     <div class="site-container">
@@ -228,7 +233,6 @@
             <h2 class="text-center">LATEST POSTS</h2>
             <p>Explore my latest dishes</p>
             <hr class="hr-devider-bot" />
-          
           </div>
           <div class="article-container posts-container flex center w-100">
             <div class="left-arrow-container">
@@ -250,8 +254,11 @@
             </div>
           </div>
         </section>
-          <!--Loader-->
-          <div class="loader-slider-container flex center" id="loaderSliderContainer">
+        <!--Loader-->
+        <div
+          class="loader-slider-container flex center"
+          id="loaderSliderContainer"
+        >
           <div class="loader-slider hidden" id="loaderSlider">
             <i class="fa-solid fa-fish fa-2x icon1"></i>
             <i class="fa-solid fa-egg fa-2x icon2"></i>
@@ -260,7 +267,8 @@
             <i class="fa-solid fa-apple-whole fa-2x icon5"></i>
             <i class="fa-solid fa-shrimp fa-2x icon6"></i>
             <p class="loader-text text-center">Loading...</p>
-          </div></div>
+          </div>
+        </div>
         <!-- === SECTION 4 NEWSLETTER === -->
         <section>
           <div class="content-container flex center box-shadow w-100">
@@ -309,8 +317,24 @@
           </div>
         </section>
       </main>
-      <footer id="newsletter-section" class="flex center">
-        <p>COPYRIGHT 2023 © JAMES SMITH</p>
+      <footer id="newsletter-section" class="">
+        <div class="footer-links-some flex space-between center">
+          <div class="footer-links flex-column">
+            <p class="footer-links-header">Quick links:</p>
+            <a href="/html/posts.html">All blog posts</a>
+            <a href="/html/about.html">About</a>
+            <a href="/html/contact.html">Contact</a>
+            <a href="/index.html">Home</a>
+          </div>
+          <div class="footer-some flex">
+            <i class="fa-brands fa-facebook fa-2x"></i
+            ><i class="fa-brands fa-instagram fa-2x"></i
+            ><i class="fa-brands fa-twitter fa-2x"></i>
+          </div>
+        </div>
+        <div class="copyright-container flex center">
+          <p>COPYRIGHT 2023 © JAMES SMITH</p>
+        </div>
       </footer>
     </div>
   </body>
