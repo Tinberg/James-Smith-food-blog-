@@ -12,6 +12,15 @@ const loaderSimilar = document.getElementById("loaderSimilar");
 const errorRecipeMessage = document.querySelector("#errorRecipeMessage");
 const errorSimilarMessage = document.querySelector("#errorSimilarMessage");
 
+//Updates the 'Back to Top' link to include the current page's id, make the navigation to top work for every id..
+const backToTopLink = document.getElementById("back-to-top-link");
+if (backToTopLink) {
+  const queryString = urlParams.toString();
+  backToTopLink.href = `/html/recipe.html${
+    queryString ? "?" + queryString : ""
+  }#top-of-page`;
+}
+
 // Category IDs for filtering similar dishes based on the recipes categories
 const categoryIds = {
   brunch: 70,
@@ -326,10 +335,10 @@ loadRecipe();
 
 //       const data = await response.json();
 //       console.log('Comment submitted:', data);
-//       
+//
 //   } catch (error) {
 //       console.error('Error posting comment:', error);
-//      
+//
 //   }
 // });
 // //Display comment

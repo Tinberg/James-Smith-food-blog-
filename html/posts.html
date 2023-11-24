@@ -42,7 +42,7 @@
 </script>
   </head>
   <body>
-    <div class="site-container">
+    <div id="top-of-page" class="site-container">
       <header>
         <!-- === NAV BAR === -->
         <button class="hamburger" aria-label="Toggle navigation menu">
@@ -251,8 +251,37 @@
           </div>
         </section>
       </main>
-      <footer class="flex center">
-        <p>COPYRIGHT 2023 © JAMES SMITH</p>
+      <footer id="newsletter-section" class="">
+        <div class="footer-links-some flex space-between center">
+          <div class="footer-links flex-column">
+            <p class="footer-links-header">Quick links:</p>
+            <a href="/html/posts.html">All blog posts</a>
+            <a href="/html/about.html">About</a>
+            <a href="/html/contact.html">Contact</a>
+            <a href="/index.html">Home</a>
+          </div>
+          <div class="footer-brand-container">
+            <a class="flex center" href="/html/posts.html#top-of-page"
+              ><p class="flex center footer-brand-text">
+                James
+                <img
+                  class="brand-logo"
+                  src="/images/Brand-logo-footer.png"
+                  alt="Brand logo. Plate with fork and knife(white)"
+                />
+                Cooks
+              </p></a
+            >
+          </div>
+          <div class="footer-some flex">
+            <i class="fa-brands fa-facebook fa-2x"></i
+            ><i class="fa-brands fa-instagram fa-2x"></i
+            ><i class="fa-brands fa-twitter fa-2x"></i>
+          </div>
+        </div>
+        <div class="copyright-container flex center">
+          <p>COPYRIGHT 2023 © JAMES SMITH</p>
+        </div>
       </footer>
     </div>
   </body>

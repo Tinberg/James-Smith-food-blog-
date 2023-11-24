@@ -31,19 +31,24 @@
     <script src="/js/index.js" defer></script>
     <script src="/js/about.js"></script>
     <!-- Hotjar Tracking Code for JamesSmith-Foodblog -->
-<script>
-  (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:3747166,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3747166, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
   </head>
   <body>
-    <div class="site-container">
+    <div id="top-of-page" class="site-container">
       <header>
         <!-- === NAV BAR === -->
         <button class="hamburger" aria-label="Toggle navigation menu">
@@ -86,7 +91,7 @@
           <div>
             <h2 class="text-center">JAMES SMITH</h2>
             <p class="location-heading text-center">Santorini´s flavors</p>
-            <hr>
+            <hr />
           </div>
           <div class="content-container flex center box-shadow">
             <div class="content-img slider w-100" id="aboutSlider">
@@ -142,25 +147,27 @@
                 blog.
               </p>
               <a
-              href="/html/posts.html?filter=origin-greece"
+                href="/html/posts.html?filter=origin-greece"
                 class="cta-btn cta-layout"
                 >EXPLORE</a
               >
             </div>
           </div>
         </section>
-         <!-- === SECTION 2 My values === -->
+        <!-- === SECTION 2 My values === -->
         <section>
           <div class="text-center w-100">
             <h2>MY VALUES</h2>
             <p>Building Community</p>
             <hr />
           </div>
-          <div class="background-text-value w-100 flex-column center box-shadow">
+          <div
+            class="background-text-value w-100 flex-column center box-shadow"
+          >
             <ul class="value-text-container flex w-100 space-around">
               <li class="flex-column center">
-                <i class="fa-solid fa-earth-americas"></i>Savoring flavor
-                around the world
+                <i class="fa-solid fa-earth-americas"></i>Savoring flavor around
+                the world
               </li>
               <li class="flex-column center">
                 <i class="fa-solid fa-utensils"></i>Sharing culinary adventures
@@ -182,7 +189,7 @@
             </div>
           </div>
         </section>
-         <!-- === SECTION 3 About me === -->
+        <!-- === SECTION 3 About me === -->
         <section>
           <div class="text-center w-100">
             <h2>ABOUT ME</h2>
@@ -215,13 +222,44 @@
                 a delicious adventure together!
               </p>
               <p class="contact-text">Got Questions or Tips? Let's Talk!</p>
-              <a href="/html/contact.html" class="cta-btn cta-layout">CONTACT</a>
+              <a href="/html/contact.html" class="cta-btn cta-layout"
+                >CONTACT</a
+              >
             </div>
           </div>
         </section>
       </main>
-      <footer class="flex center">
-        <p>COPYRIGHT 2023 © JAMES SMITH</p>
+      <footer id="newsletter-section" class="">
+        <div class="footer-links-some flex space-between center">
+          <div class="footer-links flex-column">
+            <p class="footer-links-header">Quick links:</p>
+            <a href="/html/posts.html">All blog posts</a>
+            <a href="/html/about.html">About</a>
+            <a href="/html/contact.html">Contact</a>
+            <a href="/index.html">Home</a>
+          </div>
+          <div class="footer-brand-container">
+            <a class="flex center" href="/html/about.html#top-of-page"
+              ><p class="flex center footer-brand-text">
+                James
+                <img
+                  class="brand-logo"
+                  src="/images/Brand-logo-footer.png"
+                  alt="Brand logo. Plate with fork and knife(white)"
+                />
+                Cooks
+              </p></a
+            >
+          </div>
+          <div class="footer-some flex">
+            <i class="fa-brands fa-facebook fa-2x"></i
+            ><i class="fa-brands fa-instagram fa-2x"></i
+            ><i class="fa-brands fa-twitter fa-2x"></i>
+          </div>
+        </div>
+        <div class="copyright-container flex center">
+          <p>COPYRIGHT 2023 © JAMES SMITH</p>
+        </div>
       </footer>
     </div>
   </body>

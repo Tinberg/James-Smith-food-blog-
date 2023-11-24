@@ -15,11 +15,12 @@ School project HTML/CSS/JS/HeadlessCMS
 
 - JS i could also organaize my project with several JS sheets to make it more maintanable, and i would have done that if the project was bigger. but i feel in a small project like this, having the js (less organiazed) within lesser JS sheets is a good approuch for a small project like this. 
 
-- error handling for fetch and DOMPars funcitons
+- iv chose to use error handling for fetch and DOMPars funcitons
+- i made a catch for fetch functions, so when the user have fetched the api it will not fetch it again when its allready been done. very useful for the latest post on the index page. 
 
 
 sjekk comment for recipe page. og contact form for lagring av melding
 
-brand i footer? 
+lsjekk footer på alle sidene og gå igjnneom sidene. begyn på otional del. 
  
 
