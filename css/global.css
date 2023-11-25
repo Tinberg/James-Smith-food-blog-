@@ -60,7 +60,7 @@ hr {
 .hr-devider-small {
   margin: 20px 0;
 }
-section:not(.brand-container, .hero-posts, .simular-container) {
+section:not(.brand-container, .hero-posts) {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
