@@ -313,60 +313,6 @@ loadRecipe();
 
 
 // //----------COMMENT FORM-------------//
-// document.getElementById('commentForm').addEventListener('submit', async function(event) {
-//   event.preventDefault();
-
-//   const formData = {
-//       author_name: document.getElementById('commentName').value,
-//       content: document.getElementById('commentText').value,
-//       post: postId
-//   };
-
-//   try {
-//       const response = await fetch('https://james-smith.cmsbackendsolutions.com//wp-json/wp/v2/comments', {
-//           method: 'POST',
-//           headers: {
-//               'Content-Type': 'application/json'
-//           },
-//           body: JSON.stringify(formData)
-//       });
-
-//       if (!response.ok) {
-//           throw new Error(`HTTP error! Status: ${response.status}`);
-//       }
-
-//       const data = await response.json();
-//       console.log('Comment submitted:', data);
-
-//   } catch (error) {
-//       console.error('Error posting comment:', error);
-
-//   }
-// });
-// //Display comment
-// function displayComments(comments) {
-//   const commentsContainer = document.getElementById("commentsContainer");
-//   commentsContainer.innerHTML = "";
-
-//   comments.forEach(comment => {
-//     const commentElement = document.createElement("div");
-//     commentElement.className = "comment";
-//     commentElement.innerHTML = `
-//       <p class="comment-author">${comment.author_name}</p>
-//       <p class="comment-content">${comment.content.rendered}</p>
-//     `;
-//     commentsContainer.appendChild(commentElement);
-//   });
-// }
-
-
-
-
-
-
-
-
-
 
 const form = document.getElementById("commentForm");
 
@@ -376,12 +322,14 @@ if (form) {
 
         const name = document.getElementById("commentName").value;
         const comment = document.getElementById("commentText").value;
+        const email = document.getElementById("commentEmail").value;
 
         const commentData = {
-            author_name: name,
-            content: comment,
-            post: parseInt(postId, 10),
-        };
+          author_name: name,
+          author_email: email,
+          content: comment,
+          post: parseInt(postId, 10),
+      };
         console.log("Submitting comment data:", commentData);
         submitCommentToWordPress(commentData);
     });
@@ -424,7 +372,7 @@ async function fetchAndDisplayComments(postId) {
   );
   const comments = await response.json();
 
-  const commentsContainer = document.getElementById("comments-container");
+  const commentsContainer = document.getElementById("commentsContainer");
   commentsContainer.innerHTML = ""; 
 
   comments.forEach((comment) => {
@@ -435,3 +383,10 @@ async function fetchAndDisplayComments(postId) {
     commentsContainer.appendChild(commentElement);
   });
 }
+
+
+
+
+
+
+
