@@ -18,6 +18,7 @@ School project HTML/CSS/JS/HeadlessCMS
 - iv chose to use error handling for fetch and DOMPars funcitons
 - i made a catch for fetch functions, so when the user have fetched the api it will not fetch it again when its allready been done. very useful for the latest post on the index page. 
 
+- Next time i will probably make a own JS sheet for API calls and error handling. as the project is now i think its decent with my approuch, but it might be more organaized with a own SHeet for API calls and import from that sheet. 
 
 sjekk comment for recipe page. og contact form for lagring av melding
 

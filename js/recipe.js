@@ -310,13 +310,15 @@ async function loadRecipe() {
 
 loadRecipe();
 
+
+
 // //----------COMMENT FORM-------------//
 // document.getElementById('commentForm').addEventListener('submit', async function(event) {
 //   event.preventDefault();
 
 //   const formData = {
 //       author_name: document.getElementById('commentName').value,
-//       content: document.getElementById('commentContent').value,
+//       content: document.getElementById('commentText').value,
 //       post: postId
 //   };
 
@@ -335,10 +337,10 @@ loadRecipe();
 
 //       const data = await response.json();
 //       console.log('Comment submitted:', data);
-//
+
 //   } catch (error) {
 //       console.error('Error posting comment:', error);
-//
+
 //   }
 // });
 // //Display comment
@@ -356,3 +358,80 @@ loadRecipe();
 //     commentsContainer.appendChild(commentElement);
 //   });
 // }
+
+
+
+
+
+
+
+
+
+
+const form = document.getElementById("commentForm");
+
+if (form) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("commentName").value;
+        const comment = document.getElementById("commentText").value;
+
+        const commentData = {
+            author_name: name,
+            content: comment,
+            post: parseInt(postId, 10),
+        };
+        console.log("Submitting comment data:", commentData);
+        submitCommentToWordPress(commentData);
+    });
+} else {
+    console.error("Form element not found");
+}
+
+async function submitCommentToWordPress(commentData) {
+  const corsAnywhereUrl = "https://noroffcors.onrender.com/";
+  const originalUrl = "https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/comments";
+  const url = corsAnywhereUrl + originalUrl;
+  const username = "james-smith.cmsbackendsolutions.com";
+  const appPassword = "lqMp 5wMN LbPM 2HD8 9uCQ REqV";
+  const headers = new Headers();
+  headers.append("Content-Type", "application/json");
+  headers.append(
+    "Authorization",
+    "Basic " + btoa(username + ":" + appPassword)
+  );
+  headers.append("X-Requested-With", "XMLHttpRequest");
+  const response = await fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(commentData),
+  });
+
+  if (response.ok) {
+    const postedComment = await response.json();
+    // Optionally, fetch and display all comments including the new one
+    fetchAndDisplayComments(postId);
+  } else {
+    console.error("Failed to post comment");
+    // Handle failure (e.g., display an error message)
+  }
+}
+
+async function fetchAndDisplayComments(postId) {
+  const response = await fetch(
+    `https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/comments?post=${postId}`
+  );
+  const comments = await response.json();
+
+  const commentsContainer = document.getElementById("comments-container");
+  commentsContainer.innerHTML = ""; // Clear existing comments
+
+  comments.forEach((comment) => {
+    const commentElement = document.createElement("div");
+    commentElement.innerHTML = `
+          <p><strong>${comment.author_name}:</strong> ${comment.content.rendered}</p>
+      `;
+    commentsContainer.appendChild(commentElement);
+  });
+}
