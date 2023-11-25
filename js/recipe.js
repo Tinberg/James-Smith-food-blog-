@@ -410,11 +410,11 @@ async function submitCommentToWordPress(commentData) {
 
   if (response.ok) {
     const postedComment = await response.json();
-    // Optionally, fetch and display all comments including the new one
+    
     fetchAndDisplayComments(postId);
   } else {
     console.error("Failed to post comment");
-    // Handle failure (e.g., display an error message)
+ 
   }
 }
 
@@ -425,7 +425,7 @@ async function fetchAndDisplayComments(postId) {
   const comments = await response.json();
 
   const commentsContainer = document.getElementById("comments-container");
-  commentsContainer.innerHTML = ""; // Clear existing comments
+  commentsContainer.innerHTML = ""; 
 
   comments.forEach((comment) => {
     const commentElement = document.createElement("div");
