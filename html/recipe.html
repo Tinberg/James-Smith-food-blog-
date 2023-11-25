@@ -22,6 +22,7 @@
     />
     <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/recipe.css" />
+    <link rel="stylesheet" href="/css/form.css" />
     <script
       src="https://kit.fontawesome.com/0933736d52.js"
       crossorigin="anonymous"
@@ -169,13 +170,15 @@
               </p>
             </div>
           </div>
-          <form id="commentForm">
+          <div>
+          <form class="center flex-column" id="commentForm">
             <input type="text" id="commentName" placeholder="Your Name" required />
             <input type="email" id="commentEmail" placeholder="Your Email" required />
             <textarea id="commentText" placeholder="Your Comment" required></textarea>
-            <button type="submit">Post Comment</button>
+            <button class="center flex cta-layout" type="submit">Post Comment</button>
         </form>
         <div id="commentsContainer"></div>
+        </div>
         </section>
         <!-- === SECTION 3 SIMULAR DISHES === -->
         <section class="simular-container">

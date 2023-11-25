@@ -1,4 +1,4 @@
-//---------- API, recipe content and similarDish content-------------//
+//--------------------- API,  RECIPE CONTENT AND SIMILARDISH CONTENT ---------------------//
 
 //---------- Global Variables -------------//
 
@@ -312,7 +312,7 @@ loadRecipe();
 
 
 
-// //----------COMMENT FORM-------------//
+//--------------------- COMMENT FORM ---------------------//
 
 const form = document.getElementById("commentForm");
 
@@ -329,13 +329,17 @@ if (form) {
           author_email: email,
           content: comment,
           post: parseInt(postId, 10),
-      };
+        };
         console.log("Submitting comment data:", commentData);
         submitCommentToWordPress(commentData);
     });
 } else {
     console.error("Form element not found");
 }
+
+window.addEventListener("load", () => {
+  fetchAndDisplayComments(postId);
+});
 
 async function submitCommentToWordPress(commentData) {
   const corsAnywhereUrl = "https://noroffcors.onrender.com/";
@@ -350,19 +354,29 @@ async function submitCommentToWordPress(commentData) {
     "Basic " + btoa(username + ":" + appPassword)
   );
   headers.append("X-Requested-With", "XMLHttpRequest");
-  const response = await fetch(url, {
-    method: "POST",
-    headers: headers,
-    body: JSON.stringify(commentData),
-  });
 
-  if (response.ok) {
-    const postedComment = await response.json();
-    
-    fetchAndDisplayComments(postId);
-  } else {
-    console.error("Failed to post comment");
- 
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(commentData),
+    });
+
+    if (response.ok) {
+      const postedComment = await response.json();
+
+      
+      document.getElementById("commentName").value = "";
+      document.getElementById("commentText").value = "";
+      document.getElementById("commentEmail").value = "";
+
+      
+      await fetchAndDisplayComments(postId);
+    } else {
+      console.error("Failed to post comment");
+    }
+  } catch (error) {
+    console.error("Error submitting comment:", error);
   }
 }
 
@@ -373,7 +387,7 @@ async function fetchAndDisplayComments(postId) {
   const comments = await response.json();
 
   const commentsContainer = document.getElementById("commentsContainer");
-  commentsContainer.innerHTML = ""; 
+  commentsContainer.innerHTML = "";
 
   comments.forEach((comment) => {
     const commentElement = document.createElement("div");
@@ -383,6 +397,7 @@ async function fetchAndDisplayComments(postId) {
     commentsContainer.appendChild(commentElement);
   });
 }
+
 
 
 
