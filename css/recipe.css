@@ -102,6 +102,10 @@ figure img {
 .fa-heart {
   margin-left: 5px;
 }
+/*Comment and form*/
+.comment-email {
+  display: none;
+}
 /*Loader 2 and 3*/
 .hidden {
   display: none;
