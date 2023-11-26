@@ -104,7 +104,9 @@ figure img {
 }
 /*Comment and form*/
 .comment-email {
-  display: none;
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
 }
 /*Loader 2 and 3*/
 .hidden {

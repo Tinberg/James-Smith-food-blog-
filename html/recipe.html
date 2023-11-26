@@ -31,16 +31,21 @@
     <script src="/js/global.js" defer></script>
     <script src="/js/recipe.js" defer></script>
     <!-- Hotjar Tracking Code for JamesSmith-Foodblog -->
-<script>
-  (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:3747166,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3747166, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
   </head>
   <body>
     <div id="top-of-page" class="site-container">
@@ -87,7 +92,12 @@
             <!--Enlarged img modal-->
             <div id="imageModal" class="modal w-100">
               <span class="close"><i class="fa-solid fa-x fa-beat"></i></span>
-              <img class="modal-content" id="enlargedImage" src="#" alt="Desciption of the image">
+              <img
+                class="modal-content"
+                id="enlargedImage"
+                src="#"
+                alt="Desciption of the image"
+              />
             </div>
             <div class="content-img">
               <!-- Figure,img and figcaption from API, JS -->
@@ -116,7 +126,10 @@
             <p class="loader-text text-center">Loading...</p>
           </div>
           <!--Error message recipe-->
-          <div class="error-message-recipe text-center" id="errorRecipeMessage"></div>
+          <div
+            class="error-message-recipe text-center"
+            id="errorRecipeMessage"
+          ></div>
           <div class="section2-container content-container flex w-100">
             <div class="container-howto content-img">
               <h2 class="margin-bot17">
@@ -170,17 +183,21 @@
               </p>
             </div>
           </div>
+          <!--Comment Form-->
           <div>
-          <form class="center flex-column" id="commentForm">
-            <input type="text" id="commentName" placeholder="Your Name" />
-            <div class="error-message" id="contactNameError"></div>
-            <input type="email" class="comment-email" id="commentEmail" placeholder="Your Email"/>
-            <textarea id="commentText" placeholder="Your Comment" required></textarea>
-            <div class="error-message" id="contactMessageError"></div>
-            <button class="center flex cta-layout" type="submit">Post Comment</button>
-        </form>
-        <div id="commentsContainer"></div>
-        </div>
+            <form class="center flex-column" id="commentForm">
+              <input type="text" id="commentName" placeholder="Your Name" required minlength="3" />
+              <div class="error-message" id="commentNameError"></div>
+              <!--Email is hidden, only to make the comment form work with wordpress!-->
+              <input type="email" class="comment-email" id="commentEmail" />
+              <textarea id="commentText" placeholder="Your Comment" required minlength="10"></textarea>
+              <div class="error-message" id="commentMessageError"></div>
+              <button class="center flex cta-layout" type="submit">
+                Post Comment
+              </button>
+            </form>
+            <div id="commentsContainer"></div>
+          </div>
         </section>
         <!-- === SECTION 3 SIMULAR DISHES === -->
         <section class="simular-container">
@@ -221,7 +238,10 @@
             <a href="/index.html">Home</a>
           </div>
           <div class="footer-brand-container">
-            <a id="back-to-top-link" class="flex center" href="/html/recipe.html#top-of-page"
+            <a
+              id="back-to-top-link"
+              class="flex center"
+              href="/html/recipe.html#top-of-page"
               ><p class="flex center footer-brand-text">
                 James
                 <img

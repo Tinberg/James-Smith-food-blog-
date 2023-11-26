@@ -22,6 +22,8 @@ School project HTML/CSS/JS/HeadlessCMS
 
 sjekk comment for recipe page. og contact form for lagring av melding
 
-bruk form.js for commentpost. finn en layout for comment. gå igjennom koden. kommentarer. finn ut hvordan man sletter comment fra api endpoint comments. lage show comments, kanskje 10 av gangen, eller ta bort hele comment section og vise alle. (ordne semantically correct html i comment section ) bytt ut strong!
+ finn en layout for comment. gå igjennom koden. kommentarer. finn ut hvordan man sletter comment fra api endpoint comments. lage show comments, kanskje 10 av gangen, eller ta bort hele comment section og vise alle. (ordne semantically correct html i comment section ) bytt ut strong!
+
+kommentar på kommentar på recipe. style og det som står over
  
 

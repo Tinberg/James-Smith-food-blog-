@@ -336,7 +336,7 @@ if (form) {
 } else {
     console.error("Form element not found");
 }
-document.getElementById("commentEmail").value = "default@example.com";
+document.getElementById("commentEmail").value = "tinberg92@hotmail.com";
 window.addEventListener("load", () => {
   fetchAndDisplayComments(postId);
 });
