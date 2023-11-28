@@ -184,19 +184,72 @@
             </div>
           </div>
           <!--Comment Form-->
-          <div>
-            <form class="center flex-column" id="commentForm">
-              <input type="text" id="commentName" placeholder="Your Name" required minlength="3" />
-              <div class="error-message" id="commentNameError"></div>
-              <!--Email is hidden, only to make the comment form work with wordpress!-->
-              <input type="email" class="comment-email" id="commentEmail" />
-              <textarea id="commentText" placeholder="Your Comment" required minlength="10"></textarea>
-              <div class="error-message" id="commentMessageError"></div>
-              <button class="center flex cta-layout" type="submit">
-                Post Comment
-              </button>
-            </form>
-            <div id="commentsContainer"></div>
+          <div
+            class="comment-section-container flex-column center text-center w-100"
+          >
+            <button
+              id="toggleCommentsButton"
+              class="show-hide-comment cta-layout flex center"
+            >
+              <!--Shows number of comments for each recipe-->
+            </button>
+            <div id="commentSection" class="comment-section flex-column w-100">
+                <!--Error message post comment-->
+                <div
+                class="error-post-comments-message block text-center"
+                id="errorPostCommentsMessage"
+              ></div>
+              <h3 class="comment-section-header">Leave a comment</h3>
+              <form class="center flex-column" id="commentForm">
+                <input
+                  type="text"
+                  id="commentName"
+                  placeholder="Your Name"
+                  required
+                  minlength="3"
+                />
+                <div class="error-message" id="commentNameError"></div>
+                <!--Email is hidden, only to make the comment form work with wordpress!-->
+                <input type="email" class="comment-email" id="commentEmail" />
+                <textarea
+                  id="commentText"
+                  placeholder="Your Comment"
+                  required
+                  minlength="10"
+                ></textarea>
+                <div class="error-message" id="commentMessageError"></div>
+                <button
+                  class="post-comment center flex cta-layout"
+                  type="submit"
+                >
+                  Post Comment
+                </button>
+              </form>
+              <!--Loader comments-->
+              <div
+                class="loader-comment hidden text-center center"
+                id="loaderComment"
+              >
+                <i class="fa-solid fa-fish fa-2x icon1"></i>
+                <i class="fa-solid fa-egg fa-2x icon2"></i>
+                <i class="fa-solid fa-carrot fa-2x icon3"></i>
+                <i class="fa-solid fa-pepper-hot fa-2x icon4"></i>
+                <i class="fa-solid fa-apple-whole fa-2x icon5"></i>
+                <i class="fa-solid fa-shrimp fa-2x icon6"></i>
+                <p class="loader-text text-center">Loading...</p>
+              </div>
+              <!--Error message comments-->
+              <div
+                class="error-comments-message block text-center"
+                id="errorCommentsMessage"
+              ></div>
+              <div
+                id="commentsContainer"
+                class="comments-container flex-column center text-center"
+              >
+                <!-- Comments from WP, JS -->
+              </div>
+            </div>
           </div>
         </section>
         <!-- === SECTION 3 SIMULAR DISHES === -->

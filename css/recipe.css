@@ -103,6 +103,45 @@ figure img {
   margin-left: 5px;
 }
 /*Comment and form*/
+.post-comment,
+.comment-section-header {
+  margin: 25px;
+}
+.show-hide-comment,
+.post-comment {
+  min-width: 225px;
+}
+.comment-section {
+  display: none;
+  background-color: var(--section-bg-color);
+  padding: 25px 0;
+}
+.show-hide-comment {
+  margin: 50px 25px 25px 25px;
+}
+
+form input,
+form textarea {
+  min-width: 500px;
+}
+.comments-container {
+  padding: 25px;
+}
+
+.comment-item {
+  text-align: left;
+  width: 1000px;
+  padding: 10px 25px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: var(--body-bg-color);
+}
+.comment-name {
+  font-weight: var(--body-font-weight-bold);
+}
+.comment-date {
+  font-size: .78rem;
+}
 .comment-email {
   visibility: hidden;
   position: absolute;
@@ -115,9 +154,19 @@ figure img {
 .loader-recipe {
   padding-bottom: 50px;
 }
-.loader-similar {
+.loader-similar,
+.loader-comment {
   padding-top: 25px;
 }
+.loader-comment .loader-text::before {
+  background: linear-gradient(
+    to right,
+    transparent 70%,
+    var(--section-bg-color) 70%
+  );
+  background-size: 200% 100%;
+  animation: revealText 5s infinite;
+} 
 /* === Section 3 === */
 .simular-hr {
   max-width: 300px;
@@ -182,7 +231,9 @@ figure img {
 }
 /*Error messages*/
 .error-similar-message,
-.error-message-recipe {
+.error-message-recipe,
+.error-comments-message,
+.error-post-comments-message {
   color: var(--error-message-color);
   padding: 0 25px;
 }
@@ -231,6 +282,9 @@ figure img {
   .content-text {
     padding: 25px 1px;
   }
+  .comment-item {
+    width: 800px;
+  }
   /*Section 3*/
   .simular-container {
     align-items: center;
@@ -263,6 +317,10 @@ figure img {
 }
 /*MQ max 960px*/
 @media (max-width: 960px) {
+  /*Section 2*/
+  .comment-item {
+   width: 600px;
+  }
   /*Section 3*/
   .post {
     flex: 0 0 100%;
@@ -289,6 +347,13 @@ figure img {
   .how-to-hr-left,
   .how-to-hr-right {
     width: 100%;
+  }
+  form input,
+  form textarea {
+    min-width: 300px;
+  }
+  .comment-item {
+   width: 300px;
   }
   /*Section 3*/
   .simular-h2-container {

@@ -1,16 +1,24 @@
-//--------------------- API,  RECIPE CONTENT AND SIMILARDISH CONTENT ---------------------//
+//---------------------  Global Variables --------------------- //
 
-//---------- Global Variables -------------//
+//pr0xy URL
+const corsAnywhereUrl = "https://noroffcors.onrender.com/";
 
 // Get the post_id from the query string
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get("post_id");
 
-//Error messages
+//Error messages and loader
+//Loader
 const loaderSlider = document.getElementById("loaderRecipe");
 const loaderSimilar = document.getElementById("loaderSimilar");
+const loaderComment = document.getElementById("loaderComment");
+//Error
 const errorRecipeMessage = document.querySelector("#errorRecipeMessage");
 const errorSimilarMessage = document.querySelector("#errorSimilarMessage");
+const errorPostCommentsMessage = document.querySelector(
+  "#errorPostCommentsMessage"
+);
+const errorCommentsMessage = document.querySelector("#errorCommentsMessage");
 
 //Updates the 'Back to Top' link to include the current page's id, make the navigation to top work for every id..
 const backToTopLink = document.getElementById("back-to-top-link");
@@ -20,6 +28,8 @@ if (backToTopLink) {
     queryString ? "?" + queryString : ""
   }#top-of-page`;
 }
+
+//--------------------- API,  RECIPE CONTENT AND SIMILARDISH CONTENT ---------------------//
 
 // Category IDs for filtering similar dishes based on the recipes categories
 const categoryIds = {
@@ -45,7 +55,6 @@ function getCategoryNameById(categoryId) {
 //---- This function fetch a specific post by post_id
 async function fetchPostById(postId) {
   try {
-    const corsAnywhereUrl = "https://noroffcors.onrender.com/";
     const originalUrl = `https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/posts/${postId}?_embed`;
     const url = corsAnywhereUrl + originalUrl;
 
@@ -310,40 +319,47 @@ async function loadRecipe() {
 
 loadRecipe();
 
+//------------------------- COMMENT FORM -------------------------//
 
-
-//--------------------- COMMENT FORM ---------------------//
+//This function makes date string readable, and takes the users locatl settings into consideration.
+function formatDate(dateString) {
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return new Date(dateString).toLocaleDateString(undefined, options);
+}
 
 const form = document.getElementById("commentForm");
-
+//
 if (form) {
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-        const name = document.getElementById("commentName").value;
-        const comment = document.getElementById("commentText").value;
-        const email = document.getElementById("commentEmail").value;
-
-        const commentData = {
-          author_name: name,
-          author_email: email,
-          content: comment,
-          post: parseInt(postId, 10),
-        };
-        console.log("Submitting comment data:", commentData);
-        submitCommentToWordPress(commentData);
-    });
+    const name = document.getElementById("commentName").value;
+    const comment = document.getElementById("commentText").value;
+    const email = document.getElementById("commentEmail").value;
+    //collect name,comment and email then send the data to wordpress also makes the postId a number
+    const commentData = {
+      author_name: name,
+      author_email: email,
+      content: comment,
+      post: parseInt(postId, 10),
+    };
+    submitCommentToWordPress(commentData);
+  });
 } else {
-    console.error("Form element not found");
+  console.error("Form element not found");
 }
+//Autofill Email. as wordpress only allowed the comment endpoint to work with the email included(This input is not visible in html.)
 document.getElementById("commentEmail").value = "tinberg92@hotmail.com";
 window.addEventListener("load", () => {
   fetchAndDisplayComments(postId);
 });
 
+//---------- Fetch -------------//
+
+//This function send the commentData that is saved to wordpress.
 async function submitCommentToWordPress(commentData) {
-  const corsAnywhereUrl = "https://noroffcors.onrender.com/";
-  const originalUrl = "https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/comments";
+  const originalUrl =
+    "https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/comments";
   const url = corsAnywhereUrl + originalUrl;
   const username = "james-smith.cmsbackendsolutions.com";
   const appPassword = "lqMp 5wMN LbPM 2HD8 9uCQ REqV";
@@ -365,43 +381,93 @@ async function submitCommentToWordPress(commentData) {
     if (response.ok) {
       const postedComment = await response.json();
 
-      
       document.getElementById("commentName").value = "";
       document.getElementById("commentText").value = "";
       document.getElementById("commentEmail").value = "";
 
-      
       await fetchAndDisplayComments(postId);
     } else {
-      console.error("Failed to post comment");
+      console.error("Failed to post comment - Server responded with an error");
+      errorPostCommentsMessage.textContent =
+        "Your comment couldn't be posted due to a server issue. Please check your comment for any issues and try again.";
     }
   } catch (error) {
     console.error("Error submitting comment:", error);
+    errorPostCommentsMessage.textContent =
+      "We couldn't submit your comment due to a network or system error. Please check your internet connection and try again later.";
   }
 }
+// Event listener for toggleCommentsButton
+document
+  .getElementById("toggleCommentsButton")
+  .addEventListener("click", async function () {
+    const commentSection = document.getElementById("commentSection");
+    const toggleButton = document.getElementById("toggleCommentsButton");
+    const commentCount = toggleButton.dataset.comments || "0";
 
-async function fetchAndDisplayComments(postId) {
-  const response = await fetch(
-    `https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/comments?post=${postId}`
-  );
-  const comments = await response.json();
+    if (
+      commentSection.style.display === "none" ||
+      commentSection.style.display === ""
+    ) {
+      commentSection.style.display = "block";
+      toggleButton.textContent = commentCount + " Comments ▲";
 
-  const commentsContainer = document.getElementById("commentsContainer");
-  commentsContainer.innerHTML = "";
-
-  comments.forEach((comment) => {
-    const commentElement = document.createElement("div");
-    commentElement.innerHTML = `
-          <p><strong>${comment.author_name}:</strong> ${comment.content.rendered}</p>
-      `;
-    commentsContainer.appendChild(commentElement);
+      // it will not fetch comments if they already been loaded.
+      if (!toggleButton.dataset.commentsLoaded) {
+        await fetchAndDisplayComments(postId);
+      }
+    } else {
+      commentSection.style.display = "none";
+      toggleButton.textContent = commentCount + " Comments ▼";
+    }
   });
+
+window.addEventListener("load", () => {
+  fetchAndDisplayComments(postId);
+});
+
+//---------- Fetch and Create-------------//
+
+//This funciton get the comments from wordpress for each spesific post and dynamically shows the comments
+async function fetchAndDisplayComments(postId) {
+  try {
+    loaderComment.classList.remove("hidden");
+    const response = await fetch(
+      `https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/comments?post=${postId}`
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const comments = await response.json();
+    const commentCount = comments.length;
+    const toggleButton = document.getElementById("toggleCommentsButton");
+    toggleButton.dataset.comments = commentCount;
+    toggleButton.textContent = commentCount + " Comments ▼";
+    toggleButton.dataset.commentsLoaded = "true";
+
+    const commentsContainer = document.getElementById("commentsContainer");
+    commentsContainer.innerHTML = "";
+
+    comments.forEach((comment) => {
+      const commentElement = document.createElement("div");
+      commentElement.className = "comment-item";
+      const formattedDate = formatDate(comment.date);
+      commentElement.innerHTML = `
+              <p class="comment-name">${comment.author_name}:</p>
+              <p class="comment-date">${formattedDate}</p>
+              <p class="comment-content">${comment.content.rendered}</p>
+          `;
+      commentsContainer.appendChild(commentElement);
+    });
+  } catch (error) {
+    console.error("Error fetching comments:", error);
+    errorCommentsMessage.textContent =
+      "Apologies, but we're currently experiencing difficulties in displaying comments. We kindly ask you to try reloading the page in a short while. In the meantime, feel free to leave a comment – it might still be successfully submitted. Thank you for your understanding.";
+    const toggleButton = document.getElementById("toggleCommentsButton");
+    toggleButton.textContent = "Comments ▼";
+  } finally {
+    loaderComment.classList.add("hidden");
+  }
 }
-
-
-
-
-
-
-
-

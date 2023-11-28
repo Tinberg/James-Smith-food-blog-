@@ -20,10 +20,12 @@ School project HTML/CSS/JS/HeadlessCMS
 
 - Next time i will probably make a own JS sheet for API calls and error handling. as the project is now i think its decent with my approuch, but it might be more organaized with a own SHeet for API calls and import from that sheet. 
 
+- On the recipe page the comments load when the page load, this could be changed if the website gets populare and posts get alot of comment. then its probably goood to change the comments to load with the (toggleCommentsButton).
+
 sjekk comment for recipe page. og contact form for lagring av melding
 
  finn en layout for comment. gå igjennom koden. kommentarer. finn ut hvordan man sletter comment fra api endpoint comments. lage show comments, kanskje 10 av gangen, eller ta bort hele comment section og vise alle. (ordne semantically correct html i comment section ) bytt ut strong!
 
-kommentar på kommentar på recipe. style og det som står over
+error for not fetch comment ferdig, lag en for post comments, html er klart! 
  
 
