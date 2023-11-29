@@ -95,7 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
       validateForm(event, "contact");
     });
   }
+
 function validateForm(event, formType) {
+  event.preventDefault(); 
   let hasError = false;
 
   const nameInput = formType === "newsletter" ? "name" : "contactName";
@@ -145,12 +147,11 @@ function validateForm(event, formType) {
 
     // If no error, post data to WordPress
     if (!hasError) {
-      event.preventDefault(); // Prevent form from submitting normally
+      
       postContactFormDataToWordPress(name, email, subject, message);
     }
   } else if (formType === "newsletter" && !hasError) {
     window.location.href = "/html/newsletter-thank-you.html";
-    event.preventDefault();
   }
 }});
 
@@ -174,7 +175,13 @@ function postContactFormDataToWordPress(name, email, subject, message) {
   })
   .then(response => response.json())
   .then(data => {
-    console.log('Success:', data);
+    if (data.message) {
+        // Redirect to the thank-you page upon successful submission
+        window.location.href = "/html/contact-thank-you.html";
+    } else {
+        // Handle error scenario
+        console.error('Submission error:', data.error);
+    }
     
     // After successfully posting data, you can fetch and display it on your WordPress page.
     fetch('https://james-smith.cmsbackendsolutions.com/wp-json/james-smith/v1/contact-submissions/') // Replace with your custom endpoint URL
@@ -182,6 +189,7 @@ function postContactFormDataToWordPress(name, email, subject, message) {
     .then(submissions => {
       // Handle the retrieved data and display it on your WordPress page.
       displayFormSubmissions(submissions);
+      console.log(displayFormSubmissions);
     })
     .catch((error) => {
       console.error('Error:', error);
