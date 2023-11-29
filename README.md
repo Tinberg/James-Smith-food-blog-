@@ -22,11 +22,5 @@ School project HTML/CSS/JS/HeadlessCMS
 
 - On the recipe page the comments load when the page load, this could be changed if the website gets populare and posts get alot of comment. then its probably goood to change the comments to load with the (toggleCommentsButton).
 
-sjekk comment for recipe page. og contact form for lagring av melding
 
- finn en layout for comment. gå igjennom koden. kommentarer. finn ut hvordan man sletter comment fra api endpoint comments. lage show comments, kanskje 10 av gangen, eller ta bort hele comment section og vise alle. (ordne semantically correct html i comment section ) bytt ut strong!
 
-error for not fetch comment ferdig, lag en for post comments, html er klart! 
- 
-
-sjekk php evt ta bort og prøv å fiks contact om ikke ta bort og uncomment hva some r comment. 
