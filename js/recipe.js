@@ -97,7 +97,7 @@ async function fetchSimilarDishes(categoryNames, excludePostId) {
     }
   }
 
-  // make the createsimilar dishes not display two of the same dish by removing duplicates based on dish id
+  // Make the createsimilar dishes not display two of the same dish by removing duplicates based on dish id
   const uniqueDishIds = new Set();
   const uniqueDishes = [];
   allDishes.forEach((dish) => {

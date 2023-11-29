@@ -37,7 +37,6 @@ figure img {
   font-size: 2.3rem;
   font-weight: bold;
 }
-
 .hero-hr {
   width: 200px;
   margin-bottom: 10px;
@@ -67,14 +66,12 @@ figure img {
 .steps-list {
   counter-reset: step-counter;
 }
-
 .steps-list li {
   counter-increment: step-counter;
   position: relative;
   padding-left: 50px;
   margin-bottom: 50px;
 }
-
 .steps-list li::before {
   content: counter(step-counter);
   position: absolute;
@@ -119,7 +116,6 @@ figure img {
 .show-hide-comment {
   margin: 50px 25px 25px 25px;
 }
-
 form input,
 form textarea {
   min-width: 500px;
@@ -127,7 +123,6 @@ form textarea {
 .comments-container {
   padding: 25px;
 }
-
 .comment-item {
   text-align: left;
   width: 1000px;
@@ -167,6 +162,7 @@ form textarea {
   background-size: 200% 100%;
   animation: revealText 5s infinite;
 } 
+
 /* === Section 3 === */
 .simular-hr {
   max-width: 300px;
@@ -243,6 +239,7 @@ form textarea {
 .error-similar-message {
   padding: 15px 0;
 }
+
 /* === MEDIA QUERIES === */
 /*MQ max 1332px*/
 @media (max-width: 1332px) {

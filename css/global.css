@@ -197,6 +197,7 @@ h3 {
 }
 
 /* === HEADER FOOTER === */
+
 /*Hamburger*/
 .hamburger {
   background: none;
@@ -289,6 +290,7 @@ nav a:hover span::after {
 }
 
 /* === FOOTER=== */
+
 footer {
   background-color: var(--header-footer-bg-color);
   padding: 25px 75px;
@@ -354,6 +356,7 @@ footer {
 }
 
 /* === MEDIA QUERIES === */
+
 /*MQ for max 1059px*/
 @media (max-width: 1059px) {
   /*Image and text split 50/50 of screen styles*/
@@ -406,6 +409,7 @@ footer {
 }
 
 /* === Loading Icon Styles and Keyframes === */
+
 /*For loader icons*/
 .icon1,
 .icon2,

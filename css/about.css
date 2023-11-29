@@ -41,12 +41,12 @@ figure img {
   width: 250px;
 }
 /*Section 1 and 2*/
-
 .myjourney-hr,
 .value-text-container {
   margin: 0 auto;
 }
 /* === SECTION 2  === */
+
 .fa-utensils,
 .fa-earth-americas,
 .fa-users,
@@ -94,6 +94,7 @@ figure img {
 }
 
 /* === MEDIA QUERIES === */
+
 /*MQ for max 1059px*/
 @media (max-width: 1059px) {
   /*Section 1*/
@@ -153,5 +154,5 @@ figure img {
     object-position: center 65%;
     max-height: 450px;
   }
-  /*Section 2*/
+  
 }

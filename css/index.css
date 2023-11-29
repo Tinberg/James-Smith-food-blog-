@@ -7,7 +7,6 @@
     opacity: 1;
   }
 }
-
 /* === INDEX GLOBALS === */
 hr {
   min-width: 250px;
@@ -63,7 +62,6 @@ article:hover .round-img {
   background-color: var(--hover-bg-color);
   transition: width 0.3s;
 }
-
 /*For Section 1 and 3*/
 .article-categories:hover .article-header::before {
   width: 100%;
@@ -73,7 +71,6 @@ article:hover .round-img {
 .fa-location-dot {
   padding-right: 15px;
 }
-
 /*Content-container for Section 2 and 4*/
 .content-container,
 figure img {
@@ -124,11 +121,9 @@ figure img {
 .zoom-img {
   transition: transform 0.3s ease;
 }
-
 .article-latest:hover .zoom-img {
   transform: scale(1.1);
 }
-
 .latest-top-text {
   padding-top: 2.5px;
 }
