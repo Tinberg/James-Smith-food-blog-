@@ -4,6 +4,7 @@ const nav = document.querySelector('nav');
 //eventlistner click for hamburger
 hamburger.addEventListener('click', function() {
     nav.classList.toggle('active');
+    this.classList.toggle('active'); 
 });
 //Close hamburger menu when clicked outside menu/nav or hamburger div. 
 document.addEventListener('click', function(event) {

@@ -209,6 +209,9 @@ h3 {
   right: 20px;
   color: var(--body-bg-color);
 }
+.hamburger.active {
+  transform: rotate(270deg);
+}
 nav {
   position: fixed;
   top: 0;

@@ -142,7 +142,6 @@ async function loadSliderPosts(page) {
     );
     totalPages = newTotalPages;
 
-    // Clear existing posts
     const postElements = sliderContainer.querySelectorAll(".slider-post");
     postElements.forEach((el) => el.remove());
 
@@ -150,13 +149,13 @@ async function loadSliderPosts(page) {
       leftArrowContainer,
       sliderContainer.firstChild
     );
-
+    //This add new posts to the slider if posts holds posts.
     if (posts && posts.length > 0) {
       posts.forEach((post) => {
         const articleElement = createSliderPostElement(post);
         sliderContainer.appendChild(articleElement);
       });
-
+      //Opcaity to left arrow if its on first page. and same with righ if there is no more posts. 
       document.querySelector(".left").style.opacity = page > 1 ? "1" : "0.3";
       document.querySelector(".right").style.opacity =
         page < totalPages ? "1" : "0.3";
@@ -173,7 +172,6 @@ async function loadSliderPosts(page) {
     }
     toggleArrowsDisplay("none");
   } finally {
-    // Hide the loader after posts are loaded or in case of an error
     if (loaderSlider) {
       loaderSlider.classList.add("hidden");
     }
@@ -199,7 +197,7 @@ document
       loadSliderPosts(sliderPage);
     }
   });
-
+//This debounce is used to limit the rate loadSliderPosts is called when rezising window. 
 window.addEventListener(
   "resize",
   debounce(() => loadSliderPosts(sliderPage), 250)

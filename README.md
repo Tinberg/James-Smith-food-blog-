@@ -29,3 +29,4 @@ sjekk comment for recipe page. og contact form for lagring av melding
 error for not fetch comment ferdig, lag en for post comments, html er klart! 
  
 
+sjekk php evt ta bort og prøv å fiks contact om ikke ta bort og uncomment hva some r comment. 
