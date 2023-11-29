@@ -79,7 +79,7 @@
 // });
 
 
-// Form validation for index.html and contact.html
+// Form index.html and contact.html 
 document.addEventListener("DOMContentLoaded", function () {
   const newsletterForm = document.getElementById("newsletterForm");
   const contactForm = document.getElementById("contactForm");
@@ -95,17 +95,17 @@ document.addEventListener("DOMContentLoaded", function () {
       validateForm(event, "contact");
     });
   }
-
+//this funtion validate and handle form submission
 function validateForm(event, formType) {
   event.preventDefault(); 
   let hasError = false;
-
+  //select inputfields name based on formtype
   const nameInput = formType === "newsletter" ? "name" : "contactName";
   const emailInput = formType === "newsletter" ? "email" : "contactEmail";
   const name = event.target.querySelector(`#${nameInput}`).value;
   const email = event.target.querySelector(`#${emailInput}`).value;
 
-  // Validate name for both
+  // This validate name for both(more then 5 characters)
   if (name.length <= 5) {
     event.target.querySelector(`#${nameInput}Error`).innerText =
       "Name must be more than 5 characters long.";
@@ -114,7 +114,7 @@ function validateForm(event, formType) {
     event.target.querySelector(`#${nameInput}Error`).innerText = "";
   }
 
-  // Validate email for both
+  // Validate email for both(pattern)
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   if (!emailPattern.test(email)) {
     event.target.querySelector(`#${emailInput}Error`).innerText =
@@ -124,7 +124,7 @@ function validateForm(event, formType) {
     event.target.querySelector(`#${emailInput}Error`).innerText = "";
   }
 
-  // Validation subject and message for contact
+  // Validation subject and message for contact form (more then 15 characters  and more then 25 characters)
   if (formType === "contact") {
     const subject = event.target.querySelector("#contactSubject").value;
     const message = event.target.querySelector("#contactMessage").value;
@@ -176,39 +176,31 @@ function postContactFormDataToWordPress(name, email, subject, message) {
   .then(response => response.json())
   .then(data => {
     if (data.message) {
-        // Redirect to the thank-you page upon successful submission
         window.location.href = "/html/contact-thank-you.html";
     } else {
-        // Handle error scenario
         console.error('Submission error:', data.error);
     }
     
-    // After successfully posting data, you can fetch and display it on your WordPress page.
-    fetch('https://james-smith.cmsbackendsolutions.com/wp-json/james-smith/v1/contact-submissions/') // Replace with your custom endpoint URL
+    // After successfully posting data, it fetch and display it on WordPress page.
+    fetch('https://james-smith.cmsbackendsolutions.com/wp-json/james-smith/v1/contact-submissions/') 
     .then(response => response.json())
     .then(submissions => {
-      // Handle the retrieved data and display it on your WordPress page.
       displayFormSubmissions(submissions);
       console.log(displayFormSubmissions);
     })
     .catch((error) => {
       console.error('Error:', error);
-      // Handle error (show a message to the user, for example)
     });
   })
   .catch((error) => {
     console.error('Error:', error);
-    // Handle error (show a message to the user, for example)
   });
 }
 
 
 // Function to display form submissions on your WordPress page
 function displayFormSubmissions(submissions) {
-  // You can loop through the submissions and display them on your page.
   submissions.forEach(submission => {
-    // Create HTML elements or append data to existing elements to display the submissions.
-    // For example, create a list of submissions or display them in a table.
   });
 }
 
