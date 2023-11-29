@@ -22,5 +22,5 @@ School project HTML/CSS/JS/HeadlessCMS
 
 - On the recipe page the comments load when the page load, this could be changed if the website gets populare and posts get alot of comment. then its probably goood to change the comments to load with the (toggleCommentsButton).
 
-
+.....Bytt ut strong med bold i thank you contact og thank you newsletter.....
 

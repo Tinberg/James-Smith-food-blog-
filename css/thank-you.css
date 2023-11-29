@@ -9,14 +9,16 @@
   width: 50%;
   margin-bottom: 25px;
 }
+.bold-anchor {
+  font-weight: var(--body-font-weight-bold);
+  border-bottom: 1px solid var(--main-color);
+}
 /*HR*/
 hr {
   margin: 20px 0 30px;
   max-width: 200px;
 }
-strong {
-  border-bottom: 1px solid var(--main-color);
-}
+
 .bot-text {
   margin: 100px;
 }
