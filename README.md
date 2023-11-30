@@ -9,7 +9,7 @@ School project HTML/CSS/JS/HeadlessCMS
 
 - some styles are the same on different pages like the arrow button, but bcs index and posts css page both have some lines, i chose to just repeat myself on some classes insted of link both css sheet to both html. 
 
-- when creating elements after fetching from Rest API i chose to use template strings to embed expressions and varibles with strings using ${}. in the recipe.js i relized that  after fetching the Rest api i got elements from Wordpress, and i had to remove and add classes insted of parsing out all the text from the elements. (like i did some places.)
+- when creating elements after fetching from Rest API i chose to use template strings to embed expressions and varibles with strings using ${}. in the recipe.js i relized that  after fetching the Rest api i got elements from Wordpress, and i had to remove and add classes insted of parsing out all the text from the elements. (like i did some places.) ting jeg ville gjort annerledes!!!!!!
 
 - Fetch REST API: i could re-use the recipe function fetchPosts and use it on the index page for the slider, but since i didnt need the filter and sortBy, and also needed logic for the arrows i decided to fetch the api again on the index page. 
 
@@ -22,5 +22,6 @@ School project HTML/CSS/JS/HeadlessCMS
 
 - On the recipe page the comments load when the page load, this could be changed if the website gets populare and posts get alot of comment. then its probably goood to change the comments to load with the (toggleCommentsButton).
 
-.....Bytt ut strong med bold i thank you contact og thank you newsletter.....
+- on my lists i from wordpress i dont use innerHTMl and display my html, i pull ul article and lists out of the string, bcs its aleardy in the large string from wordpress...... 
+
 

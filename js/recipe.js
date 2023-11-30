@@ -7,6 +7,9 @@ const corsAnywhereUrl = "https://noroffcors.onrender.com/";
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get("post_id");
 
+//New DOMParser
+const parser = new DOMParser();
+
 //Error messages and loader
 //Loader
 const loaderSlider = document.getElementById("loaderRecipe");
@@ -119,7 +122,7 @@ function createSimilarDishesElements(similarDishes) {
     container.innerHTML = "";
 
     similarDishes.forEach((dish) => {
-      const parser = new DOMParser();
+      // Parsing the content
       const doc = parser.parseFromString(dish.content.rendered, "text/html");
 
       const image = doc.querySelector("img");
@@ -178,7 +181,6 @@ function createRecipeElements(post) {
     instructionsList.innerHTML = "";
 
     // Parsing the content
-    const parser = new DOMParser();
     const contentDoc = parser.parseFromString(
       post.content.rendered,
       "text/html"
