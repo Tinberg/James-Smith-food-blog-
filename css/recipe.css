@@ -235,7 +235,7 @@ form textarea {
   padding: 0 25px;
 }
 .error-message-recipe {
-  margin-bottom: 75px;
+  margin: 75px 0;
 }
 .error-similar-message {
   padding: 15px 0;
