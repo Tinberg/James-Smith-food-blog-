@@ -238,13 +238,12 @@ function createRecipeElements(post) {
 
     ratingValueElement.appendChild(heartIcon);
 
-    document.querySelector(".difficulty-value").textContent =
-      post["difficulty-value"];
+    document.querySelector(".difficulty-value").textContent = post["difficulty-value"];
     document.querySelector(".time-value").textContent = post["time-value"];
-    document.querySelector(".category-value").textContent =
-      post["category-value"];
+    document.querySelector(".category-value").textContent = post["category-value"];
     document.querySelector(".type-value").textContent = post["type-value"];
     document.querySelector(".origin-value").textContent = post["origin-value"];
+    
   } catch (error) {
     console.error("Error displaying the recipe:", error);
     errorRecipeMessage.textContent =
