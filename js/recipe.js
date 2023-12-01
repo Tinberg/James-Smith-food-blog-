@@ -163,7 +163,7 @@ function createSimilarDishesElements(similarDishes) {
   } catch (error) {
     console.error("Error displaying similar dishes:", error);
     errorSimilarMessage.textContent =
-      "Looks like our side dish recommendations are taking a little longer to simmer! While we sort that out, please enjoy the main recipe. Swing by a bit later for those extra tasty suggestions!";
+      "Looks like my side dish recommendations are taking a little longer to simmer! While I'm sort that out, please enjoy the main recipe. Swing by a bit later for those extra tasty suggestions!";
   }
 }
 
@@ -247,9 +247,10 @@ function createRecipeElements(post) {
   } catch (error) {
     console.error("Error displaying the recipe:", error);
     errorRecipeMessage.textContent =
-      "We've fetched the recipe but are having trouble displaying it right now. Please refresh the page or try again later. Feel free to check out similar dishes below";
+      "I fetched the recipe but are having trouble displaying it right now. Please refresh the page or try again later. Feel free to check out similar dishes below";
   }
 }
+
 // This function opens the modal to display the recipe img bigger also close the modal when click outside imagemodal or closeIcon.
 function openModal(src) {
   var modal = document.getElementById("imageModal");
@@ -308,11 +309,11 @@ async function loadRecipe() {
     console.error("Error loading recipe page:", error);
     if (!recipeLoaded) {
       errorRecipeMessage.textContent =
-        "We're having trouble serving up this recipe right now. Please refresh the page or try again later. We're working to get everything back to the kitchen as soon as possible!";
+        "I'm having trouble serving up this recipe right now. Please refresh the page or try again later. I'm working to get everything back to the kitchen as soon as possible!";
       loaderSlider.classList.add("hidden");
     } else if (!similarDishesLoaded) {
       errorSimilarMessage.textContent =
-        "Just a heads up: We managed to fetch the recipe, but we're having a bit of trouble loading suggestions for similar dishes. Feel free to enjoy the recipe, and check back later for more culinary inspirations!";
+        "Just a heads up: I managed to fetch the recipe, but I'm having a bit of trouble loading suggestions for similar dishes. Feel free to enjoy the recipe, and check back later for more culinary inspirations!";
       loaderSimilar.classList.add("hidden");
     }
   }
@@ -395,7 +396,7 @@ async function submitCommentToWordPress(commentData) {
   } catch (error) {
     console.error("Error submitting comment:", error);
     errorPostCommentsMessage.textContent =
-      "We couldn't submit your comment due to a network or system error. Please check your internet connection and try again later.";
+      "I couldn't submit your comment due to a network or system error. Please check your internet connection and try again later.";
   }
 }
 // Event listener for toggleCommentsButton
@@ -465,7 +466,7 @@ async function fetchAndDisplayComments(postId) {
   } catch (error) {
     console.error("Error fetching comments:", error);
     errorCommentsMessage.textContent =
-      "Apologies, but we're currently experiencing difficulties in displaying comments. We kindly ask you to try reloading the page in a short while. In the meantime, feel free to leave a comment – it might still be successfully submitted. Thank you for your understanding.";
+      "Apologies, but I'm currently experiencing difficulties in displaying comments. I kindly ask you to try reloading the page in a short while. In the meantime, feel free to leave a comment – it might still be successfully submitted. Thank you for your understanding.";
     const toggleButton = document.getElementById("toggleCommentsButton");
     toggleButton.textContent = "Comments ▼";
   } finally {

@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error occurred while loading posts on page load:", error);
     if (errorMessage) {
       errorMessage.textContent =
-        "We're currently unable to load the recipes. This might be due to a network issue or an error on our end. Please check your internet connection, and if the problem persists, visit us again later.";
+        "I'm currently unable to load the recipes. This might be due to a network issue or an error on my end. Please check your internet connection, and if the problem persists, visit me again later.";
     }
   }
 });
@@ -176,7 +176,7 @@ function createPostsElements(post) {
   } catch (error) {
     console.error("Error creating post element:", error);
     throw new Error(
-      "We're having a bit of trouble in the kitchen, and our recipes aren't displaying as expected. Please refresh the page or try visiting us again a little later!"
+      "I'm experiencing some challenges in the kitchen, and my recipes aren't displaying as expected. Please refresh the page or try visiting me again a little later!"
     );
   }
 }

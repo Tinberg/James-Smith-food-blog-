@@ -106,7 +106,7 @@ function postContactFormDataToWordPress(name, email, subject, message) {
       }
     })
     .catch((error) => {
-      errorSubmit.innerText = "We encountered a problem connecting to the server. Please check your internet connection and try again.";
+      errorSubmit.innerText = "I encountered a problem connecting to the server. Please check your internet connection and try again.";
     console.error("Network or fetch error:", error);
     });
 }
