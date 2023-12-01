@@ -184,7 +184,7 @@ h3 {
   max-width: 125px;
   padding: 10px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
