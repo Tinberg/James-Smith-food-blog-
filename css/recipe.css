@@ -282,17 +282,23 @@ form textarea {
   }
   .ingredient-list li {
     list-style-type: none;
-    max-width: 500px;
-  }
-  .ingredient-list li::before {
+    text-align: left;
+    position: relative; 
+    padding-left: 25px; 
+}
+.ingredient-list li::before {
     content: "•";
+    position: absolute; 
+    left: 0; 
+    top: 0; 
     margin-right: 10px;
     font-weight: var(--body-font-weight-bold);
-  }
+}
   .hero-hr {
     margin: 0 auto;
     width: 40%;
   }
+
   /*Section 2*/
   .content-text {
     padding: 25px 1px;
@@ -300,6 +306,7 @@ form textarea {
   .comment-item {
     width: 800px;
   }
+
   /*Section 3*/
   .simular-container {
     align-items: center;
@@ -330,6 +337,7 @@ form textarea {
     line-height: 30px;
   }
 }
+
 /*MQ max 960px*/
 @media (max-width: 960px) {
   /*Section 2*/
@@ -341,6 +349,7 @@ form textarea {
     flex: 0 0 100%;
   }
 }
+
 /*MQ max 744px*/
 @media (max-width: 744px) {
   /*Section 1*/
@@ -353,12 +362,10 @@ form textarea {
   .close {
     font-size: 1.5rem;
   }
-  /*Section 1 and 2*/
-  .ingredient-list li,
+  /*Section 2*/
   .section2-container {
     padding: 0 25px;
   }
-  /*Section 2*/
   .how-to-hr-left,
   .how-to-hr-right {
     width: 100%;
