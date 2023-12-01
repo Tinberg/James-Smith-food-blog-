@@ -75,7 +75,7 @@ async function fetchSliderPosts(page = 1, perPage) {
     console.error("Error fetching posts for slider:", error);
     if (sliderErrorMessage) {
       sliderErrorMessage.textContent =
-        "Oops! Something went wrong while fetching the latest posts. It could be a temporary issue with our server or your internet connection. Please try again later, and if the problem continues, our site might be undergoing maintenance.";
+        "Something went wrong while fetching the latest posts. It could be a temporary issue with our server or your internet connection. Please try again later, and if the problem continues, our site might be undergoing maintenance.";
       sliderErrorMessage.style.display = "block";
     }
 
@@ -168,7 +168,7 @@ async function loadSliderPosts(page) {
     console.error("Error loading slider posts:", error);
     if (sliderErrorMessage) {
       sliderErrorMessage.textContent =
-        "Oops! There was an issue loading the latest posts. It might be due to a connectivity problem or a temporary glitch. Please check your internet connection and try again. If the problem persists, our website could be undergoing maintenance.";
+        "There was an issue loading the latest posts. It might be due to a connectivity problem or a temporary glitch. Please check your internet connection and try again. If the problem persists, our website could be undergoing maintenance.";
     }
     toggleArrowsDisplay("none");
   } finally {

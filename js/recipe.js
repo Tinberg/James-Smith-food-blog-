@@ -301,14 +301,14 @@ async function loadRecipe() {
       }
     } else {
       errorRecipeMessage.textContent =
-        "Oops! Something went wrong. It could be due to a network issue, an invalid recipe ID, or the recipe not being found. Please check your connection, verify the recipe details, and try again later.";
+        "Something went wrong. It could be due to a network issue, an invalid recipe ID, or the recipe not being found. Please check your connection, verify the recipe details, and try again later.";
       loaderSlider.classList.add("hidden");
     }
   } catch (error) {
     console.error("Error loading recipe page:", error);
     if (!recipeLoaded) {
       errorRecipeMessage.textContent =
-        "Oops! We're having trouble serving up this recipe right now. Please refresh the page or try again later. We're working to get everything back to the kitchen as soon as possible!";
+        "We're having trouble serving up this recipe right now. Please refresh the page or try again later. We're working to get everything back to the kitchen as soon as possible!";
       loaderSlider.classList.add("hidden");
     } else if (!similarDishesLoaded) {
       errorSimilarMessage.textContent =
