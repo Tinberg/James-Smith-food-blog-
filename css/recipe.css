@@ -44,6 +44,7 @@ figure img {
 .ingredient-list li {
   margin: 15px 0;
   font-size: var(--h3-font-size); /*Not Header Font-size!*/
+  list-style-type: disc;
 }
 /* === Section 2 === */
 /*50/50 Left*/
@@ -135,7 +136,7 @@ form textarea {
   font-weight: var(--body-font-weight-bold);
 }
 .comment-date {
-  font-size: .78rem;
+  font-size: 0.78rem;
 }
 .comment-email {
   visibility: hidden;
@@ -147,7 +148,7 @@ form textarea {
   display: none;
 }
 .loader-recipe {
-  padding-bottom: 50px;
+  padding-top: 50px;
 }
 .loader-similar,
 .loader-comment {
@@ -161,7 +162,7 @@ form textarea {
   );
   background-size: 200% 100%;
   animation: revealText 5s infinite;
-} 
+}
 
 /* === Section 3 === */
 .simular-hr {
@@ -271,6 +272,23 @@ form textarea {
     object-position: center;
     max-height: 500px;
   }
+  .content-text {
+    text-align: center;
+  }
+  .ingredient-list {
+    display: inline-block;
+    text-align: center;
+    padding: 25px;
+  }
+  .ingredient-list li {
+    list-style-type: none;
+    max-width: 500px;
+  }
+  .ingredient-list li::before {
+    content: "•";
+    margin-right: 10px;
+    font-weight: var(--body-font-weight-bold);
+  }
   .hero-hr {
     margin: 0 auto;
     width: 40%;
@@ -316,7 +334,7 @@ form textarea {
 @media (max-width: 960px) {
   /*Section 2*/
   .comment-item {
-   width: 600px;
+    width: 600px;
   }
   /*Section 3*/
   .post {
@@ -350,7 +368,7 @@ form textarea {
     min-width: 300px;
   }
   .comment-item {
-   width: 300px;
+    width: 300px;
   }
   /*Section 3*/
   .simular-h2-container {

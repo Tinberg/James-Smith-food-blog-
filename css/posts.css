@@ -6,7 +6,7 @@
   100% {
     opacity: 1;
   }
-} 
+}
 /* === SECTION 1 Slider=== */
 .hero-posts {
   background-image: url(/images/Greeksalad-background.jpg);
@@ -32,8 +32,13 @@
 .hero-posts.bg-slide7 {
   background-image: url(/images/Frozenyogurt-background.jpg);
 }
+.highlight-h2,
 h2 {
   padding-top: 20px;
+}
+.highlight-h2 {
+  background-color: rgba(227, 241, 250, 0.7);
+  padding-bottom: 10px;
 }
 .slider-container {
   position: relative;
@@ -183,7 +188,7 @@ select {
 .postsbtn {
   margin-top: 25px;
 }
-.section-2-hr{
+.section-2-hr {
   margin: 0 auto;
   padding-bottom: 15px;
 }
@@ -279,7 +284,7 @@ figure img {
     align-items: center;
     padding-top: 15px;
   }
-  .section-2-hr{
+  .section-2-hr {
     padding-bottom: 0;
   }
 }
