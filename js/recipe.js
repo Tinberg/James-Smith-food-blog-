@@ -363,6 +363,7 @@ async function submitCommentToWordPress(commentData) {
   const originalUrl =
     "https://james-smith.cmsbackendsolutions.com/wp-json/wp/v2/comments";
   const url = corsAnywhereUrl + originalUrl;
+  //i would not use username and appPassword in the code, but rather make it in the wordpress if this was a real blog
   const username = "james-smith.cmsbackendsolutions.com";
   const appPassword = "lqMp 5wMN LbPM 2HD8 9uCQ REqV";
   const headers = new Headers();
