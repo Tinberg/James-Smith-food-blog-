@@ -110,7 +110,16 @@ function postContactFormDataToWordPress(name, email, subject, message) {
     console.error("Network or fetch error:", error);
     });
 }
+//Select all inputs and make so Keyboard enter submit the form.
+document.querySelectorAll('input').forEach(input => {
+  input.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+          e.preventDefault();
 
+          this.form.dispatchEvent(new Event('submit'));
+      }
+  });
+});
 
 
 
