@@ -110,7 +110,8 @@ function postContactFormDataToWordPress(name, email, subject, message) {
     console.error("Network or fetch error:", error);
     });
 }
-//Select all inputs and make so Keyboard enter submit the form.
+
+//Select all inputs and make so Keyboard enter submit the form. but in texarea its not working and i decided not ovridding the texerea default behaveior.
 document.querySelectorAll('input').forEach(input => {
   input.addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
