@@ -10,8 +10,8 @@ James Cooks food blog is my exam assignment project where I've put to use everyt
 - Blog Pages with Load More Functionality: Designed the blog pages to initially display 10 posts, with an option to load more, ensuring a clean and user-friendly interface.
 - Dynamic Blog Post Pages: Each blog post is displayed on its own page, with content and titles that update dynamically based on user selection.
 - Enhanced User Interaction: Developed a modal feature for image viewing on the blog pages and implemented a contact form with robust JavaScript validations.
-- WordPress Integration: Utilized WordPress as a Headless CMS, demonstrating my ability to integrate a RESTful API for dynamic content management.
 - Responsive and Accessible Design: Ensured the website is responsive across various devices and adheres to WCAG accessibility guidelines.
+- WordPress Integration: Utilized WordPress as a Headless CMS, demonstrating my ability to integrate a RESTful API for dynamic content management. [REST API server](https://james-smith.cmsbackendsolutions.com/)
 
 This project was not only a technical challenge, but also a creative process. allowing me to explore various aspects of web development. Check out the live site on Netlify and axplore the code on Github for a deeoer dive into my work!
 
